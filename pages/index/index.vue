@@ -1,0 +1,194 @@
+<template>
+	<view class="content">
+		<view class="header">
+			<view class="header-content">
+				<view class="user-info">
+					<image class="avatar" src="/static/avatar-default.png"></image>
+					<text class="user-title">未登录</text>
+					<!-- <view class="vip-tag">开通VIP</view> -->
+				</view>
+				<view class="quick-actions">
+					<view class="action-item">
+						<view class="action-icon">⚡️</view>
+						<text>真心话大冒险</text>
+					</view>
+					<view class="action-item">
+						<view class="action-icon">🍺</view>
+						<text>喝酒认丛</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		
+		<view class="game-categories">
+			<view class="game-list">
+				<view class="game-item neon-box" v-for="(game, gIndex) in games" :key="gIndex" @tap="startGame(game.path)">
+					<image class="game-image" :src="game.image"></image>
+					<text class="game-name">{{game.name}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				games: [
+					{ name: '摇骰子', image: '/static/images/game1.png',path:'/pages/game/game1' }
+				],
+			}
+		},
+
+		onLoad() {
+
+		},
+		methods: {
+			startGame(path) {
+				// 跳转到游戏页面
+				uni.navigateTo({
+					url: path
+				})
+
+			},
+			showRules() {
+				// 显示规则弹窗
+				uni.showModal({
+					title: '游戏规则',
+					content: '1. 玩家轮流参与游戏\n2. 根据游戏指示完成任务\n3. 未完成任务的玩家需要喝酒\n4. 注意适量，快乐游戏',
+					showCancel: false
+				})
+			}
+		}
+	}
+</script>
+
+<style>
+	.content {
+		display: flex;
+		flex-direction: column;
+		padding: 30rpx;
+		background: linear-gradient(
+			180deg, 
+			#B0E2FF 0%, 
+			#FFFFFF 25%, 
+			#FFFFFF 55%, 
+			#B0E2FF 100%
+		);
+		min-height: 100vh;
+	}
+
+	.header {
+		margin-bottom: 40rpx;
+		background: rgba(255, 255, 255, 0.9);
+		border-radius: 16px;
+		padding: 20rpx;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.header-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.user-info {
+		display: flex;
+		align-items: center;
+	}
+
+	.avatar {
+		width: 80rpx;
+		height: 80rpx;
+		border-radius: 50%;
+		border: 2rpx solid rgba(255, 255, 255, 0.2);
+	}
+
+	.user-title {
+		color: #333;
+		margin-left: 20rpx;
+		font-size: 32rpx;
+	}
+
+	.vip-tag {
+		margin-left: 20rpx;
+		padding: 4rpx 16rpx;
+		background: #4682B4;
+		border-radius: 24rpx;
+		font-size: 24rpx;
+		color: #fff;
+	}
+
+	.quick-actions {
+		display: flex;
+		gap: 30rpx;
+	}
+
+	.action-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: #333;
+		font-size: 24rpx;
+		background: #FFFFFF;
+		padding: 12rpx 24rpx;
+		border-radius: 12rpx;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.action-icon {
+		font-size: 40rpx;
+		margin-bottom: 8rpx;
+	}
+
+	.game-categories {
+		width: 100%;
+	}
+
+	.game-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 24rpx;
+	}
+
+	.game-item {
+		padding: 30rpx 20rpx;
+		border-radius: 16rpx;
+		text-align: center;
+		background: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(10px);
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+	}
+
+	.game-item:active {
+		transform: scale(0.95);
+		background: #F5F5F5;
+	}
+
+	.game-image {
+		width: 120rpx;
+		height: 120rpx;
+		border-radius: 12rpx;
+		margin-bottom: 16rpx;
+	}
+
+	.game-name {
+		font-size: 28rpx;
+		color: #333;
+		margin-bottom: 8rpx;
+		display: block;
+	}
+
+	.game-desc {
+		font-size: 24rpx;
+		color: rgba(255, 255, 255, 0.5);
+		display: block;
+		line-height: 1.4;
+	}
+</style>
