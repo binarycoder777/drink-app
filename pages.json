@@ -7,9 +7,15 @@
 			}
 		},
 		{
-			"path": "pages/game/game1",
+			"path": "pages/game/dice",
 			"style": {
 				"navigationBarTitleText": "摇骰子"
+			}
+		},
+		{
+			"path": "pages/game/lucky-wheel",
+			"style": {
+				"navigationBarTitleText": "幸运转盘"
 			}
 		}
 	],

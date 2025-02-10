@@ -1,0 +1,272 @@
+
+.lucky-wheel-container {
+    padding: 30rpx;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #0D0D2B 0%, #1A1A3A 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 背景动画效果 */
+.lucky-wheel-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, #0D0D2B 70%);
+    animation: pulse 4s ease-in-out infinite;
+    z-index: 0;
+}
+@keyframes pulse {
+0% { opacity: 0.5;
+}
+50% { opacity: 0.8;
+}
+100% { opacity: 0.5;
+}
+}
+.game-header {
+    text-align: center;
+    margin-bottom: 40rpx;
+    position: relative;
+    z-index: 1;
+}
+.title {
+    font-size: 48rpx;
+    margin-bottom: 10rpx;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.neon-text {
+    color: #fff;
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff,
+                 0 0 20px #ff00de,
+                 0 0 30px #ff00de,
+                 0 0 40px #ff00de;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+@keyframes neon {
+from {
+        text-shadow: 0 0 5px #fff,
+                     0 0 10px #fff,
+                     0 0 20px #ff00de,
+                     0 0 30px #ff00de,
+                     0 0 40px #ff00de;
+}
+to {
+        text-shadow: 0 0 2px #fff,
+                     0 0 5px #fff,
+                     0 0 10px #ff00de,
+                     0 0 15px #ff00de,
+                     0 0 20px #ff00de;
+}
+}
+.subtitle {
+    font-size: 28rpx;
+    color: #00f7ff;
+    margin-top: 10rpx;
+}
+.glow-text {
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff;
+}
+.wheel-section {
+    position: relative;
+    z-index: 1;
+}
+.wheel-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 40rpx auto;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #ff00de,
+                0 0 40px #ff00de,
+                inset 0 0 20px #ff00de;
+    z-index: 1;
+}
+.wheel-canvas {
+    width: 300px !important;
+    height: 300px !important;
+    transition: transform 0.1s linear;
+    position: relative;
+    z-index: 1;
+    visibility: visible; /* 默认可见 */
+}
+
+/* 当设置弹窗显示时，确保 canvas 隐藏 */
+.wheel-canvas.hidden {
+    visibility: hidden;
+}
+.control-section {
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: center;
+    gap: 2rpx;
+}
+.spin-button {
+    background: transparent;
+    border: 2px solid #00f7ff;
+    color: #00f7ff;
+    padding: 20rpx 60rpx;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00f7ff,
+                inset 0 0 10px #00f7ff;
+    transition: all 0.3s ease;
+    min-width: 350rpx;
+}
+.neon-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 20px #00f7ff,
+                inset 0 0 20px #00f7ff;
+}
+.spinning {
+    animation: buttonGlow 0.5s ease-in-out infinite alternate;
+}
+@keyframes buttonGlow {
+from {
+        box-shadow: 0 0 10px #00f7ff,
+                    inset 0 0 10px #00f7ff;
+}
+to {
+        box-shadow: 0 0 20px #00f7ff,
+                    inset 0 0 20px #00f7ff;
+}
+}
+.settings-button {
+    background: transparent;
+    border: 2px solid #ff00de;
+    color: #ff00de;
+    padding: 20rpx 40rpx;
+    font-size: 28rpx;
+    border-radius: 50rpx;
+    font-weight: bold;
+    box-shadow: 0 0 10px #ff00de,
+                inset 0 0 10px #ff00de;
+    min-width: 300rpx;
+}
+.history-section {
+    margin-top: 60rpx;
+    padding: 30rpx;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20rpx;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+.neon-text-small {
+    font-size: 28rpx;
+    color: #00f7ff;
+    text-shadow: 0 0 5px #00f7ff,
+                 0 0 10px #00f7ff;
+}
+.history-list {
+    margin-top: 20rpx;
+}
+.history-item {
+    padding: 10rpx 0;
+    border-bottom: 1px solid rgba(0, 247, 255, 0.3);
+    font-size: 24rpx;
+    transition: all 0.3s ease;
+}
+.history-item:hover {
+    background: rgba(0, 247, 255, 0.1);
+}
+
+/* 添加结果展示动画 */
+.history-item:first-child {
+    animation: newResult 0.5s ease-in-out;
+}
+@keyframes newResult {
+from {
+        transform: scale(1.1);
+        background: rgba(0, 247, 255, 0.3);
+}
+to {
+        transform: scale(1);
+        background: transparent;
+}
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: rgba(26, 11, 46, 0.95);
+    border-radius: 20rpx;
+    padding: 40rpx;
+    width: 80%;
+    max-width: 600rpx;
+    border: 2px solid #ff00de;
+    box-shadow: 0 0 20px #ff00de;
+    position: relative;
+    z-index: 100000;
+}
+.modal-title {
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+.prize-list {
+    margin: 20rpx 0;
+}
+.prize-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+.prize-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ff00de;
+    border-radius: 10rpx;
+    padding: 10rpx 20rpx;
+    color: #fff;
+    margin-right: 10rpx;
+}
+.delete-btn {
+    color: #ff00de;
+    font-size: 40rpx;
+    padding: 0 20rpx;
+}
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20rpx;
+    margin-top: 30rpx;
+}
+.neon-button-small {
+    background: transparent;
+    border: 1px solid #00f7ff;
+    color: #00f7ff;
+    padding: 10rpx 30rpx;
+    font-size: 28rpx;
+    border-radius: 30rpx;
+    box-shadow: 0 0 5px #00f7ff;
+}
+.neon-button-small.cancel {
+    border-color: #ff00de;
+    color: #ff00de;
+    box-shadow: 0 0 5px #ff00de;
+}
+.add-btn {
+    width: 100%;
+    margin-top: 20rpx;
+}

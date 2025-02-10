@@ -344,17 +344,12 @@ const _sfc_main = {
     },
     createDices() {
       const materials = this.diceTextures.map((texture) => {
-        return common_vendor.markRaw(new this.THREE.MeshPhongMaterial({
+        return common_vendor.markRaw(new this.THREE.MeshBasicMaterial({
           map: texture,
           transparent: false,
-          // 改为 false，禁用透明
           opacity: 1,
-          shininess: 70,
-          specular: 4473924,
           depthWrite: true,
-          // 启用深度写入
           depthTest: true
-          // 启用深度测试
         }));
       });
       const diceSize = 0.6;
@@ -502,6 +497,14 @@ const _sfc_main = {
     },
     showDiceOptions() {
       this.showOptions = true;
+      if (this.diceCup) {
+        this.diceCup.visible = false;
+      }
+      if (this.dices) {
+        this.dices.forEach((dice) => {
+          dice.visible = false;
+        });
+      }
     },
     selectDiceCount(count) {
       this.diceCount = count;
@@ -515,6 +518,14 @@ const _sfc_main = {
         this.dices = [];
       }
       this.createDices();
+      if (this.diceCup) {
+        this.diceCup.visible = true;
+      }
+      if (this.dices) {
+        this.dices.forEach((dice) => {
+          dice.visible = true;
+        });
+      }
     },
     initScene() {
       return new Promise((resolve, reject) => {
@@ -551,13 +562,16 @@ const _sfc_main = {
 };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
-    a: common_vendor.o((...args) => $options.goBack && $options.goBack(...args)),
-    b: common_vendor.o((...args) => $options.onTouchStart && $options.onTouchStart(...args)),
-    c: common_vendor.o((...args) => $options.onTouchMove && $options.onTouchMove(...args)),
-    d: common_vendor.o((...args) => $options.onTouchEnd && $options.onTouchEnd(...args)),
-    e: $setup.showOptions
+    a: common_vendor.o((...args) => $options.onTouchStart && $options.onTouchStart(...args)),
+    b: common_vendor.o((...args) => $options.onTouchMove && $options.onTouchMove(...args)),
+    c: common_vendor.o((...args) => $options.onTouchEnd && $options.onTouchEnd(...args)),
+    d: $setup.showOptions ? 1 : "",
+    e: common_vendor.t($setup.diceCount),
+    f: common_vendor.o((...args) => $options.showDiceOptions && $options.showDiceOptions(...args)),
+    g: common_vendor.o((...args) => $options.shakeDiceCup && $options.shakeDiceCup(...args)),
+    h: $setup.showOptions
   }, $setup.showOptions ? {
-    f: common_vendor.f(6, (n, k0, i0) => {
+    i: common_vendor.f(3, (n, k0, i0) => {
       return {
         a: common_vendor.t(n),
         b: n,
@@ -565,14 +579,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         d: common_vendor.o(($event) => $options.selectDiceCount(n), n)
       };
     }),
-    g: common_vendor.o(() => {
-    }),
-    h: common_vendor.o(($event) => $setup.showOptions = false)
-  } : {}, {
-    i: common_vendor.t($setup.diceCount),
-    j: common_vendor.o((...args) => $options.showDiceOptions && $options.showDiceOptions(...args)),
-    k: common_vendor.o((...args) => $options.shakeDiceCup && $options.shakeDiceCup(...args))
-  });
+    j: common_vendor.f(3, (n, k0, i0) => {
+      return {
+        a: common_vendor.t(n + 3),
+        b: n + 3,
+        c: $setup.diceCount === n + 3 ? 1 : "",
+        d: common_vendor.o(($event) => $options.selectDiceCount(n + 3), n + 3)
+      };
+    })
+  } : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/weitao/Desktop/ThinGift/drink-app/pages/game/game1.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/weitao/Desktop/ThinGift/drink-app/pages/game/dice.vue"]]);
 wx.createPage(MiniProgramPage);

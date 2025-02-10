@@ -4,7 +4,8 @@ const _sfc_main = {
   data() {
     return {
       games: [
-        { name: "摇骰子", image: "/static/images/game1.png", path: "/pages/game/game1" }
+        { name: "摇骰子", image: "/static/images/game1.png", path: "/pages/game/dice" },
+        { name: "幸运转盘", image: "/static/images/wheel.png", path: "/pages/game/lucky-wheel" }
       ]
     };
   },

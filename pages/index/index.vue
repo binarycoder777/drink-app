@@ -36,7 +36,8 @@
 		data() {
 			return {
 				games: [
-					{ name: '摇骰子', image: '/static/images/game1.png',path:'/pages/game/game1' }
+					{ name: '摇骰子', image: '/static/images/game1.png',path:'/pages/game/dice' },
+					{ name: '幸运转盘', image: '/static/images/wheel.png', path:'/pages/game/lucky-wheel' }
 				],
 			}
 		},
@@ -69,22 +70,40 @@
 		display: flex;
 		flex-direction: column;
 		padding: 30rpx;
-		background: linear-gradient(
-			180deg, 
-			#B0E2FF 0%, 
-			#FFFFFF 25%, 
-			#FFFFFF 55%, 
-			#B0E2FF 100%
-		);
+		background: linear-gradient(to bottom, #0D0D2B 0%, #1A1A3A 100%);
 		min-height: 100vh;
+		position: relative;
+		overflow: hidden;
+	}
+
+	/* 添加背景动画效果 */
+	.content::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: radial-gradient(circle at center, transparent 0%, #0D0D2B 70%);
+		animation: pulse 4s ease-in-out infinite;
+		z-index: 0;
+	}
+
+	@keyframes pulse {
+		0% { opacity: 0.5; }
+		50% { opacity: 0.8; }
+		100% { opacity: 0.5; }
 	}
 
 	.header {
 		margin-bottom: 40rpx;
-		background: rgba(255, 255, 255, 0.9);
+		background: rgba(26, 11, 46, 0.95);
 		border-radius: 16px;
 		padding: 20rpx;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 20px #ff00de;
+		border: 2px solid #ff00de;
+		position: relative;
+		z-index: 1;
 	}
 
 	.header-content {
@@ -102,22 +121,28 @@
 		width: 80rpx;
 		height: 80rpx;
 		border-radius: 50%;
-		border: 2rpx solid rgba(255, 255, 255, 0.2);
+		border: 2px solid #00f7ff;
+		box-shadow: 0 0 10px #00f7ff;
 	}
 
 	.user-title {
-		color: #333;
+		color: #fff;
 		margin-left: 20rpx;
 		font-size: 32rpx;
+		text-shadow: 0 0 5px #fff,
+					 0 0 10px #fff,
+					 0 0 20px #00f7ff;
 	}
 
 	.vip-tag {
 		margin-left: 20rpx;
 		padding: 4rpx 16rpx;
-		background: #4682B4;
+		background: linear-gradient(45deg, #ff00de, #00f7ff);
 		border-radius: 24rpx;
 		font-size: 24rpx;
 		color: #fff;
+		text-shadow: 0 0 5px #fff;
+		animation: neon 1.5s ease-in-out infinite alternate;
 	}
 
 	.quick-actions {
@@ -129,21 +154,26 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		color: #333;
+		color: #fff;
 		font-size: 24rpx;
-		background: #FFFFFF;
+		background: rgba(26, 11, 46, 0.95);
 		padding: 12rpx 24rpx;
 		border-radius: 12rpx;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 15px #ff00de;
+		border: 1px solid #ff00de;
+		backdrop-filter: blur(10px);
 	}
 
 	.action-icon {
 		font-size: 40rpx;
 		margin-bottom: 8rpx;
+		text-shadow: 0 0 10px #00f7ff;
 	}
 
 	.game-categories {
 		width: 100%;
+		position: relative;
+		z-index: 1;
 	}
 
 	.game-list {
@@ -156,19 +186,20 @@
 		padding: 30rpx 20rpx;
 		border-radius: 16rpx;
 		text-align: center;
-		background: rgba(255, 255, 255, 0.9);
+		background: rgba(26, 11, 46, 0.95);
 		backdrop-filter: blur(10px);
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 15px #ff00de;
+		border: 2px solid #ff00de;
 		transition: all 0.3s ease;
 	}
 
 	.game-item:active {
 		transform: scale(0.95);
-		background: #F5F5F5;
+		box-shadow: 0 0 25px #ff00de;
 	}
 
 	.game-image {
@@ -176,19 +207,39 @@
 		height: 120rpx;
 		border-radius: 12rpx;
 		margin-bottom: 16rpx;
+		/* border: 1px solid #ff00de; */
 	}
 
 	.game-name {
 		font-size: 28rpx;
-		color: #333;
+		color: #fff;
 		margin-bottom: 8rpx;
 		display: block;
+		/* text-shadow: 0 0 5px #fff, */
+					 /* 0 0 10px #ff00de,
+					 0 0 15px #ff00de; */
 	}
 
 	.game-desc {
 		font-size: 24rpx;
-		color: rgba(255, 255, 255, 0.5);
+		color: rgba(255, 255, 255, 0.7);
 		display: block;
 		line-height: 1.4;
+		text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+	}
+
+	@keyframes neon {
+		from {
+			text-shadow: 0 0 5px #fff,
+						 0 0 10px #fff,
+						 0 0 20px #ff00de,
+						 0 0 30px #ff00de;
+		}
+		to {
+			text-shadow: 0 0 2px #fff,
+						 0 0 5px #fff,
+						 0 0 10px #ff00de,
+						 0 0 15px #ff00de;
+		}
 	}
 </style>

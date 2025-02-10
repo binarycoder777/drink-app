@@ -3,11 +3,23 @@ Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
 if (!Math) {
   "./pages/index/index.js";
-  "./pages/game/game1.js";
+  "./pages/game/dice.js";
+  "./pages/game/lucky-wheel.js";
 }
 const _sfc_main = {
   onLaunch: function() {
     console.log("App Launch");
+    common_vendor.wx$1.getSystemInfo({
+      success: function(res) {
+        if (common_vendor.index.canIUse("canvas.type.2d")) {
+          common_vendor.index.createSelectorQuery().selectAll("canvas").fields({
+            node: true,
+            size: true,
+            component: true
+          }).exec();
+        }
+      }
+    });
   },
   onShow: function() {
     console.log("App Show");

@@ -1,14 +1,15 @@
 <template>
   <!-- 将整个页面包装在一个相对定位的容器中 -->
   <view class="page-container">
-    <!-- 添加返回按钮 -->
-    <view class="back-button" @tap="goBack">
-      <text>返回</text>
+    <!-- 添加标题区域 -->
+    <view class="game-header">
+      <text class="title neon-text">骰子游戏</text>
+      <text class="subtitle glow-text">今晚 就看你的了</text>
     </view>
     
     <view class="game-container">
       <!-- 骰蛊区域 -->
-      <view class="canvas-container">
+      <view class="canvas-container glow-effect" :class="{ 'hidden': showOptions }">
         <canvas 
           type="webgl" 
           id="dice-container"
@@ -19,23 +20,25 @@
         ></canvas>
       </view>
       
+      <!-- 按钮区域 -->
+      <view class="button-container">
+        <view class="dice-count-selector neon-button" @tap="showDiceOptions">
+          <text>{{ diceCount }}个骰子</text>
+        </view>
+        <view class="shake-button neon-button" @tap="shakeDiceCup">摇骰子</view>
+      </view>
+      
       <!-- 弹窗层 -->
       <view 
-        class="modal-layer"
+        class="modal"
         v-if="showOptions"
       >
-        <view 
-          class="modal-overlay" 
-          @tap="showOptions = false"
-        >
-          <scroll-view 
-            class="modal-content" 
-            scroll-x
-            @tap.stop
-          >
-            <view class="modal-options-container">
+        <view class="modal-content">
+          <text class="modal-title neon-text">选择骰子数量</text>
+          <view class="modal-options-container">
+            <view class="options-row">
               <view 
-                v-for="n in 6" 
+                v-for="n in 3" 
                 :key="n" 
                 class="modal-option"
                 :class="{ 'active': diceCount === n }"
@@ -44,16 +47,19 @@
                 {{ n }}
               </view>
             </view>
-          </scroll-view>
+            <view class="options-row">
+              <view 
+                v-for="n in 3" 
+                :key="n + 3" 
+                class="modal-option"
+                :class="{ 'active': diceCount === (n + 3) }"
+                @tap="selectDiceCount(n + 3)"
+              >
+                {{ n + 3 }}
+              </view>
+            </view>
+          </view>
         </view>
-      </view>
-
-      <!-- 按钮区域 -->
-      <view class="button-container">
-        <view class="dice-count-selector" @tap="showDiceOptions">
-          <text>{{ diceCount }}个骰子</text>
-        </view>
-        <view class="shake-button" @tap="shakeDiceCup">摇骰子</view>
       </view>
     </view>
   </view>
@@ -493,14 +499,12 @@ export default {
 
     createDices() {
       const materials = this.diceTextures.map(texture => {
-        return markRaw(new this.THREE.MeshPhongMaterial({ 
+        return markRaw(new this.THREE.MeshBasicMaterial({ 
           map: texture,
-          transparent: false,    // 改为 false，禁用透明
-          opacity: 1,          
-          shininess: 70,       
-          specular: 0x444444,
-          depthWrite: true,     // 启用深度写入
-          depthTest: true,      // 启用深度测试
+          transparent: false,
+          opacity: 1,
+          depthWrite: true,
+          depthTest: true,
         }));
       });
       
@@ -704,6 +708,15 @@ export default {
 
     showDiceOptions() {
       this.showOptions = true;
+      // 隐藏骰蛊和骰子
+      if (this.diceCup) {
+        this.diceCup.visible = false;
+      }
+      if (this.dices) {
+        this.dices.forEach(dice => {
+          dice.visible = false;
+        });
+      }
     },
 
     selectDiceCount(count) {
@@ -719,6 +732,16 @@ export default {
         this.dices = [];
       }
       this.createDices();
+      
+      // 显示骰蛊和新创建的骰子
+      if (this.diceCup) {
+        this.diceCup.visible = true;
+      }
+      if (this.dices) {
+        this.dices.forEach(dice => {
+          dice.visible = true;
+        });
+      }
     },
 
     initScene() {
@@ -770,32 +793,84 @@ export default {
 .page-container {
   width: 100vw;
   height: 100vh;
+  background: linear-gradient(to bottom, #0D0D2B 0%, #1A1A3A 100%);
   position: relative;
+  overflow: hidden;
 }
 
-/* 游戏容器 */
-.game-container {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(
-    180deg, 
-    #B0E2FF 0%, 
-    #FFFFFF 25%, 
-    #FFFFFF 55%, 
-    #B0E2FF 100%
-  );
-  display: flex;
-  flex-direction: column;
-  position: relative;
+/* 背景动画效果 */
+.page-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, #0D0D2B 70%);
+  animation: pulse 4s ease-in-out infinite;
   z-index: 0;
 }
 
-/* Canvas 相关样式 */
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 40rpx;
+  position: relative;
+  z-index: 1;
+  padding-top: 80rpx;  /* 调整顶部间距，原来是120rpx */
+}
+
+.title {
+  font-size: 48rpx;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 20px #ff00de,
+               0 0 30px #ff00de,
+               0 0 40px #ff00de;
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #00f7ff;
+  margin-top: 10rpx;
+}
+
+.glow-text {
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+.game-container {
+  width: 100%;
+  height: calc(100vh - 200rpx);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
 .canvas-container {
   width: 100%;
   height: 75vh;
   position: relative;
-  background: transparent;
+  border-radius: 20rpx;
+  box-shadow: 0 0 20px #ff00de,
+              0 0 40px #ff00de,
+              inset 0 0 20px #ff00de;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .dice-canvas {
@@ -805,66 +880,78 @@ export default {
   background: transparent;
 }
 
-/* 弹窗层 */
-.modal-layer {
-  position: absolute;
-  left: 0;
-  bottom: 20vh;
-  width: 100%;
-  height: auto;
-  z-index: 100000;
-}
-
-.modal-overlay {
-  width: 100%;
-  background: transparent;
+/* 按钮容器 */
+.button-container {
+  margin-top: 40rpx;
   display: flex;
   justify-content: center;
-  padding: 0 20rpx;
+  gap: 20rpx;
+}
+
+.neon-button {
+  background: transparent;
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  padding: 20rpx 60rpx;
+  font-size: 32rpx;
+  border-radius: 50rpx;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00f7ff,
+              inset 0 0 10px #00f7ff;
+  transition: all 0.3s ease;
+}
+
+.neon-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 20px #00f7ff,
+              inset 0 0 20px #00f7ff;
+}
+
+/* 弹窗层 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 13, 43, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .modal-content {
-  background: #FFFFFF;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  animation: modalShow 0.3s ease;
-  width: 600rpx; /* 固定宽度 */
+  background: rgba(26, 26, 58, 0.95);
+  border-radius: 30rpx;
+  padding: 60rpx 40rpx;
+  width: 85%;
+  max-width: 600rpx;
+  border: 2px solid #ff00de;
+  box-shadow: 0 0 30px rgba(255, 0, 222, 0.3),
+              inset 0 0 20px rgba(255, 0, 222, 0.2);
+  animation: contentSlideUp 0.3s ease;
+  transform: translateZ(0);
 }
 
-.modal-options-container {
-  padding: 30rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around; /* 均匀分布 */
-  align-items: center;
-  width: 100%;
-}
-
-.modal-option {
-  padding: 20rpx;
-  width: 80rpx; /* 固定宽度 */
-  text-align: center;
-  font-size: 36rpx;
-  color: #333333;
-  transition: all 0.2s;
-  border-radius: 8rpx;
-  flex-shrink: 0; /* 防止压缩 */
-}
-
-.modal-option:active {
-  background-color: #F5F5F5;
-  transform: scale(0.95);
-}
-
-.modal-option.active {
-  color: #4682B4;
-  font-weight: bold;
-}
-
-@keyframes modalShow {
+@keyframes contentSlideUp {
   from {
     opacity: 0;
-    transform: translateY(20rpx);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -872,57 +959,56 @@ export default {
   }
 }
 
-/* 按钮容器 */
-.button-container {
-  width: 100%;
-  height: 25vh;
+.modal-title {
+  text-align: center;
+  margin-bottom: 50rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.modal-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40rpx; /* 两行之间的间距 */
+  margin-top: 20rpx;
+}
+
+.options-row {
   display: flex;
   justify-content: center;
+  gap: 60rpx; /* 同一行选项之间的间距 */
+}
+
+.modal-option {
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
   align-items: center;
-  gap: 30rpx;
+  justify-content: center;
+  border: 2px solid #00f7ff;
+  border-radius: 50%;
+  color: #00f7ff;
+  font-size: 36rpx;
+  font-weight: bold;
+  background: rgba(0, 247, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  z-index: 1;
+  overflow: hidden;
 }
 
-/* 其他样式保持不变 */
-.dice-count-selector,
-.shake-button {
-  background: #FFFFFF;
-  color: #333333;
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-size: 32rpx;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.shake-button {
-  padding: 15px 40px;
-}
-
-.dice-count-selector:active,
-.shake-button:active {
-  transform: scale(0.95);
-  background: #F5F5F5;
-}
-
-/* 添加返回按钮样式 */
-.back-button {
-  position: fixed;
-  top: 40px;
-  left: 20px;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 8px 20px;
-  border-radius: 20px;
+.neon-text-small {
   font-size: 28rpx;
-  color: #333;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #00f7ff;
+  text-shadow: 0 0 5px #00f7ff,
+               0 0 10px #00f7ff;
 }
 
-.back-button:active {
-  transform: scale(0.95);
-  background: #F5F5F5;
+/* 添加隐藏类 */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 </style>

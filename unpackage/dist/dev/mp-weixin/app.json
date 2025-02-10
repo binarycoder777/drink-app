@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/game/game1"
+    "pages/game/dice",
+    "pages/game/lucky-wheel"
   ],
   "window": {
     "navigationBarTextStyle": "black",
