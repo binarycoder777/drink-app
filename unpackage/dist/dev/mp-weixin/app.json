@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/game/dice",
-    "pages/game/lucky-wheel"
+    "pages/game/lucky-wheel",
+    "pages/game/revolver",
+    "pages/game/draw-lots"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -5,6 +5,8 @@ if (!Math) {
   "./pages/index/index.js";
   "./pages/game/dice.js";
   "./pages/game/lucky-wheel.js";
+  "./pages/game/revolver.js";
+  "./pages/game/draw-lots.js";
 }
 const _sfc_main = {
   onLaunch: function() {

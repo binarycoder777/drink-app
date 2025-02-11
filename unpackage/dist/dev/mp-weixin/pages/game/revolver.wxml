@@ -1,0 +1,1 @@
+<view class="container"><block wx:if="{{r0}}"><canvas type="webgl" id="webgl" class="webgl-canvas" bindtouchstart="{{a}}" bindtouchmove="{{b}}" bindtouchend="{{c}}"></canvas></block><view class="controls"><button class="spin-btn" bindtap="{{d}}">旋转弹仓</button><button class="fire-btn" bindtap="{{e}}">开火</button></view></view>

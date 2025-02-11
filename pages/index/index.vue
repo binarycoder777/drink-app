@@ -37,7 +37,9 @@
 			return {
 				games: [
 					{ name: '摇骰子', image: '/static/images/game1.png',path:'/pages/game/dice' },
-					{ name: '幸运转盘', image: '/static/images/wheel.png', path:'/pages/game/lucky-wheel' }
+					{ name: '幸运转盘', image: '/static/images/wheel.png', path:'/pages/game/lucky-wheel' },
+					{ name: '左轮轮盘', image: '/static/images/revolver.png', path:'/pages/game/revolver' },
+					{ name: '抽签', image: '/static/images/lots.png', path:'/pages/game/draw-lots' }
 				],
 			}
 		},
