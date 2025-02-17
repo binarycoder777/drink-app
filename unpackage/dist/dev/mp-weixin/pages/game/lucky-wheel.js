@@ -29,17 +29,17 @@ const _sfc_main = {
     this.sectorOffset = 360 / this.prizes.length / 2;
   },
   onReady() {
-    console.log("Component ready, attempting to initialize canvas...");
+    common_vendor.index.__f__("log", "at pages/game/lucky-wheel.vue:102", "Component ready, attempting to initialize canvas...");
     setTimeout(() => {
       this.initCanvas();
     }, 100);
   },
   methods: {
     initCanvas() {
-      console.log("Initializing canvas...");
+      common_vendor.index.__f__("log", "at pages/game/lucky-wheel.vue:110", "Initializing canvas...");
       const query = common_vendor.index.createSelectorQuery();
       query.select("#wheelCanvas").fields({ node: true, size: true }).exec((res) => {
-        console.log("MP Canvas query result:", res);
+        common_vendor.index.__f__("log", "at pages/game/lucky-wheel.vue:117", "MP Canvas query result:", res);
         if (res[0]) {
           const canvas = res[0].node;
           this.ctx = canvas.getContext("2d");
@@ -47,10 +47,10 @@ const _sfc_main = {
           canvas.width = res[0].width * dpr;
           canvas.height = res[0].height * dpr;
           this.ctx.scale(dpr, dpr);
-          console.log("MP Canvas context obtained");
+          common_vendor.index.__f__("log", "at pages/game/lucky-wheel.vue:125", "MP Canvas context obtained");
           this.render();
         } else {
-          console.error("Failed to get canvas node");
+          common_vendor.index.__f__("error", "at pages/game/lucky-wheel.vue:128", "Failed to get canvas node");
         }
       });
     },
@@ -66,7 +66,7 @@ const _sfc_main = {
     },
     drawWheel() {
       if (!this.ctx) {
-        console.error("Canvas context not available");
+        common_vendor.index.__f__("error", "at pages/game/lucky-wheel.vue:169", "Canvas context not available");
         return;
       }
       const ctx = this.ctx;
@@ -319,5 +319,6 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     o: common_vendor.o((...args) => $options.cancelSettings && $options.cancelSettings(...args))
   }) : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/weitao/Desktop/ThinGift/drink-app/pages/game/lucky-wheel.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render]]);
 wx.createPage(MiniProgramPage);
+//# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/game/lucky-wheel.js.map

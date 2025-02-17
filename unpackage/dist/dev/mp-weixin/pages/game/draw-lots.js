@@ -68,12 +68,35 @@ const _sfc_main = {
       });
     },
     closeSettings() {
+      if (this.$refs.settingsPopup) {
+        this.$refs.settingsPopup.close();
+      }
       this.showSettings = false;
     },
     updateLot(index, text) {
       this.editableLots[index].text = text;
     },
+    addNewLot() {
+      const newNumber = this.editableLots.length + 1;
+      this.editableLots.push({
+        number: newNumber,
+        text: ""
+      });
+    },
+    deleteLot(index) {
+      this.editableLots.splice(index, 1);
+      this.editableLots.forEach((lot, idx) => {
+        lot.number = idx + 1;
+      });
+    },
     saveLots() {
+      if (this.editableLots.length === 0) {
+        common_vendor.index.showToast({
+          title: "至少需要一个签",
+          icon: "none"
+        });
+        return;
+      }
       this.lots = JSON.parse(JSON.stringify(this.editableLots));
       this.closeSettings();
       common_vendor.index.showToast({
@@ -92,8 +115,8 @@ const _sfc_main = {
   }
 };
 if (!Array) {
-  const _component_uni_popup = common_vendor.resolveComponent("uni-popup");
-  _component_uni_popup();
+  const _component_popup = common_vendor.resolveComponent("popup");
+  _component_popup();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
@@ -119,19 +142,22 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     m: common_vendor.f($data.editableLots, (lot, index, i0) => {
       return {
         a: common_vendor.t(lot.number),
-        b: common_vendor.o(($event) => $options.updateLot(index, lot.text), index),
-        c: lot.text,
-        d: common_vendor.o(($event) => lot.text = $event.detail.value, index),
-        e: index
+        b: common_vendor.o(($event) => $options.deleteLot(index), index),
+        c: common_vendor.o(($event) => $options.updateLot(index, lot.text), index),
+        d: lot.text,
+        e: common_vendor.o(($event) => lot.text = $event.detail.value, index),
+        f: index
       };
     }),
-    n: common_vendor.o((...args) => $options.saveLots && $options.saveLots(...args)),
-    o: common_vendor.sr("settingsPopup", "49c2cbdf-0"),
-    p: common_vendor.o($options.popupChange),
-    q: common_vendor.p({
+    n: common_vendor.o((...args) => $options.addNewLot && $options.addNewLot(...args)),
+    o: common_vendor.o((...args) => $options.saveLots && $options.saveLots(...args)),
+    p: common_vendor.sr("settingsPopup", "49c2cbdf-0"),
+    q: common_vendor.o($options.popupChange),
+    r: common_vendor.p({
       type: "center"
     })
   } : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/weitao/Desktop/ThinGift/drink-app/pages/game/draw-lots.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render]]);
 wx.createPage(MiniProgramPage);
+//# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/game/draw-lots.js.map

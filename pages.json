@@ -29,6 +29,18 @@
 			"style": {
 				"navigationBarTitleText": "抽签"
 			}
+		},
+		{
+			"path": "pages/game/drink-dare",
+			"style": {
+				"navigationBarTitleText": "喝酒认怂"
+			}
+		},
+		{
+			"path": "pages/game/truth-dare",
+			"style": {
+				"navigationBarTitleText": "真心话大冒险"
+			}
 		}
 	],
 	"globalStyle": {

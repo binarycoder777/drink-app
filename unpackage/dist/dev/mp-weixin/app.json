@@ -4,7 +4,9 @@
     "pages/game/dice",
     "pages/game/lucky-wheel",
     "pages/game/revolver",
-    "pages/game/draw-lots"
+    "pages/game/draw-lots",
+    "pages/game/drink-dare",
+    "pages/game/truth-dare"
   ],
   "window": {
     "navigationBarTextStyle": "black",

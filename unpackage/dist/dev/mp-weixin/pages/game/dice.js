@@ -59,8 +59,8 @@ const _sfc_main = {
       if (!gl) {
         throw new Error("WebGL context not available");
       }
-      console.log("WebGL Context Attributes:", gl.getContextAttributes());
-      console.log("Canvas:", {
+      common_vendor.index.__f__("log", "at pages/game/dice.vue:141", "WebGL Context Attributes:", gl.getContextAttributes());
+      common_vendor.index.__f__("log", "at pages/game/dice.vue:142", "Canvas:", {
         width: canvas.width,
         height: canvas.height,
         style: canvas.style
@@ -71,7 +71,7 @@ const _sfc_main = {
       this.createDices();
       this.animate();
     } catch (error) {
-      console.error("Initialization error:", error);
+      common_vendor.index.__f__("error", "at pages/game/dice.vue:154", "Initialization error:", error);
     }
   },
   methods: {
@@ -96,8 +96,8 @@ const _sfc_main = {
             premultipliedAlpha: false,
             preserveDrawingBuffer: false
           });
-          console.log("WebGL Context Attributes:", gl.getContextAttributes());
-          console.log("Canvas:", {
+          common_vendor.index.__f__("log", "at pages/game/dice.vue:188", "WebGL Context Attributes:", gl.getContextAttributes());
+          common_vendor.index.__f__("log", "at pages/game/dice.vue:189", "Canvas:", {
             width: canvas.width,
             height: canvas.height,
             style: canvas.style
@@ -105,7 +105,7 @@ const _sfc_main = {
           try {
             this.THREE = common_vendor.markRaw(common_vendor.dist.createScopedThreejs(canvas));
             this.scene = common_vendor.markRaw(new this.THREE.Scene());
-            console.log("THREE.js Scene:", {
+            common_vendor.index.__f__("log", "at pages/game/dice.vue:200", "THREE.js Scene:", {
               background: this.scene.background,
               children: this.scene.children.length
             });
@@ -149,7 +149,7 @@ const _sfc_main = {
             gl.clear(gl.COLOR_BUFFER_BIT);
             resolve();
           } catch (error) {
-            console.error("THREE.js initialization error:", error);
+            common_vendor.index.__f__("error", "at pages/game/dice.vue:256", "THREE.js initialization error:", error);
             reject(error);
           }
         });
@@ -339,7 +339,7 @@ const _sfc_main = {
           this.diceTextures.push(texture);
         }
       } catch (error) {
-        console.error("Error loading textures:", error);
+        common_vendor.index.__f__("error", "at pages/game/dice.vue:496", "Error loading textures:", error);
       }
     },
     createDices() {
@@ -589,5 +589,6 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   } : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/weitao/Desktop/ThinGift/drink-app/pages/game/dice.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render]]);
 wx.createPage(MiniProgramPage);
+//# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/game/dice.js.map

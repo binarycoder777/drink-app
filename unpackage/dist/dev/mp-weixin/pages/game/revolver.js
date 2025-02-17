@@ -57,7 +57,7 @@ const _sfc_main = {
       await this.initThree();
       this.animate();
     } catch (error) {
-      console.error("Initialization error:", error);
+      common_vendor.index.__f__("error", "at pages/game/revolver.vue:86", "Initialization error:", error);
     }
   },
   methods: {
@@ -98,7 +98,7 @@ const _sfc_main = {
         this.scene.background = new this.THREE.Color(14540253);
         this.createRevolver();
       } catch (error) {
-        console.error("THREE.js initialization error:", error);
+        common_vendor.index.__f__("error", "at pages/game/revolver.vue:144", "THREE.js initialization error:", error);
         throw error;
       }
     },
@@ -416,5 +416,6 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     e: common_vendor.o((...args) => $options.pullTrigger && $options.pullTrigger(...args))
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/weitao/Desktop/ThinGift/drink-app/pages/game/revolver.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render]]);
 wx.createPage(MiniProgramPage);
+//# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/game/revolver.js.map

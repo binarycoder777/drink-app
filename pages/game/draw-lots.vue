@@ -31,7 +31,12 @@
     </view>
 
     <!-- 设置弹窗 -->
-    <uni-popup ref="settingsPopup" type="center" @change="popupChange" v-if="showSettings">
+    <popup 
+      ref="settingsPopup" 
+      type="center" 
+      @change="popupChange" 
+      v-if="showSettings"
+    >
       <view class="settings-popup">
         <view class="settings-header">
           <text class="settings-title">设置签内容</text>
@@ -39,7 +44,10 @@
         </view>
         <scroll-view scroll-y class="lots-list">
           <view v-for="(lot, index) in editableLots" :key="index" class="lot-item">
-            <text class="lot-number">第{{lot.number}}签</text>
+            <view class="lot-item-header">
+              <text class="lot-number">第{{lot.number}}签</text>
+              <text class="delete-btn" @click="deleteLot(index)">删除</text>
+            </view>
             <input 
               class="lot-input"
               v-model="lot.text"
@@ -48,9 +56,12 @@
             />
           </view>
         </scroll-view>
-        <button class="save-button" @click="saveLots">保存设置</button>
+        <view class="popup-footer">
+          <button class="add-button" @click="addNewLot">新增签</button>
+          <button class="save-button" @click="saveLots">保存设置</button>
+        </view>
       </view>
-    </uni-popup>
+    </popup>
   </view>
 </template>
 
@@ -120,7 +131,6 @@ export default {
     openSettings() {
       this.editableLots = JSON.parse(JSON.stringify(this.lots))
       this.showSettings = true
-      // 确保在下一个 tick 再打开弹窗
       this.$nextTick(() => {
         if (this.$refs.settingsPopup) {
           this.$refs.settingsPopup.open()
@@ -129,6 +139,9 @@ export default {
     },
     
     closeSettings() {
+      if (this.$refs.settingsPopup) {
+        this.$refs.settingsPopup.close()
+      }
       this.showSettings = false
     },
     
@@ -136,7 +149,30 @@ export default {
       this.editableLots[index].text = text
     },
     
+    addNewLot() {
+      const newNumber = this.editableLots.length + 1
+      this.editableLots.push({
+        number: newNumber,
+        text: ''
+      })
+    },
+
+    deleteLot(index) {
+      this.editableLots.splice(index, 1)
+      // 重新编号
+      this.editableLots.forEach((lot, idx) => {
+        lot.number = idx + 1
+      })
+    },
+
     saveLots() {
+      if (this.editableLots.length === 0) {
+        uni.showToast({
+          title: '至少需要一个签',
+          icon: 'none'
+        })
+        return
+      }
       this.lots = JSON.parse(JSON.stringify(this.editableLots))
       this.closeSettings()
       uni.showToast({
@@ -378,6 +414,11 @@ export default {
   font-size: 48rpx;
   padding: 0 20rpx;
   text-shadow: 0 0 5px #fff;
+  cursor: pointer;
+}
+
+.close-btn:active {
+  opacity: 0.7;
 }
 
 .lots-list {
@@ -393,6 +434,13 @@ export default {
   border-radius: 10rpx;
 }
 
+.lot-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
 .lot-number {
   display: block;
   color: #fff;
@@ -400,6 +448,15 @@ export default {
   margin-bottom: 10rpx;
   text-shadow: 0 0 5px #fff,
                0 0 10px #00f7ff;
+}
+
+.delete-btn {
+  color: #ff4444;
+  font-size: 28rpx;
+  padding: 4rpx 12rpx;
+  border: 1px solid #ff4444;
+  border-radius: 6rpx;
+  text-shadow: 0 0 5px #ff4444;
 }
 
 .lot-input {
@@ -414,8 +471,27 @@ export default {
   font-size: 28rpx;
 }
 
+.popup-footer {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 30rpx;
+}
+
+.add-button {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  background: rgba(26, 11, 46, 0.95);
+  color: #fff;
+  font-size: 32rpx;
+  border: 2px solid #00f7ff;
+  box-shadow: 0 0 15px #00f7ff;
+  text-shadow: 0 0 5px #fff;
+}
+
 .save-button {
-  width: 100%;
+  flex: 1;
   height: 88rpx;
   line-height: 88rpx;
   border-radius: 44rpx;
@@ -424,8 +500,12 @@ export default {
   font-size: 32rpx;
   border: 2px solid #ff00de;
   box-shadow: 0 0 15px #ff00de;
-  margin-top: 30rpx;
   text-shadow: 0 0 5px #fff;
+}
+
+.save-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 25px #ff00de;
 }
 
 @keyframes pulse {

@@ -8,13 +8,13 @@
 					<!-- <view class="vip-tag">开通VIP</view> -->
 				</view>
 				<view class="quick-actions">
-					<view class="action-item">
+					<view class="action-item" @tap="startGame('/pages/game/truth-dare')">
 						<view class="action-icon">⚡️</view>
 						<text>真心话大冒险</text>
 					</view>
-					<view class="action-item">
+					<view class="action-item" @tap="startGame('/pages/game/drink-dare')">
 						<view class="action-icon">🍺</view>
-						<text>喝酒认丛</text>
+						<text>喝酒认怂</text>
 					</view>
 				</view>
 			</view>
