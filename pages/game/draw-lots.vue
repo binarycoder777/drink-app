@@ -28,6 +28,12 @@
       <button class="settings-button" @click="openSettings">
         设置签内容
       </button>
+
+      <!-- 新增游戏说明卡片 -->
+      <view class="game-info">
+        <text class="info-title">游戏说明</text>
+        <text class="info-text">这是一个趣味抽签小游戏。每根签都对应着不同的酒桌任务，抽到什么签就要完成什么任务。记住要理性饮酒，注意安全！</text>
+      </view>
     </view>
 
     <!-- 设置弹窗 -->
@@ -512,5 +518,35 @@ export default {
   0% { opacity: 0.5; }
   50% { opacity: 0.8; }
   100% { opacity: 0.5; }
+}
+
+/* 新增游戏说明卡片样式 */
+.game-info {
+  width: 100%;
+  margin-top: 40rpx;
+  padding: 30rpx;
+  background: rgba(26, 11, 46, 0.95);
+  border: 2px solid #00f7ff;
+  box-shadow: 0 0 15px #00f7ff;
+  border-radius: 16rpx;
+}
+
+.info-title {
+  display: block;
+  color: #fff;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #00f7ff;
+}
+
+.info-text {
+  display: block;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 1.6;
+  text-align: justify;
+  text-shadow: 0 0 5px #fff;
 }
 </style> 

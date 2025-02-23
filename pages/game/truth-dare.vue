@@ -34,6 +34,17 @@
         <view class="action-btn" @tap="confirmChoice">确定</view>
       </view>
     </view>
+
+    <!-- 游戏说明卡片 -->
+    <view class="game-info-card neon-box">
+      <view class="info-title">游戏说明</view>
+      <view class="info-content">
+        <text>1. 点击瓶子开始旋转</text>
+        <text>2. 瓶子指向谁，谁就要选择真心话或大冒险</text>
+        <text>3. 可以由瓶子尾部指向的人指定游戏内容</text>
+        <text>4. 完成任务后点击确定继续游戏</text>
+      </view>
+    </view>
   </view>
 </template>
 
@@ -251,5 +262,37 @@ export default {
   text-align: center;
   border-radius: 10rpx;
   margin-top: 20rpx;
+}
+
+.game-info-card {
+  position: fixed;
+  bottom: 30rpx;
+  left: 30rpx;
+  right: 30rpx;
+  background: rgba(26, 11, 46, 0.95);
+  padding: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+  border: 2px solid #00f7ff;
+}
+
+.info-title {
+  color: #fff;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.info-content text {
+  color: #fff;
+  font-size: 28rpx;
+  opacity: 0.8;
 }
 </style> 

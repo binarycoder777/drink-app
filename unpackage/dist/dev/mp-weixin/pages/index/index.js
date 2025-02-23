@@ -8,7 +8,9 @@ const _sfc_main = {
         { name: "摇骰子", image: "/static/images/game1.png", path: "/pages/game/dice" },
         { name: "幸运转盘", image: "/static/images/wheel.png", path: "/pages/game/lucky-wheel" },
         { name: "左轮轮盘", image: "/static/images/revolver.png", path: "/pages/game/revolver" },
-        { name: "抽签", image: "/static/images/lots.png", path: "/pages/game/draw-lots" }
+        { name: "抽签", image: "/static/images/lots.png", path: "/pages/game/draw-lots" },
+        { name: "时间刚刚好", image: "/static/images/timer.png", path: "/pages/game/perfect-time" },
+        { name: "猜谜语", image: "/static/images/riddle.png", path: "/pages/game/riddle" }
       ]
     };
   },

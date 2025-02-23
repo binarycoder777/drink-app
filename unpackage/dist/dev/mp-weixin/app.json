@@ -6,7 +6,9 @@
     "pages/game/revolver",
     "pages/game/draw-lots",
     "pages/game/drink-dare",
-    "pages/game/truth-dare"
+    "pages/game/truth-dare",
+    "pages/game/perfect-time",
+    "pages/game/riddle"
   ],
   "window": {
     "navigationBarTextStyle": "black",

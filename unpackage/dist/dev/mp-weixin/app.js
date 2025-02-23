@@ -9,6 +9,8 @@ if (!Math) {
   "./pages/game/draw-lots.js";
   "./pages/game/drink-dare.js";
   "./pages/game/truth-dare.js";
+  "./pages/game/perfect-time.js";
+  "./pages/game/riddle.js";
 }
 const _sfc_main = {
   onLaunch: function() {

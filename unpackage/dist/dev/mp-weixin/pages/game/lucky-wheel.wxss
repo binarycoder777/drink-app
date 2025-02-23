@@ -270,3 +270,27 @@ to {
     width: 100%;
     margin-top: 20rpx;
 }
+.instructions-section {
+    margin-top: 40rpx;
+    padding: 30rpx;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20rpx;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+.instructions-content {
+    margin-top: 20rpx;
+}
+.instruction-item {
+    padding: 10rpx 0;
+    font-size: 24rpx;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.instruction-item:hover {
+    opacity: 1;
+}

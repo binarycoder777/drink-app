@@ -1,0 +1,88 @@
+
+.container {
+	min-height: 100vh;
+	padding: 40rpx;
+	background: linear-gradient(to bottom, #0D0D2B 0%, #1A1A3A 100%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.game-title {
+	font-size: 48rpx;
+	color: #fff;
+	margin-bottom: 60rpx;
+	text-shadow: 0 0 10px #00f7ff;
+}
+.game-area {
+	width: 100%;
+	height: 600rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.circle {
+	width: 200rpx;
+	height: 200rpx;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+.red {
+	background: #ff0000;
+	box-shadow: 0 0 20px #ff0000;
+}
+.green {
+	background: #00ff00;
+	box-shadow: 0 0 20px #00ff00;
+}
+.timer {
+	font-size: 72rpx;
+	color: #fff;
+	margin-top: 40rpx;
+	text-shadow: 0 0 10px #00f7ff;
+}
+.result {
+	font-size: 36rpx;
+	color: #fff;
+	margin-top: 40rpx;
+	text-shadow: 0 0 10px #00f7ff;
+}
+.controls {
+	margin-top: 60rpx;
+	width: 100%;
+}
+.neon-button {
+	background: rgba(26, 11, 46, 0.95);
+	color: #fff;
+	border: 2px solid #ff00de;
+	box-shadow: 0 0 15px #ff00de;
+	border-radius: 50rpx;
+	padding: 20rpx 60rpx;
+	font-size: 32rpx;
+	text-shadow: 0 0 5px #fff;
+}
+.neon-button:active {
+	transform: scale(0.95);
+	box-shadow: 0 0 25px #ff00de;
+}
+.rules {
+	margin-top: 80rpx;
+	width: 100%;
+	padding: 30rpx;
+	background: rgba(26, 11, 46, 0.95);
+	border-radius: 16rpx;
+	border: 2px solid #ff00de;
+	box-shadow: 0 0 15px #ff00de;
+}
+.rule-title {
+	color: #fff;
+	font-size: 32rpx;
+	margin-bottom: 20rpx;
+	text-shadow: 0 0 5px #fff;
+}
+.rule-content {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 28rpx;
+	line-height: 1.6;
+}

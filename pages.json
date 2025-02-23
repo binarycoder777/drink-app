@@ -41,6 +41,18 @@
 			"style": {
 				"navigationBarTitleText": "真心话大冒险"
 			}
+		},
+		{
+			"path": "pages/game/perfect-time",
+			"style": {
+				"navigationBarTitleText": "时间刚刚好"
+			}
+		},
+		{
+			"path": "pages/game/riddle",
+			"style": {
+				"navigationBarTitleText": "猜谜语"
+			}
 		}
 	],
 	"globalStyle": {

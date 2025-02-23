@@ -128,3 +128,31 @@
   border-radius: 10rpx;
   margin-top: 20rpx;
 }
+.game-info-card {
+  position: fixed;
+  bottom: 30rpx;
+  left: 30rpx;
+  right: 30rpx;
+  background: rgba(26, 11, 46, 0.95);
+  padding: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
+  border: 2px solid #00f7ff;
+}
+.info-title {
+  color: #fff;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  text-shadow: 0 0 10px #00f7ff;
+}
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+.info-content text {
+  color: #fff;
+  font-size: 28rpx;
+  opacity: 0.8;
+}

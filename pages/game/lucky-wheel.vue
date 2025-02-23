@@ -48,6 +48,17 @@
             </view>
         </view>
 
+        <!-- Game Instructions Card -->
+        <view class="instructions-section">
+            <text class="instructions-title neon-text-small">游戏说明</text>
+            <view class="instructions-content glow-text">
+                <view class="instruction-item">🎯 点击"开始狂欢"按钮开始游戏</view>
+                <view class="instruction-item">🎲 转盘停止时，执行指定的任务</view>
+                <view class="instruction-item">⚙️ 点击"设置"可自定义转盘选项</view>
+                <view class="instruction-item">📝 最多可设置12个选项，最少4个选项</view>
+            </view>
+        </view>
+
         <!-- Settings Modal -->
         <view class="modal" v-if="showSettingsModal">
             <view class="modal-content">
@@ -744,5 +755,32 @@ export default {
 .add-btn {
     width: 100%;
     margin-top: 20rpx;
+}
+
+.instructions-section {
+    margin-top: 40rpx;
+    padding: 30rpx;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20rpx;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.instructions-content {
+    margin-top: 20rpx;
+}
+
+.instruction-item {
+    padding: 10rpx 0;
+    font-size: 24rpx;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.instruction-item:hover {
+    opacity: 1;
 }
 </style> 
