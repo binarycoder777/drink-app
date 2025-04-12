@@ -8,7 +8,8 @@
     "pages/game/drink-dare",
     "pages/game/truth-dare",
     "pages/game/perfect-time",
-    "pages/game/riddle"
+    "pages/game/riddle",
+    "pages/game/bomb"
   ],
   "window": {
     "navigationBarTextStyle": "black",

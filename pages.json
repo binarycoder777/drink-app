@@ -53,6 +53,12 @@
 			"style": {
 				"navigationBarTitleText": "猜谜语"
 			}
+		},
+		{
+			"path": "pages/game/bomb",
+			"style": {
+				"navigationBarTitleText": "炸弹九宫格"
+			}
 		}
 	],
 	"globalStyle": {

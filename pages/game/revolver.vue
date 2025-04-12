@@ -1,576 +1,477 @@
 <template>
-    <view class="container">
-        <canvas type="webgl" id="webgl" class="webgl-canvas"
-            @touchstart="onTouchStart"
-            @touchmove="onTouchMove"
-            @touchend="onTouchEnd">
-        </canvas>
-        <view class="controls">
-            <button class="spin-btn" @tap="spinCylinder">旋转弹仓</button>
-            <button class="fire-btn" @tap="pullTrigger">开火</button>
-        </view>
+  <view class="page-container">
+    <!-- 添加标题区域 -->
+    <view class="game-header">
+      <text class="title neon-text">左轮游戏</text>
+      <text class="subtitle glow-text">生死一线 命运一转</text>
     </view>
+    
+    <view class="game-container">
+      <!-- 左轮手枪区域 -->
+      <view class="revolver-container glow-effect">
+        <image class="revolver" :src="revolverImage" :class="{ 'firing': isFiring }" />
+      </view>
+      
+      <!-- 结果显示 -->
+      <view class="result neon-text" :class="{ 'danger': isDanger }">
+        {{ resultText }}
+      </view>
+      
+      <!-- 按钮区域 -->
+      <view class="button-container">
+        <view class="neon-button info" @tap="showBulletSelector">
+          {{ bulletCount }}颗子弹
+        </view>
+        <view class="neon-button" @tap="spinCylinder" :class="{ 'disabled': isSpinning || isFiring }">
+          旋转弹仓
+        </view>
+        <view class="neon-button danger" @tap="pullTrigger" :class="{ 'disabled': isSpinning || isFiring }">
+          扣动扳机
+        </view>
+      </view>
+    </view>
+
+    <!-- 在 game-container 中添加 -->
+    <view class="modal" v-if="showBulletOptions">
+      <view class="modal-content">
+        <text class="modal-title neon-text">选择子弹数量</text>
+        <view class="modal-options-container">
+          <view class="options-row">
+            <view 
+              v-for="n in 3" 
+              :key="n" 
+              class="modal-option"
+              :class="{ 'active': bulletCount === n }"
+              @tap="selectBulletCount(n)"
+            >
+              {{ n }}
+            </view>
+          </view>
+          <view class="options-row">
+            <view 
+              v-for="n in 3" 
+              :key="n + 3" 
+              class="modal-option"
+              :class="{ 'active': bulletCount === (n + 3) }"
+              @tap="selectBulletCount(n + 3)"
+            >
+              {{ n + 3 }}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
-import { createScopedThreejs } from 'threejs-miniprogram'
-import { markRaw } from 'vue'
-
 export default {
-    data() {
-        return {
-            THREE: null,
-            scene: null,
-            camera: null,
-            renderer: null,
-            canvas: null,
-            revolver: null,
-            cylinder: null,
-            bullets: [true, false, false, false, false, false],
-            currentChamber: 0,
-            isSpinning: false,
-            animationFrameId: null,
-            canvasWidth: 0,
-            canvasHeight: 0,
-            isDragging: false,
-            previousTouch: {
-                x: 0,
-                y: 0
-            },
-            rotationSpeed: 0.01,
-            currentRotation: {
-                x: 0,
-                y: Math.PI / 12
-            }
-        }
-    },
-    
-    async mounted() {
-        try {
-            // 增加延迟确保 canvas 节点已经准备好
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            const sysInfo = uni.getSystemInfoSync();
-            this.canvasWidth = sysInfo.windowWidth;
-            this.canvasHeight = sysInfo.windowHeight;
-            
-            // 获取 canvas 上下文
-            const query = uni.createSelectorQuery().in(this);
-            const canvas = await new Promise((resolve, reject) => {
-                query.select('#webgl')
-                    .node()
-                    .exec((res) => {
-                        if (res[0] && res[0].node) {
-                            resolve(res[0].node);
-                        } else {
-                            reject(new Error('Canvas element not found'));
-                        }
-                    });
-            });
-            
-            this.canvas = markRaw(canvas);
-            const gl = canvas.getContext('webgl', {
-                alpha: true,
-                antialias: true,
-                premultipliedAlpha: false,
-                preserveDrawingBuffer: false
-            });
-            
-            if (!gl) {
-                throw new Error('WebGL context not available');
-            }
-            
-            await this.initThree();
-            this.animate();
-        } catch (error) {
-            console.error('Initialization error:', error);
-        }
-    },
-    
-    methods: {
-        async initThree() {
-            const canvas = this.canvas;
-            const sysInfo = uni.getSystemInfoSync();
-            const pixelRatio = sysInfo.pixelRatio || 1;
-            
-            canvas.width = this.canvasWidth * pixelRatio;
-            canvas.height = this.canvasHeight * pixelRatio;
-            
-            try {
-                this.THREE = markRaw(createScopedThreejs(canvas));
-                this.scene = markRaw(new this.THREE.Scene());
-                
-                // 创建相机
-                this.camera = markRaw(new this.THREE.PerspectiveCamera(
-                    45,
-                    this.canvasWidth / this.canvasHeight,
-                    0.1,
-                    1000
-                ));
-                this.camera.position.set(0, 0.1, 2);
-                this.camera.lookAt(0, 0, 0);
-                
-                // 创建渲染器
-                this.renderer = markRaw(new this.THREE.WebGLRenderer({
-                    canvas,
-                    context: canvas.getContext('webgl'),
-                    antialias: true,
-                    alpha: true
-                }));
-                
-                this.renderer.setPixelRatio(pixelRatio);
-                this.renderer.setSize(this.canvasWidth, this.canvasHeight);
-                this.renderer.setClearColor(0xdddddd, 0);
-                
-                // 添加灯光
-                const ambientLight = markRaw(new this.THREE.AmbientLight(0xffffff, 0.4));
-                this.scene.add(ambientLight);
-                
-                const mainLight = markRaw(new this.THREE.DirectionalLight(0xffffff, 0.8));
-                mainLight.position.set(2, 2, 2);
-                this.scene.add(mainLight);
-                
-                const fillLight = markRaw(new this.THREE.DirectionalLight(0xffffff, 0.4));
-                fillLight.position.set(-2, -1, 2);
-                this.scene.add(fillLight);
-                
-                // 添加背景色
-                this.scene.background = new this.THREE.Color(0xdddddd);
-                
-                // 创建左轮手枪模型
-                this.createRevolver();
-                
-            } catch (error) {
-                console.error('THREE.js initialization error:', error);
-                throw error;
-            }
-        },
-        
-        createRevolver() {
-            // 材质定义
-            const blackMetalMaterial = markRaw(new this.THREE.MeshPhongMaterial({
-                color: 0x2a2a2a,
-                shininess: 30,
-                specular: 0x222222
-            }));
-            
-            const silverMetalMaterial = markRaw(new this.THREE.MeshPhongMaterial({
-                color: 0xdddddd,
-                shininess: 50,
-                specular: 0x444444
-            }));
-
-            // 确保正确初始化 revolver 组
-            this.revolver = markRaw(new this.THREE.Group());
-
-            // 顶部导轨
-            const createRailSystem = () => {
-                const railGroup = new this.THREE.Group();
-                
-                // 主导轨
-                const railBaseGeometry = markRaw(new this.THREE.BoxGeometry(0.8, 0.05, 0.2));
-                const railBase = markRaw(new this.THREE.Mesh(railBaseGeometry, silverMetalMaterial));
-                railBase.position.set(0.4, 0.35, 0);
-
-                // 导轨齿
-                for(let i = 0; i < 12; i++) {
-                    const toothGeometry = markRaw(new this.THREE.BoxGeometry(0.03, 0.03, 0.2));
-                    const tooth = markRaw(new this.THREE.Mesh(toothGeometry, silverMetalMaterial));
-                    tooth.position.set(0.1 + (i * 0.05), 0.38, 0);
-                    railGroup.add(tooth);
-                }
-                
-                railGroup.add(railBase);
-                return railGroup;
-            };
-
-            // 改进弹仓设计
-            const createCylinder = () => {
-                const cylinderGroup = new this.THREE.Group();
-                
-                // 主弹仓 - 更现代的设计
-                const cylinderGeometry = markRaw(new this.THREE.CylinderGeometry(0.2, 0.2, 0.35, 24));
-                const cylinder = markRaw(new this.THREE.Mesh(cylinderGeometry, silverMetalMaterial));
-                cylinder.rotation.z = Math.PI / 2;
-                cylinder.position.set(0.3, 0.12, 0);
-
-                // 弹仓花纹
-                for(let i = 0; i < 8; i++) {
-                    const grooveGeometry = markRaw(new this.THREE.BoxGeometry(0.35, 0.02, 0.02));
-                    const groove = markRaw(new this.THREE.Mesh(grooveGeometry, silverMetalMaterial));
-                    groove.rotation.z = i * Math.PI / 4;
-                    groove.position.set(0.3, 0.12, 0);
-                    cylinderGroup.add(groove);
-                }
-
-                cylinderGroup.add(cylinder);
-                return cylinderGroup;
-            };
-
-            // 改进机匣设计
-            const createFrame = () => {
-                const frameGroup = new this.THREE.Group();
-                
-                // 主机匣
-                const frameShape = new this.THREE.Shape();
-                frameShape.moveTo(0, 0);
-                frameShape.lineTo(0.9, 0);
-                frameShape.lineTo(0.9, 0.3);
-                // 添加通气孔
-                frameShape.lineTo(0.7, 0.3);
-                frameShape.lineTo(0.7, 0.35);
-                frameShape.lineTo(0.2, 0.35);
-                frameShape.bezierCurveTo(0.1, 0.35, 0, 0.3, 0, 0);
-
-                const frameExtrudeSettings = {
-                    steps: 2,
-                    depth: 0.25,
-                    bevelEnabled: true,
-                    bevelThickness: 0.02,
-                    bevelSize: 0.02,
-                    bevelSegments: 4
-                };
-
-                const frame = markRaw(new this.THREE.Mesh(
-                    new this.THREE.ExtrudeGeometry(frameShape, frameExtrudeSettings),
-                    blackMetalMaterial
-                ));
-
-                // 添加装饰性铭文
-                const textGeometry = markRaw(new this.THREE.BoxGeometry(0.2, 0.01, 0.1));
-                const text = markRaw(new this.THREE.Mesh(textGeometry, silverMetalMaterial));
-                text.position.set(0.5, 0.2, 0.13);
-
-                frameGroup.add(frame);
-                frameGroup.add(text);
-                return frameGroup;
-            };
-
-            // 改进手柄设计
-            const createGrip = () => {
-                const gripShape = new this.THREE.Shape();
-                // 更现代的手柄轮廓
-                gripShape.moveTo(0, 0);
-                gripShape.lineTo(0.25, 0);
-                gripShape.bezierCurveTo(
-                    0.25, -0.3,
-                    0.2, -0.5,
-                    0.15, -0.6
-                );
-                gripShape.lineTo(0.1, -0.65);
-                gripShape.bezierCurveTo(
-                    0.05, -0.7,
-                    -0.05, -0.7,
-                    -0.1, -0.65
-                );
-                gripShape.lineTo(-0.15, -0.6);
-                gripShape.bezierCurveTo(
-                    -0.2, -0.5,
-                    -0.15, -0.2,
-                    0, 0
-                );
-
-                const grip = markRaw(new this.THREE.Mesh(
-                    new this.THREE.ExtrudeGeometry(gripShape, {
-                        steps: 2,
-                        depth: 0.25,
-                        bevelEnabled: true,
-                        bevelThickness: 0.02,
-                        bevelSize: 0.02,
-                        bevelSegments: 4
-                    }),
-                    blackMetalMaterial
-                ));
-
-                return grip;
-            };
-
-            // 重新设计击锤组件，调整位置
-            const createHammer = () => {
-                const hammerGroup = new this.THREE.Group();
-                
-                // 击锤主体 - 调整位置到弹仓后方
-                const hammerShape = new this.THREE.Shape();
-                hammerShape.moveTo(0, 0);
-                hammerShape.lineTo(0.06, 0);
-                hammerShape.lineTo(0.06, 0.15);
-                hammerShape.lineTo(0.08, 0.18);
-                hammerShape.lineTo(0.08, 0.25);
-                hammerShape.lineTo(0.03, 0.28);
-                hammerShape.lineTo(0, 0.25);
-                hammerShape.lineTo(0, 0);
-
-                const hammer = markRaw(new this.THREE.Mesh(
-                    new this.THREE.ExtrudeGeometry(hammerShape, {
-                        depth: 0.08,
-                        bevelEnabled: true,
-                        bevelThickness: 0.01,
-                        bevelSize: 0.01,
-                        bevelSegments: 3
-                    }),
-                    silverMetalMaterial
-                ));
-                // 将击锤移到弹仓正后方
-                hammer.position.set(0.1, 0.22, -0.04);
-
-                // 击锤轴心 - 对应调整位置
-                const hammerPin = markRaw(new this.THREE.Mesh(
-                    new this.THREE.CylinderGeometry(0.015, 0.015, 0.1, 12),
-                    silverMetalMaterial
-                ));
-                hammerPin.rotation.x = Math.PI / 2;
-                hammerPin.position.set(0.11, 0.25, 0);
-
-                hammerGroup.add(hammer);
-                hammerGroup.add(hammerPin);
-                
-                return hammerGroup;
-            };
-
-            // 重新设计扳机组件
-            const createTrigger = () => {
-                const triggerGroup = new this.THREE.Group();
-
-                // 扳机护圈
-                const guardShape = new this.THREE.Shape();
-                guardShape.moveTo(0, 0);
-                guardShape.lineTo(0.25, 0);
-                // 更方正的护圈设计
-                guardShape.lineTo(0.25, -0.4);    // 直线下降
-                guardShape.lineTo(0.15, -0.45);   // 小斜角
-                guardShape.lineTo(-0.15, -0.45);  // 平直底部
-                guardShape.lineTo(-0.25, -0.4);   // 小斜角
-                guardShape.lineTo(-0.25, 0);      // 直线上升
-                guardShape.lineTo(0, 0);
-
-                const triggerGuard = markRaw(new this.THREE.Mesh(
-                    new this.THREE.ExtrudeGeometry(guardShape, {
-                        depth: 0.15,
-                        bevelEnabled: true,
-                        bevelThickness: 0.02,
-                        bevelSize: 0.02,
-                        bevelSegments: 4
-                    }),
-                    blackMetalMaterial
-                ));
-                triggerGuard.position.set(0.15, 0, -0.075);
-
-                // 扳机本体 - 更现代的方形设计
-                const triggerShape = new this.THREE.Shape();
-                // 从上方开始
-                triggerShape.moveTo(0, 0);
-                // 前部垂直线
-                triggerShape.lineTo(0.04, 0);
-                triggerShape.lineTo(0.04, -0.15);
-                // 底部水平段
-                triggerShape.lineTo(0.02, -0.15);
-                triggerShape.lineTo(0.02, -0.2);
-                // 后部垂直线
-                triggerShape.lineTo(-0.01, -0.2);
-                triggerShape.lineTo(-0.01, -0.15);
-                triggerShape.lineTo(0, -0.15);
-                triggerShape.lineTo(0, 0);
-
-                const trigger = markRaw(new this.THREE.Mesh(
-                    new this.THREE.ExtrudeGeometry(triggerShape, {
-                        depth: 0.08,
-                        bevelEnabled: true,
-                        bevelThickness: 0.01,
-                        bevelSize: 0.01,
-                        bevelSegments: 3
-                    }),
-                    silverMetalMaterial
-                ));
-                // 调整扳机位置
-                trigger.position.set(0.2, -0.1, -0.04);
-
-                // 扳机轴心
-                const triggerPin = markRaw(new this.THREE.Mesh(
-                    new this.THREE.CylinderGeometry(0.01, 0.01, 0.17, 8),
-                    silverMetalMaterial
-                ));
-                triggerPin.rotation.x = Math.PI / 2;
-                triggerPin.position.set(0.2, -0.1, 0);
-
-                triggerGroup.add(triggerGuard);
-                triggerGroup.add(trigger);
-                triggerGroup.add(triggerPin);
-
-                return triggerGroup;
-            };
-
-            // 组装部分
-            const rail = createRailSystem();
-            const cylinder = createCylinder();
-            const frame = createFrame();
-            const grip = createGrip();
-            const hammer = createHammer();
-            const trigger = createTrigger();
-            
-            this.revolver.add(rail);
-            this.revolver.add(cylinder);
-            this.revolver.add(frame);
-            this.revolver.add(grip);
-            this.revolver.add(hammer);
-            this.revolver.add(trigger);
-
-            // 整体缩放和位置调整
-            const scale = 0.35;
-            this.revolver.scale.set(scale, scale, scale);
-            this.revolver.position.set(-0.3, 0, 0);
-            this.revolver.rotation.y = this.currentRotation.y;
-            this.revolver.rotation.x = this.currentRotation.x;
-
-            // 添加到场景
-            this.scene.add(this.revolver);
-        },
-        
-        animate() {
-            const animate = () => {
-                if (this.renderer && this.scene && this.camera) {
-                    this.renderer.render(this.scene, this.camera);
-                }
-                
-                if (this.canvas) {
-                    this.animationFrameId = this.canvas.requestAnimationFrame(animate);
-                }
-            };
-            
-            if (this.canvas) {
-                this.canvas.requestAnimationFrame(animate);
-            }
-        },
-        
-        spinCylinder() {
-            if (this.isSpinning) return
-            
-            this.isSpinning = true
-            const rotations = 2 + Math.random() * 4
-            const duration = 2000
-            const startTime = Date.now()
-            
-            const spin = () => {
-                const elapsed = Date.now() - startTime
-                const progress = elapsed / duration
-                
-                if (progress < 1) {
-                    const angle = rotations * Math.PI * 2 * (1 - Math.pow(1 - progress, 3))
-                    this.cylinder.rotation.x = angle
-                    this.canvas.requestAnimationFrame(spin)
-                } else {
-                    this.isSpinning = false
-                    this.currentChamber = Math.floor(Math.random() * 6)
-                    uni.showToast({
-                        title: '弹仓已旋转',
-                        icon: 'none'
-                    })
-                }
-            }
-            
-            spin()
-        },
-        
-        pullTrigger() {
-            if (this.isSpinning) return
-            
-            if (this.bullets[this.currentChamber]) {
-                uni.showToast({
-                    title: '砰！',
-                    icon: 'none'
-                })
-            } else {
-                uni.showToast({
-                    title: '咔！',
-                    icon: 'none'
-                })
-            }
-            
-            this.currentChamber = (this.currentChamber + 1) % 6
-        },
-        
-        onTouchStart(event) {
-            this.isDragging = true;
-            const touch = event.touches[0];
-            this.previousTouch.x = touch.clientX;
-            this.previousTouch.y = touch.clientY;
-        },
-        
-        onTouchMove(event) {
-            if (!this.isDragging) return;
-            
-            const touch = event.touches[0];
-            const deltaX = touch.clientX - this.previousTouch.x;
-            const deltaY = touch.clientY - this.previousTouch.y;
-
-            // 更新旋转角度
-            this.currentRotation.y += deltaX * this.rotationSpeed;
-            this.currentRotation.x += deltaY * this.rotationSpeed;
-
-            // 限制垂直旋转范围
-            this.currentRotation.x = Math.max(-Math.PI / 3, Math.min(Math.PI / 3, this.currentRotation.x));
-
-            // 应用旋转
-            if (this.revolver) {
-                this.revolver.rotation.y = this.currentRotation.y;
-                this.revolver.rotation.x = this.currentRotation.x;
-            }
-
-            // 更新前一个触摸点
-            this.previousTouch.x = touch.clientX;
-            this.previousTouch.y = touch.clientY;
-        },
-        
-        onTouchEnd(event) {
-            this.isDragging = false;
-        },
-        
-        beforeDestroy() {
-            if (this.animationFrameId && this.canvas) {
-                this.canvas.cancelAnimationFrame(this.animationFrameId);
-            }
-        }
+  data() {
+    return {
+      revolverImage: '/static/images/revolver-body.png',
+      resultText: '准备开始游戏',
+      chambers: Array(6).fill().map(() => ({ loaded: false })),
+      currentChamber: 0,
+      isSpinning: false,
+      isFiring: false,
+      isDanger: false,
+      showBulletOptions: false,
+      bulletCount: 1  // 默认1颗子弹
     }
+  },
+  
+  mounted() {
+    this.initGame()
+  },
+  
+  methods: {
+    initGame() {
+      // 先清空所有弹仓
+      this.chambers = Array(6).fill().map(() => ({ loaded: false }))
+      
+      // 随机装填指定数量的子弹
+      let remainingBullets = this.bulletCount
+      let availablePositions = [0, 1, 2, 3, 4, 5]
+      
+      while (remainingBullets > 0) {
+        const randomIndex = Math.floor(Math.random() * availablePositions.length)
+        const position = availablePositions[randomIndex]
+        this.chambers[position].loaded = true
+        availablePositions.splice(randomIndex, 1)
+        remainingBullets--
+      }
+      
+      this.currentChamber = Math.floor(Math.random() * 6)
+      this.resultText = '准备开始游戏'
+      this.isDanger = false
+    },
+    
+    async spinCylinder() {
+      if (this.isSpinning || this.isFiring) return
+      
+      this.isSpinning = true
+      this.resultText = '弹仓旋转中...'
+      this.isDanger = false
+      
+      // 播放旋转音效
+    //   await this.playSound('spin.mp3')
+      
+      // 震动反馈
+      uni.vibrateShort()
+      
+      // 随机旋转时间：1-2秒
+      const duration = 1000 + Math.random() * 1000
+      
+      setTimeout(() => {
+        this.currentChamber = Math.floor(Math.random() * 6)
+        this.isSpinning = false
+        this.resultText = '弹仓已就绪'
+        
+        // 再次震动提示准备完成
+        uni.vibrateShort()
+      }, duration)
+    },
+    
+    async pullTrigger() {
+      if (this.isSpinning || this.isFiring) return
+      
+      this.isFiring = true
+      
+      // 检查当前弹仓是否有子弹
+      const hasBullet = this.chambers[this.currentChamber].loaded
+      
+      if (hasBullet) {
+        // 中弹效果
+        // await this.playSound('gunshot.mp3')
+        uni.vibrateLong()
+        this.resultText = '💥 中弹！喝一杯！'
+        this.isDanger = true
+        
+        // 消耗掉当前弹仓的子弹
+        this.chambers[this.currentChamber].loaded = false
+        // 更新剩余子弹数量
+        this.bulletCount = this.chambers.filter(chamber => chamber.loaded).length
+        
+        // 如果没有子弹了，提示重新开始
+        if (this.bulletCount === 0) {
+          setTimeout(() => {
+            this.resultText = '弹仓已空，请重新装填'
+          }, 1500)
+        }
+      } else {
+        // 空枪效果
+        // await this.playSound('empty-click.mp3')
+        uni.vibrateShort()
+        this.resultText = '✅ 空枪！暂时安全～'
+        this.isDanger = false
+      }
+      
+      // 移动到下一个弹仓
+      this.currentChamber = (this.currentChamber + 1) % 6
+      
+      setTimeout(() => {
+        this.isFiring = false
+      }, 500)
+    },
+    
+    playSound(soundFile) {
+      return new Promise((resolve) => {
+        const innerAudioContext = uni.createInnerAudioContext()
+        innerAudioContext.src = `/static/sounds/${soundFile}`
+        innerAudioContext.onEnded(() => {
+          innerAudioContext.destroy()
+          resolve()
+        })
+        innerAudioContext.play()
+      })
+    },
+
+    showBulletSelector() {
+      if (!this.isSpinning && !this.isFiring) {
+        this.showBulletOptions = true
+      }
+    },
+
+    selectBulletCount(count) {
+      this.bulletCount = count
+      this.showBulletOptions = false
+      this.initGame()  // 重新初始化游戏
+    }
+  }
 }
 </script>
 
 <style>
-.container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    background-color: #dddddd;
+/* 复用骰子游戏的基础样式 */
+.page-container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #0D0D2B 0%, #1A1A3A 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.webgl-canvas {
-    width: 100%;
-    height: 100%;
-    touch-action: none;
+.page-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, #0D0D2B 70%);
+  animation: pulse 4s ease-in-out infinite;
+  z-index: 0;
 }
 
-.controls {
-    position: fixed;
-    bottom: 40rpx;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 40rpx;
-    padding: 0 40rpx;
+.game-header {
+  text-align: center;
+  padding-top: 80rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+  z-index: 1;
 }
 
-.spin-btn,
-.fire-btn {
-    flex: 1;
-    max-width: 300rpx;
-    padding: 20rpx;
-    border-radius: 10rpx;
-    background: rgba(255, 0, 222, 0.8);
-    color: white;
-    border: none;
-    font-size: 32rpx;
+.title {
+  font-size: 48rpx;
+  margin-bottom: 10rpx;
+  font-weight: bold;
 }
 
-.fire-btn {
-    background: rgba(255, 0, 0, 0.8);
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 20px #ff00de,
+               0 0 30px #ff00de,
+               0 0 40px #ff00de;
+  animation: neon 1.5s ease-in-out infinite alternate;
 }
-</style> 
+
+.subtitle {
+  font-size: 28rpx;
+  color: #00f7ff;
+  margin-top: 10rpx;
+}
+
+.game-container {
+  width: 100%;
+  height: calc(100vh - 200rpx);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* 左轮手枪容器样式 */
+.revolver-container {
+  width: 600rpx;
+  height: 600rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.revolver {
+  width: 400rpx;
+  height: 400rpx;
+  transition: transform 0.1s ease;
+}
+
+.revolver.firing {
+  transform: rotate(-15deg) translateX(-20rpx);
+}
+
+/* 弹仓显示样式 */
+.cylinder-display {
+  display: flex;
+  justify-content: center;
+  gap: 20rpx;
+  margin-top: 40rpx;
+}
+
+.chamber {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 2px solid #00f7ff;
+  background: rgba(0, 247, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.chamber.current {
+  border-color: #ff00de;
+  box-shadow: 0 0 15px #ff00de;
+}
+
+.chamber.loaded {
+  background: rgba(255, 0, 0, 0.3);
+}
+
+/* 结果显示样式 */
+.result {
+  font-size: 36rpx;
+  margin: 40rpx 0;
+  text-align: center;
+  min-height: 50rpx;
+}
+
+.result.danger {
+  color: #ff0000;
+  text-shadow: 0 0 5px #ff0000,
+               0 0 10px #ff0000,
+               0 0 20px #ff0000;
+}
+
+/* 按钮样式 */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 40rpx;
+  margin-top: 40rpx;
+}
+
+.neon-button {
+  background: transparent;
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  padding: 20rpx 60rpx;
+  font-size: 32rpx;
+  border-radius: 50rpx;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00f7ff,
+              inset 0 0 10px #00f7ff;
+  transition: all 0.3s ease;
+}
+
+.neon-button.danger {
+  border-color: #ff00de;
+  color: #ff00de;
+  box-shadow: 0 0 10px #ff00de,
+              inset 0 0 10px #ff00de;
+}
+
+.neon-button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.neon-button:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff,
+                 0 0 20px #ff00de,
+                 0 0 30px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff,
+                 0 0 20px #ff00de,
+                 0 0 30px #ff00de,
+                 0 0 40px #ff00de;
+  }
+}
+
+/* 弹窗样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 13, 43, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: rgba(26, 26, 58, 0.95);
+  border-radius: 30rpx;
+  padding: 60rpx 40rpx;
+  width: 85%;
+  max-width: 600rpx;
+  border: 2px solid #ff00de;
+  box-shadow: 0 0 30px rgba(255, 0, 222, 0.3),
+              inset 0 0 20px rgba(255, 0, 222, 0.2);
+}
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 50rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.modal-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40rpx;
+}
+
+.options-row {
+  display: flex;
+  justify-content: center;
+  gap: 60rpx;
+}
+
+.modal-option {
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #00f7ff;
+  border-radius: 50%;
+  color: #00f7ff;
+  font-size: 36rpx;
+  font-weight: bold;
+  background: rgba(0, 247, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.modal-option.active {
+  border-color: #ff00de;
+  color: #ff00de;
+  box-shadow: 0 0 20px #ff00de;
+}
+
+/* 信息按钮样式 */
+.neon-button.info {
+  border-color: #00f7ff;
+  color: #00f7ff;
+  box-shadow: 0 0 10px #00f7ff,
+              inset 0 0 10px #00f7ff;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+</style>
+  

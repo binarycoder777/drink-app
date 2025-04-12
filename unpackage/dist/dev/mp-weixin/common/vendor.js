@@ -6846,9 +6846,9 @@ function initOnError() {
   };
 }
 function initRuntimeSocketService() {
-  const hosts = "127.0.0.1,192.168.163.130,1.1.0.198";
+  const hosts = "127.0.0.1,192.168.2.51";
   const port = "8090";
-  const id = "mp-weixin_V6-dTO";
+  const id = "mp-weixin_FGbW3q";
   const lazy = typeof swan !== "undefined";
   let restoreError = lazy ? () => {
   } : initOnError();
@@ -8052,7 +8052,7 @@ var dist = {};
           } }) : t4.responseText = r4, M.call(t4, a3.DONE), _.call(t4, "load"), _.call(t4, "loadend");
         }, h2 = function(e5) {
           var r4 = e5.errMsg;
-          -1 !== r4.indexOf("abort") ? _.call(t4, "abort") : _.call(t4, "error", { message: r4 }), _.call(t4, "loadend"), c2 && console.warn(r4);
+          -1 !== r4.indexOf("abort") ? _.call(t4, "abort") : _.call(t4, "error", { message: r4 }), _.call(t4, "loadend"), c2 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", r4);
         };
         if (c2) {
           var u3 = wx$1.getFileSystemManager(), p3 = { filePath: n2, success: l2, fail: h2 };
@@ -8288,7 +8288,7 @@ var dist = {};
         }, copy: function(t4) {
           return this.x = t4.x, this.y = t4.y, this;
         }, add: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Vector2: .add() now only accepts one argument. Use .addVectors( a, b ) instead."), this.addVectors(t4, e5)) : (this.x += t4.x, this.y += t4.y, this);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector2: .add() now only accepts one argument. Use .addVectors( a, b ) instead."), this.addVectors(t4, e5)) : (this.x += t4.x, this.y += t4.y, this);
         }, addScalar: function(t4) {
           return this.x += t4, this.y += t4, this;
         }, addVectors: function(t4, e5) {
@@ -8296,7 +8296,7 @@ var dist = {};
         }, addScaledVector: function(t4, e5) {
           return this.x += t4.x * e5, this.y += t4.y * e5, this;
         }, sub: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Vector2: .sub() now only accepts one argument. Use .subVectors( a, b ) instead."), this.subVectors(t4, e5)) : (this.x -= t4.x, this.y -= t4.y, this);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector2: .sub() now only accepts one argument. Use .subVectors( a, b ) instead."), this.subVectors(t4, e5)) : (this.x -= t4.x, this.y -= t4.y, this);
         }, subScalar: function(t4) {
           return this.x -= t4, this.y -= t4, this;
         }, subVectors: function(t4, e5) {
@@ -8368,7 +8368,7 @@ var dist = {};
         }, toArray: function(t4, e5) {
           return void 0 === t4 && (t4 = []), void 0 === e5 && (e5 = 0), t4[e5] = this.x, t4[e5 + 1] = this.y, t4;
         }, fromBufferAttribute: function(t4, e5, r3) {
-          return void 0 !== r3 && console.warn("THREE.Vector2: offset has been removed from .fromBufferAttribute()."), this.x = t4.getX(e5), this.y = t4.getY(e5), this;
+          return void 0 !== r3 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector2: offset has been removed from .fromBufferAttribute()."), this.x = t4.getX(e5), this.y = t4.getY(e5), this;
         }, rotateAround: function(t4, e5) {
           var r3 = Math.cos(e5), n2 = Math.sin(e5), i3 = this.x - t4.x, a4 = this.y - t4.y;
           return this.x = i3 * r3 - a4 * n2 + t4.x, this.y = i3 * n2 + a4 * r3 + t4.y, this;
@@ -8447,7 +8447,7 @@ var dist = {};
           var t4 = this.length();
           return 0 === t4 ? (this._x = 0, this._y = 0, this._z = 0, this._w = 1) : (t4 = 1 / t4, this._x = this._x * t4, this._y = this._y * t4, this._z = this._z * t4, this._w = this._w * t4), this._onChangeCallback(), this;
         }, multiply: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Quaternion: .multiply() now only accepts one argument. Use .multiplyQuaternions( a, b ) instead."), this.multiplyQuaternions(t4, e5)) : this.multiplyQuaternions(this, t4);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Quaternion: .multiply() now only accepts one argument. Use .multiplyQuaternions( a, b ) instead."), this.multiplyQuaternions(t4, e5)) : this.multiplyQuaternions(this, t4);
         }, premultiply: function(t4) {
           return this.multiplyQuaternions(t4, this);
         }, multiplyQuaternions: function(t4, e5) {
@@ -8523,7 +8523,7 @@ var dist = {};
         }, copy: function(t4) {
           return this.x = t4.x, this.y = t4.y, this.z = t4.z, this;
         }, add: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Vector3: .add() now only accepts one argument. Use .addVectors( a, b ) instead."), this.addVectors(t4, e5)) : (this.x += t4.x, this.y += t4.y, this.z += t4.z, this);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector3: .add() now only accepts one argument. Use .addVectors( a, b ) instead."), this.addVectors(t4, e5)) : (this.x += t4.x, this.y += t4.y, this.z += t4.z, this);
         }, addScalar: function(t4) {
           return this.x += t4, this.y += t4, this.z += t4, this;
         }, addVectors: function(t4, e5) {
@@ -8531,19 +8531,19 @@ var dist = {};
         }, addScaledVector: function(t4, e5) {
           return this.x += t4.x * e5, this.y += t4.y * e5, this.z += t4.z * e5, this;
         }, sub: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Vector3: .sub() now only accepts one argument. Use .subVectors( a, b ) instead."), this.subVectors(t4, e5)) : (this.x -= t4.x, this.y -= t4.y, this.z -= t4.z, this);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector3: .sub() now only accepts one argument. Use .subVectors( a, b ) instead."), this.subVectors(t4, e5)) : (this.x -= t4.x, this.y -= t4.y, this.z -= t4.z, this);
         }, subScalar: function(t4) {
           return this.x -= t4, this.y -= t4, this.z -= t4, this;
         }, subVectors: function(t4, e5) {
           return this.x = t4.x - e5.x, this.y = t4.y - e5.y, this.z = t4.z - e5.z, this;
         }, multiply: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Vector3: .multiply() now only accepts one argument. Use .multiplyVectors( a, b ) instead."), this.multiplyVectors(t4, e5)) : (this.x *= t4.x, this.y *= t4.y, this.z *= t4.z, this);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector3: .multiply() now only accepts one argument. Use .multiplyVectors( a, b ) instead."), this.multiplyVectors(t4, e5)) : (this.x *= t4.x, this.y *= t4.y, this.z *= t4.z, this);
         }, multiplyScalar: function(t4) {
           return this.x *= t4, this.y *= t4, this.z *= t4, this;
         }, multiplyVectors: function(t4, e5) {
           return this.x = t4.x * e5.x, this.y = t4.y * e5.y, this.z = t4.z * e5.z, this;
         }, applyEuler: function(t4) {
-          return t4 && t4.isEuler || console.error("THREE.Vector3: .applyEuler() now expects an Euler rotation rather than a Vector3 and order."), this.applyQuaternion(p3.setFromEuler(t4));
+          return t4 && t4.isEuler || index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector3: .applyEuler() now expects an Euler rotation rather than a Vector3 and order."), this.applyQuaternion(p3.setFromEuler(t4));
         }, applyAxisAngle: function(t4, e5) {
           return this.applyQuaternion(p3.setFromAxisAngle(t4, e5));
         }, applyMatrix3: function(t4) {
@@ -8604,7 +8604,7 @@ var dist = {};
         }, lerpVectors: function(t4, e5, r3) {
           return this.subVectors(e5, t4).multiplyScalar(r3).add(t4);
         }, cross: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Vector3: .cross() now only accepts one argument. Use .crossVectors( a, b ) instead."), this.crossVectors(t4, e5)) : this.crossVectors(this, t4);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector3: .cross() now only accepts one argument. Use .crossVectors( a, b ) instead."), this.crossVectors(t4, e5)) : this.crossVectors(this, t4);
         }, crossVectors: function(t4, e5) {
           var r3 = t4.x, n2 = t4.y, i3 = t4.z, a4 = e5.x, o5 = e5.y, s4 = e5.z;
           return this.x = n2 * s4 - i3 * o5, this.y = i3 * a4 - r3 * s4, this.z = r3 * o5 - n2 * a4, this;
@@ -8649,11 +8649,11 @@ var dist = {};
         }, toArray: function(t4, e5) {
           return void 0 === t4 && (t4 = []), void 0 === e5 && (e5 = 0), t4[e5] = this.x, t4[e5 + 1] = this.y, t4[e5 + 2] = this.z, t4;
         }, fromBufferAttribute: function(t4, e5, r3) {
-          return void 0 !== r3 && console.warn("THREE.Vector3: offset has been removed from .fromBufferAttribute()."), this.x = t4.getX(e5), this.y = t4.getY(e5), this.z = t4.getZ(e5), this;
+          return void 0 !== r3 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector3: offset has been removed from .fromBufferAttribute()."), this.x = t4.getX(e5), this.y = t4.getY(e5), this.z = t4.getZ(e5), this;
         } });
         var f3 = new d2();
         function m2() {
-          this.elements = [1, 0, 0, 0, 1, 0, 0, 0, 1], arguments.length > 0 && console.error("THREE.Matrix3: the constructor no longer reads arguments. use .set() instead.");
+          this.elements = [1, 0, 0, 0, 1, 0, 0, 0, 1], arguments.length > 0 && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Matrix3: the constructor no longer reads arguments. use .set() instead.");
         }
         Object.assign(m2.prototype, { isMatrix3: true, set: function(t4, e5, r3, n2, i3, a4, o5, s4, c3) {
           var l4 = this.elements;
@@ -8686,13 +8686,13 @@ var dist = {};
           var t4 = this.elements, e5 = t4[0], r3 = t4[1], n2 = t4[2], i3 = t4[3], a4 = t4[4], o5 = t4[5], s4 = t4[6], c3 = t4[7], l4 = t4[8];
           return e5 * a4 * l4 - e5 * o5 * c3 - r3 * i3 * l4 + r3 * o5 * s4 + n2 * i3 * c3 - n2 * a4 * s4;
         }, getInverse: function(t4, e5) {
-          t4 && t4.isMatrix4 && console.error("THREE.Matrix3: .getInverse() no longer takes a Matrix4 argument.");
+          t4 && t4.isMatrix4 && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Matrix3: .getInverse() no longer takes a Matrix4 argument.");
           var r3 = t4.elements, n2 = this.elements, i3 = r3[0], a4 = r3[1], o5 = r3[2], s4 = r3[3], c3 = r3[4], l4 = r3[5], h3 = r3[6], u4 = r3[7], p4 = r3[8], d3 = p4 * c3 - l4 * u4, f4 = l4 * h3 - p4 * s4, m3 = u4 * s4 - c3 * h3, g3 = i3 * d3 + a4 * f4 + o5 * m3;
           if (0 === g3) {
             var v3 = "THREE.Matrix3: .getInverse() can't invert matrix, determinant is 0";
             if (true === e5)
               throw new Error(v3);
-            return console.warn(v3), this.identity();
+            return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", v3), this.identity();
           }
           var y3 = 1 / g3;
           return n2[0] = d3 * y3, n2[1] = (o5 * u4 - p4 * a4) * y3, n2[2] = (l4 * a4 - o5 * c3) * y3, n2[3] = f4 * y3, n2[4] = (p4 * i3 - o5 * h3) * y3, n2[5] = (o5 * s4 - l4 * i3) * y3, n2[6] = m3 * y3, n2[7] = (a4 * h3 - u4 * i3) * y3, n2[8] = (c3 * i3 - a4 * s4) * y3, this;
@@ -8858,7 +8858,7 @@ var dist = {};
         }, copy: function(t4) {
           return this.x = t4.x, this.y = t4.y, this.z = t4.z, this.w = void 0 !== t4.w ? t4.w : 1, this;
         }, add: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Vector4: .add() now only accepts one argument. Use .addVectors( a, b ) instead."), this.addVectors(t4, e5)) : (this.x += t4.x, this.y += t4.y, this.z += t4.z, this.w += t4.w, this);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector4: .add() now only accepts one argument. Use .addVectors( a, b ) instead."), this.addVectors(t4, e5)) : (this.x += t4.x, this.y += t4.y, this.z += t4.z, this.w += t4.w, this);
         }, addScalar: function(t4) {
           return this.x += t4, this.y += t4, this.z += t4, this.w += t4, this;
         }, addVectors: function(t4, e5) {
@@ -8866,7 +8866,7 @@ var dist = {};
         }, addScaledVector: function(t4, e5) {
           return this.x += t4.x * e5, this.y += t4.y * e5, this.z += t4.z * e5, this.w += t4.w * e5, this;
         }, sub: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Vector4: .sub() now only accepts one argument. Use .subVectors( a, b ) instead."), this.subVectors(t4, e5)) : (this.x -= t4.x, this.y -= t4.y, this.z -= t4.z, this.w -= t4.w, this);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector4: .sub() now only accepts one argument. Use .subVectors( a, b ) instead."), this.subVectors(t4, e5)) : (this.x -= t4.x, this.y -= t4.y, this.z -= t4.z, this.w -= t4.w, this);
         }, subScalar: function(t4) {
           return this.x -= t4, this.y -= t4, this.z -= t4, this.w -= t4, this;
         }, subVectors: function(t4, e5) {
@@ -8937,7 +8937,7 @@ var dist = {};
         }, toArray: function(t4, e5) {
           return void 0 === t4 && (t4 = []), void 0 === e5 && (e5 = 0), t4[e5] = this.x, t4[e5 + 1] = this.y, t4[e5 + 2] = this.z, t4[e5 + 3] = this.w, t4;
         }, fromBufferAttribute: function(t4, e5, r3) {
-          return void 0 !== r3 && console.warn("THREE.Vector4: offset has been removed from .fromBufferAttribute()."), this.x = t4.getX(e5), this.y = t4.getY(e5), this.z = t4.getZ(e5), this.w = t4.getW(e5), this;
+          return void 0 !== r3 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Vector4: offset has been removed from .fromBufferAttribute()."), this.x = t4.getX(e5), this.y = t4.getY(e5), this.z = t4.getZ(e5), this.w = t4.getW(e5), this;
         } }), b2.prototype = Object.assign(Object.create(e4.prototype), { constructor: b2, isWebGLRenderTarget: true, setSize: function(t4, e5) {
           this.width === t4 && this.height === e5 || (this.width = t4, this.height = e5, this.texture.image.width = t4, this.texture.image.height = e5, this.dispose()), this.viewport.set(0, 0, t4, e5), this.scissor.set(0, 0, t4, e5);
         }, clone: function() {
@@ -8951,7 +8951,7 @@ var dist = {};
         } });
         var _2 = new d2(), M2 = new P2(), S2 = new d2(0, 0, 0), T3 = new d2(1, 1, 1), E3 = new d2(), A3 = new d2(), L3 = new d2();
         function P2() {
-          this.elements = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], arguments.length > 0 && console.error("THREE.Matrix4: the constructor no longer reads arguments. use .set() instead.");
+          this.elements = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], arguments.length > 0 && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Matrix4: the constructor no longer reads arguments. use .set() instead.");
         }
         Object.assign(P2.prototype, { isMatrix4: true, set: function(t4, e5, r3, n2, i3, a4, o5, s4, c3, l4, h3, u4, p4, d3, f4, m3) {
           var g3 = this.elements;
@@ -8974,7 +8974,7 @@ var dist = {};
           var e5 = this.elements, r3 = t4.elements, n2 = 1 / _2.setFromMatrixColumn(t4, 0).length(), i3 = 1 / _2.setFromMatrixColumn(t4, 1).length(), a4 = 1 / _2.setFromMatrixColumn(t4, 2).length();
           return e5[0] = r3[0] * n2, e5[1] = r3[1] * n2, e5[2] = r3[2] * n2, e5[3] = 0, e5[4] = r3[4] * i3, e5[5] = r3[5] * i3, e5[6] = r3[6] * i3, e5[7] = 0, e5[8] = r3[8] * a4, e5[9] = r3[9] * a4, e5[10] = r3[10] * a4, e5[11] = 0, e5[12] = 0, e5[13] = 0, e5[14] = 0, e5[15] = 1, this;
         }, makeRotationFromEuler: function(t4) {
-          t4 && t4.isEuler || console.error("THREE.Matrix4: .makeRotationFromEuler() now expects a Euler rotation rather than a Vector3 and order.");
+          t4 && t4.isEuler || index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Matrix4: .makeRotationFromEuler() now expects a Euler rotation rather than a Vector3 and order.");
           var e5 = this.elements, r3 = t4.x, n2 = t4.y, i3 = t4.z, a4 = Math.cos(r3), o5 = Math.sin(r3), s4 = Math.cos(n2), c3 = Math.sin(n2), l4 = Math.cos(i3), h3 = Math.sin(i3);
           if ("XYZ" === t4.order) {
             var u4 = a4 * l4, p4 = a4 * h3, d3 = o5 * l4, f4 = o5 * h3;
@@ -8998,7 +8998,7 @@ var dist = {};
           var n2 = this.elements;
           return L3.subVectors(t4, e5), 0 === L3.lengthSq() && (L3.z = 1), L3.normalize(), E3.crossVectors(r3, L3), 0 === E3.lengthSq() && (1 === Math.abs(r3.z) ? L3.x += 1e-4 : L3.z += 1e-4, L3.normalize(), E3.crossVectors(r3, L3)), E3.normalize(), A3.crossVectors(L3, E3), n2[0] = E3.x, n2[4] = A3.x, n2[8] = L3.x, n2[1] = E3.y, n2[5] = A3.y, n2[9] = L3.y, n2[2] = E3.z, n2[6] = A3.z, n2[10] = L3.z, this;
         }, multiply: function(t4, e5) {
-          return void 0 !== e5 ? (console.warn("THREE.Matrix4: .multiply() now only accepts one argument. Use .multiplyMatrices( a, b ) instead."), this.multiplyMatrices(t4, e5)) : this.multiplyMatrices(this, t4);
+          return void 0 !== e5 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Matrix4: .multiply() now only accepts one argument. Use .multiplyMatrices( a, b ) instead."), this.multiplyMatrices(t4, e5)) : this.multiplyMatrices(this, t4);
         }, premultiply: function(t4) {
           return this.multiplyMatrices(t4, this);
         }, multiplyMatrices: function(t4, e5) {
@@ -9026,7 +9026,7 @@ var dist = {};
             var T4 = "THREE.Matrix4: .getInverse() can't invert matrix, determinant is 0";
             if (true === e5)
               throw new Error(T4);
-            return console.warn(T4), this.identity();
+            return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", T4), this.identity();
           }
           var E4 = 1 / S3;
           return r3[0] = b3 * E4, r3[1] = (v3 * f4 * s4 - d3 * y3 * s4 - v3 * o5 * m3 + a4 * y3 * m3 + d3 * o5 * x3 - a4 * f4 * x3) * E4, r3[2] = (l4 * y3 * s4 - v3 * h3 * s4 + v3 * o5 * u4 - a4 * y3 * u4 - l4 * o5 * x3 + a4 * h3 * x3) * E4, r3[3] = (d3 * h3 * s4 - l4 * f4 * s4 - d3 * o5 * u4 + a4 * f4 * u4 + l4 * o5 * m3 - a4 * h3 * m3) * E4, r3[4] = w3 * E4, r3[5] = (p4 * y3 * s4 - g3 * f4 * s4 + g3 * o5 * m3 - i3 * y3 * m3 - p4 * o5 * x3 + i3 * f4 * x3) * E4, r3[6] = (g3 * h3 * s4 - c3 * y3 * s4 - g3 * o5 * u4 + i3 * y3 * u4 + c3 * o5 * x3 - i3 * h3 * x3) * E4, r3[7] = (c3 * f4 * s4 - p4 * h3 * s4 + p4 * o5 * u4 - i3 * f4 * u4 - c3 * o5 * m3 + i3 * h3 * m3) * E4, r3[8] = _3 * E4, r3[9] = (g3 * d3 * s4 - p4 * v3 * s4 - g3 * a4 * m3 + i3 * v3 * m3 + p4 * a4 * x3 - i3 * d3 * x3) * E4, r3[10] = (c3 * v3 * s4 - g3 * l4 * s4 + g3 * a4 * u4 - i3 * v3 * u4 - c3 * a4 * x3 + i3 * l4 * x3) * E4, r3[11] = (p4 * l4 * s4 - c3 * d3 * s4 - p4 * a4 * u4 + i3 * d3 * u4 + c3 * a4 * m3 - i3 * l4 * m3) * E4, r3[12] = M3 * E4, r3[13] = (p4 * v3 * o5 - g3 * d3 * o5 + g3 * a4 * f4 - i3 * v3 * f4 - p4 * a4 * y3 + i3 * d3 * y3) * E4, r3[14] = (g3 * l4 * o5 - c3 * v3 * o5 - g3 * a4 * h3 + i3 * v3 * h3 + c3 * a4 * y3 - i3 * l4 * y3) * E4, r3[15] = (c3 * d3 * o5 - p4 * l4 * o5 + p4 * a4 * h3 - i3 * d3 * h3 - c3 * a4 * f4 + i3 * l4 * f4) * E4, this;
@@ -9063,7 +9063,7 @@ var dist = {};
           var s4 = 1 / i3, c3 = 1 / a4, l4 = 1 / o5;
           return M2.elements[0] *= s4, M2.elements[1] *= s4, M2.elements[2] *= s4, M2.elements[4] *= c3, M2.elements[5] *= c3, M2.elements[6] *= c3, M2.elements[8] *= l4, M2.elements[9] *= l4, M2.elements[10] *= l4, e5.setFromRotationMatrix(M2), r3.x = i3, r3.y = a4, r3.z = o5, this;
         }, makePerspective: function(t4, e5, r3, n2, i3, a4) {
-          void 0 === a4 && console.warn("THREE.Matrix4: .makePerspective() has been redefined and has a new signature. Please check the docs.");
+          void 0 === a4 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Matrix4: .makePerspective() has been redefined and has a new signature. Please check the docs.");
           var o5 = this.elements, s4 = 2 * i3 / (e5 - t4), c3 = 2 * i3 / (r3 - n2), l4 = (e5 + t4) / (e5 - t4), h3 = (r3 + n2) / (r3 - n2), u4 = -(a4 + i3) / (a4 - i3), p4 = -2 * a4 * i3 / (a4 - i3);
           return o5[0] = s4, o5[4] = 0, o5[8] = l4, o5[12] = 0, o5[1] = 0, o5[5] = c3, o5[9] = h3, o5[13] = 0, o5[2] = 0, o5[6] = 0, o5[10] = u4, o5[14] = p4, o5[3] = 0, o5[7] = 0, o5[11] = -1, o5[15] = 0, this;
         }, makeOrthographic: function(t4, e5, r3, n2, i3, a4) {
@@ -9115,7 +9115,7 @@ var dist = {};
           return this._x = t4._x, this._y = t4._y, this._z = t4._z, this._order = t4._order, this._onChangeCallback(), this;
         }, setFromRotationMatrix: function(t4, e5, r3) {
           var n2 = s3.clamp, i3 = t4.elements, a4 = i3[0], o5 = i3[4], c3 = i3[8], l4 = i3[1], h3 = i3[5], u4 = i3[9], p4 = i3[2], d3 = i3[6], f4 = i3[10];
-          return "XYZ" === (e5 = e5 || this._order) ? (this._y = Math.asin(n2(c3, -1, 1)), Math.abs(c3) < 0.9999999 ? (this._x = Math.atan2(-u4, f4), this._z = Math.atan2(-o5, a4)) : (this._x = Math.atan2(d3, h3), this._z = 0)) : "YXZ" === e5 ? (this._x = Math.asin(-n2(u4, -1, 1)), Math.abs(u4) < 0.9999999 ? (this._y = Math.atan2(c3, f4), this._z = Math.atan2(l4, h3)) : (this._y = Math.atan2(-p4, a4), this._z = 0)) : "ZXY" === e5 ? (this._x = Math.asin(n2(d3, -1, 1)), Math.abs(d3) < 0.9999999 ? (this._y = Math.atan2(-p4, f4), this._z = Math.atan2(-o5, h3)) : (this._y = 0, this._z = Math.atan2(l4, a4))) : "ZYX" === e5 ? (this._y = Math.asin(-n2(p4, -1, 1)), Math.abs(p4) < 0.9999999 ? (this._x = Math.atan2(d3, f4), this._z = Math.atan2(l4, a4)) : (this._x = 0, this._z = Math.atan2(-o5, h3))) : "YZX" === e5 ? (this._z = Math.asin(n2(l4, -1, 1)), Math.abs(l4) < 0.9999999 ? (this._x = Math.atan2(-u4, h3), this._y = Math.atan2(-p4, a4)) : (this._x = 0, this._y = Math.atan2(c3, f4))) : "XZY" === e5 ? (this._z = Math.asin(-n2(o5, -1, 1)), Math.abs(o5) < 0.9999999 ? (this._x = Math.atan2(d3, h3), this._y = Math.atan2(c3, a4)) : (this._x = Math.atan2(-u4, f4), this._y = 0)) : console.warn("THREE.Euler: .setFromRotationMatrix() given unsupported order: " + e5), this._order = e5, false !== r3 && this._onChangeCallback(), this;
+          return "XYZ" === (e5 = e5 || this._order) ? (this._y = Math.asin(n2(c3, -1, 1)), Math.abs(c3) < 0.9999999 ? (this._x = Math.atan2(-u4, f4), this._z = Math.atan2(-o5, a4)) : (this._x = Math.atan2(d3, h3), this._z = 0)) : "YXZ" === e5 ? (this._x = Math.asin(-n2(u4, -1, 1)), Math.abs(u4) < 0.9999999 ? (this._y = Math.atan2(c3, f4), this._z = Math.atan2(l4, h3)) : (this._y = Math.atan2(-p4, a4), this._z = 0)) : "ZXY" === e5 ? (this._x = Math.asin(n2(d3, -1, 1)), Math.abs(d3) < 0.9999999 ? (this._y = Math.atan2(-p4, f4), this._z = Math.atan2(-o5, h3)) : (this._y = 0, this._z = Math.atan2(l4, a4))) : "ZYX" === e5 ? (this._y = Math.asin(-n2(p4, -1, 1)), Math.abs(p4) < 0.9999999 ? (this._x = Math.atan2(d3, f4), this._z = Math.atan2(l4, a4)) : (this._x = 0, this._z = Math.atan2(-o5, h3))) : "YZX" === e5 ? (this._z = Math.asin(n2(l4, -1, 1)), Math.abs(l4) < 0.9999999 ? (this._x = Math.atan2(-u4, h3), this._y = Math.atan2(-p4, a4)) : (this._x = 0, this._y = Math.atan2(c3, f4))) : "XZY" === e5 ? (this._z = Math.asin(-n2(o5, -1, 1)), Math.abs(o5) < 0.9999999 ? (this._x = Math.atan2(d3, h3), this._y = Math.atan2(c3, a4)) : (this._x = Math.atan2(-u4, f4), this._y = 0)) : index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Euler: .setFromRotationMatrix() given unsupported order: " + e5), this._order = e5, false !== r3 && this._onChangeCallback(), this;
         }, setFromQuaternion: function(t4, e5, r3) {
           return C.makeRotationFromQuaternion(t4), this.setFromRotationMatrix(C, e5, r3);
         }, setFromVector3: function(t4, e5) {
@@ -9207,7 +9207,7 @@ var dist = {};
               this.add(arguments[e5]);
             return this;
           }
-          return t4 === this ? (console.error("THREE.Object3D.add: object can't be added as a child of itself.", t4), this) : (t4 && t4.isObject3D ? (null !== t4.parent && t4.parent.remove(t4), t4.parent = this, this.children.push(t4), t4.dispatchEvent(q)) : console.error("THREE.Object3D.add: object not an instance of THREE.Object3D.", t4), this);
+          return t4 === this ? (index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Object3D.add: object can't be added as a child of itself.", t4), this) : (t4 && t4.isObject3D ? (null !== t4.parent && t4.parent.remove(t4), t4.parent = this, this.children.push(t4), t4.dispatchEvent(q)) : index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Object3D.add: object not an instance of THREE.Object3D.", t4), this);
         }, remove: function(t4) {
           if (arguments.length > 1) {
             for (var e5 = 0; e5 < arguments.length; e5++)
@@ -9231,13 +9231,13 @@ var dist = {};
               return i3;
           }
         }, getWorldPosition: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Object3D: .getWorldPosition() target is now required"), t4 = new d2()), this.updateMatrixWorld(true), t4.setFromMatrixPosition(this.matrixWorld);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Object3D: .getWorldPosition() target is now required"), t4 = new d2()), this.updateMatrixWorld(true), t4.setFromMatrixPosition(this.matrixWorld);
         }, getWorldQuaternion: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Object3D: .getWorldQuaternion() target is now required"), t4 = new h2()), this.updateMatrixWorld(true), this.matrixWorld.decompose(U2, t4, H), t4;
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Object3D: .getWorldQuaternion() target is now required"), t4 = new h2()), this.updateMatrixWorld(true), this.matrixWorld.decompose(U2, t4, H), t4;
         }, getWorldScale: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Object3D: .getWorldScale() target is now required"), t4 = new d2()), this.updateMatrixWorld(true), this.matrixWorld.decompose(U2, V2, t4), t4;
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Object3D: .getWorldScale() target is now required"), t4 = new d2()), this.updateMatrixWorld(true), this.matrixWorld.decompose(U2, V2, t4), t4;
         }, getWorldDirection: function(t4) {
-          void 0 === t4 && (console.warn("THREE.Object3D: .getWorldDirection() target is now required"), t4 = new d2()), this.updateMatrixWorld(true);
+          void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Object3D: .getWorldDirection() target is now required"), t4 = new d2()), this.updateMatrixWorld(true);
           var e5 = this.matrixWorld.elements;
           return t4.set(e5[8], e5[9], e5[10]).normalize();
         }, raycast: function() {
@@ -9374,9 +9374,9 @@ var dist = {};
         }, isEmpty: function() {
           return this.max.x < this.min.x || this.max.y < this.min.y || this.max.z < this.min.z;
         }, getCenter: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Box3: .getCenter() target is now required"), t4 = new d2()), this.isEmpty() ? t4.set(0, 0, 0) : t4.addVectors(this.min, this.max).multiplyScalar(0.5);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Box3: .getCenter() target is now required"), t4 = new d2()), this.isEmpty() ? t4.set(0, 0, 0) : t4.addVectors(this.min, this.max).multiplyScalar(0.5);
         }, getSize: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Box3: .getSize() target is now required"), t4 = new d2()), this.isEmpty() ? t4.set(0, 0, 0) : t4.subVectors(this.max, this.min);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Box3: .getSize() target is now required"), t4 = new d2()), this.isEmpty() ? t4.set(0, 0, 0) : t4.subVectors(this.max, this.min);
         }, expandByPoint: function(t4) {
           return this.min.min(t4), this.max.max(t4), this;
         }, expandByVector: function(t4) {
@@ -9408,7 +9408,7 @@ var dist = {};
         }, containsBox: function(t4) {
           return this.min.x <= t4.min.x && t4.max.x <= this.max.x && this.min.y <= t4.min.y && t4.max.y <= this.max.y && this.min.z <= t4.min.z && t4.max.z <= this.max.z;
         }, getParameter: function(t4, e5) {
-          return void 0 === e5 && (console.warn("THREE.Box3: .getParameter() target is now required"), e5 = new d2()), e5.set((t4.x - this.min.x) / (this.max.x - this.min.x), (t4.y - this.min.y) / (this.max.y - this.min.y), (t4.z - this.min.z) / (this.max.z - this.min.z));
+          return void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Box3: .getParameter() target is now required"), e5 = new d2()), e5.set((t4.x - this.min.x) / (this.max.x - this.min.x), (t4.y - this.min.y) / (this.max.y - this.min.y), (t4.z - this.min.z) / (this.max.z - this.min.z));
         }, intersectsBox: function(t4) {
           return !(t4.max.x < this.min.x || t4.min.x > this.max.x || t4.max.y < this.min.y || t4.min.y > this.max.y || t4.max.z < this.min.z || t4.min.z > this.max.z);
         }, intersectsSphere: function(t4) {
@@ -9423,11 +9423,11 @@ var dist = {};
           var e5 = [0, -et.z, et.y, 0, -rt.z, rt.y, 0, -nt.z, nt.y, et.z, 0, -et.x, rt.z, 0, -rt.x, nt.z, 0, -nt.x, -et.y, et.x, 0, -rt.y, rt.x, 0, -nt.y, nt.x, 0];
           return !!lt(e5, K, $, tt2, at) && !!lt(e5 = [1, 0, 0, 0, 1, 0, 0, 0, 1], K, $, tt2, at) && (ot.crossVectors(et, rt), lt(e5 = [ot.x, ot.y, ot.z], K, $, tt2, at));
         }, clampPoint: function(t4, e5) {
-          return void 0 === e5 && (console.warn("THREE.Box3: .clampPoint() target is now required"), e5 = new d2()), e5.copy(t4).clamp(this.min, this.max);
+          return void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Box3: .clampPoint() target is now required"), e5 = new d2()), e5.copy(t4).clamp(this.min, this.max);
         }, distanceToPoint: function(t4) {
           return Q.copy(t4).clamp(this.min, this.max).sub(t4).length();
         }, getBoundingSphere: function(t4) {
-          return void 0 === t4 && console.error("THREE.Box3: .getBoundingSphere() target is now required"), this.getCenter(t4.center), t4.radius = 0.5 * this.getSize(Q).length(), t4;
+          return void 0 === t4 && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Box3: .getBoundingSphere() target is now required"), this.getCenter(t4.center), t4.radius = 0.5 * this.getSize(Q).length(), t4;
         }, intersect: function(t4) {
           return this.min.max(t4.min), this.max.min(t4.max), this.isEmpty() && this.makeEmpty(), this;
         }, union: function(t4) {
@@ -9470,9 +9470,9 @@ var dist = {};
           return Math.abs(t4.distanceToPoint(this.center)) <= this.radius;
         }, clampPoint: function(t4, e5) {
           var r3 = this.center.distanceToSquared(t4);
-          return void 0 === e5 && (console.warn("THREE.Sphere: .clampPoint() target is now required"), e5 = new d2()), e5.copy(t4), r3 > this.radius * this.radius && (e5.sub(this.center).normalize(), e5.multiplyScalar(this.radius).add(this.center)), e5;
+          return void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Sphere: .clampPoint() target is now required"), e5 = new d2()), e5.copy(t4), r3 > this.radius * this.radius && (e5.sub(this.center).normalize(), e5.multiplyScalar(this.radius).add(this.center)), e5;
         }, getBoundingBox: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Sphere: .getBoundingBox() target is now required"), t4 = new ct()), t4.set(this.center, this.center), t4.expandByScalar(this.radius), t4;
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Sphere: .getBoundingBox() target is now required"), t4 = new ct()), t4.set(this.center, this.center), t4.expandByScalar(this.radius), t4;
         }, applyMatrix4: function(t4) {
           return this.center.applyMatrix4(t4), this.radius = this.radius * t4.getMaxScaleOnAxis(), this;
         }, translate: function(t4) {
@@ -9491,13 +9491,13 @@ var dist = {};
         }, copy: function(t4) {
           return this.origin.copy(t4.origin), this.direction.copy(t4.direction), this;
         }, at: function(t4, e5) {
-          return void 0 === e5 && (console.warn("THREE.Ray: .at() target is now required"), e5 = new d2()), e5.copy(this.direction).multiplyScalar(t4).add(this.origin);
+          return void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Ray: .at() target is now required"), e5 = new d2()), e5.copy(this.direction).multiplyScalar(t4).add(this.origin);
         }, lookAt: function(t4) {
           return this.direction.copy(t4).sub(this.origin).normalize(), this;
         }, recast: function(t4) {
           return this.origin.copy(this.at(t4, pt)), this;
         }, closestPointToPoint: function(t4, e5) {
-          void 0 === e5 && (console.warn("THREE.Ray: .closestPointToPoint() target is now required"), e5 = new d2()), e5.subVectors(t4, this.origin);
+          void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Ray: .closestPointToPoint() target is now required"), e5 = new d2()), e5.subVectors(t4, this.origin);
           var r3 = e5.dot(this.direction);
           return r3 < 0 ? e5.copy(this.origin) : e5.copy(this.direction).multiplyScalar(r3).add(this.origin);
         }, distanceToPoint: function(t4) {
@@ -9582,13 +9582,13 @@ var dist = {};
           this.a = void 0 !== t4 ? t4 : new d2(), this.b = void 0 !== e5 ? e5 : new d2(), this.c = void 0 !== r3 ? r3 : new d2();
         }
         Object.assign(Pt, { getNormal: function(t4, e5, r3, n2) {
-          void 0 === n2 && (console.warn("THREE.Triangle: .getNormal() target is now required"), n2 = new d2()), n2.subVectors(r3, e5), bt.subVectors(t4, e5), n2.cross(bt);
+          void 0 === n2 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Triangle: .getNormal() target is now required"), n2 = new d2()), n2.subVectors(r3, e5), bt.subVectors(t4, e5), n2.cross(bt);
           var i3 = n2.lengthSq();
           return i3 > 0 ? n2.multiplyScalar(1 / Math.sqrt(i3)) : n2.set(0, 0, 0);
         }, getBarycoord: function(t4, e5, r3, n2, i3) {
           bt.subVectors(n2, e5), wt.subVectors(r3, e5), _t.subVectors(t4, e5);
           var a4 = bt.dot(bt), o5 = bt.dot(wt), s4 = bt.dot(_t), c3 = wt.dot(wt), l4 = wt.dot(_t), h3 = a4 * c3 - o5 * o5;
-          if (void 0 === i3 && (console.warn("THREE.Triangle: .getBarycoord() target is now required"), i3 = new d2()), 0 === h3)
+          if (void 0 === i3 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Triangle: .getBarycoord() target is now required"), i3 = new d2()), 0 === h3)
             return i3.set(-2, -1, -1);
           var u4 = 1 / h3, p4 = (c3 * s4 - o5 * l4) * u4, f4 = (a4 * l4 - o5 * s4) * u4;
           return i3.set(1 - p4 - f4, f4, p4);
@@ -9609,11 +9609,11 @@ var dist = {};
         }, getArea: function() {
           return bt.subVectors(this.c, this.b), wt.subVectors(this.a, this.b), 0.5 * bt.cross(wt).length();
         }, getMidpoint: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Triangle: .getMidpoint() target is now required"), t4 = new d2()), t4.addVectors(this.a, this.b).add(this.c).multiplyScalar(1 / 3);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Triangle: .getMidpoint() target is now required"), t4 = new d2()), t4.addVectors(this.a, this.b).add(this.c).multiplyScalar(1 / 3);
         }, getNormal: function(t4) {
           return Pt.getNormal(this.a, this.b, this.c, t4);
         }, getPlane: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Triangle: .getPlane() target is now required"), t4 = new d2()), t4.setFromCoplanarPoints(this.a, this.b, this.c);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Triangle: .getPlane() target is now required"), t4 = new d2()), t4.setFromCoplanarPoints(this.a, this.b, this.c);
         }, getBarycoord: function(t4, e5) {
           return Pt.getBarycoord(t4, this.a, this.b, this.c, e5);
         }, getUV: function(t4, e5, r3, n2, i3) {
@@ -9625,7 +9625,7 @@ var dist = {};
         }, intersectsBox: function(t4) {
           return t4.intersectsTriangle(this);
         }, closestPointToPoint: function(t4, e5) {
-          void 0 === e5 && (console.warn("THREE.Triangle: .closestPointToPoint() target is now required"), e5 = new d2());
+          void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Triangle: .closestPointToPoint() target is now required"), e5 = new d2());
           var r3, n2, i3 = this.a, a4 = this.b, o5 = this.c;
           St.subVectors(a4, i3), Tt.subVectors(o5, i3), At.subVectors(t4, i3);
           var s4 = St.dot(At), c3 = Tt.dot(At);
@@ -9687,7 +9687,7 @@ var dist = {};
           return this;
         }, setStyle: function(t4) {
           function e5(e6) {
-            void 0 !== e6 && parseFloat(e6) < 1 && console.warn("THREE.Color: Alpha component of " + t4 + " will be ignored.");
+            void 0 !== e6 && parseFloat(e6) < 1 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Color: Alpha component of " + t4 + " will be ignored.");
           }
           var r3;
           if (r3 = /^((?:rgb|hsl)a?)\(\s*([^\)]*)\)/.exec(t4)) {
@@ -9714,7 +9714,7 @@ var dist = {};
             if (6 === h3)
               return this.r = parseInt(l4.charAt(0) + l4.charAt(1), 16) / 255, this.g = parseInt(l4.charAt(2) + l4.charAt(3), 16) / 255, this.b = parseInt(l4.charAt(4) + l4.charAt(5), 16) / 255, this;
           }
-          return t4 && t4.length > 0 && (void 0 !== (l4 = Ct[t4]) ? this.setHex(l4) : console.warn("THREE.Color: Unknown color " + t4)), this;
+          return t4 && t4.length > 0 && (void 0 !== (l4 = Ct[t4]) ? this.setHex(l4) : index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Color: Unknown color " + t4)), this;
         }, clone: function() {
           return new this.constructor(this.r, this.g, this.b);
         }, copy: function(t4) {
@@ -9742,7 +9742,7 @@ var dist = {};
         }, getHexString: function() {
           return ("000000" + this.getHex().toString(16)).slice(-6);
         }, getHSL: function(t4) {
-          void 0 === t4 && (console.warn("THREE.Color: .getHSL() target is now required"), t4 = { h: 0, s: 0, l: 0 });
+          void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Color: .getHSL() target is now required"), t4 = { h: 0, s: 0, l: 0 });
           var e5, r3, n2 = this.r, i3 = this.g, a4 = this.b, o5 = Math.max(n2, i3, a4), s4 = Math.min(n2, i3, a4), c3 = (s4 + o5) / 2;
           if (s4 === o5)
             e5 = 0, r3 = 0;
@@ -9858,11 +9858,11 @@ var dist = {};
               if (void 0 !== r3)
                 if ("shading" !== e5) {
                   var n2 = this[e5];
-                  void 0 !== n2 ? n2 && n2.isColor ? n2.set(r3) : n2 && n2.isVector3 && r3 && r3.isVector3 ? n2.copy(r3) : this[e5] = r3 : console.warn("THREE." + this.type + ": '" + e5 + "' is not a property of this material.");
+                  void 0 !== n2 ? n2 && n2.isColor ? n2.set(r3) : n2 && n2.isVector3 && r3 && r3.isVector3 ? n2.copy(r3) : this[e5] = r3 : index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE." + this.type + ": '" + e5 + "' is not a property of this material.");
                 } else
-                  console.warn("THREE." + this.type + ": .shading has been removed. Use the boolean .flatShading instead."), this.flatShading = 1 === r3;
+                  index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE." + this.type + ": .shading has been removed. Use the boolean .flatShading instead."), this.flatShading = 1 === r3;
               else
-                console.warn("THREE.Material: '" + e5 + "' parameter is undefined.");
+                index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Material: '" + e5 + "' parameter is undefined.");
             }
         }, toJSON: function(t4) {
           var e5 = void 0 === t4 || "string" == typeof t4;
@@ -9918,25 +9918,25 @@ var dist = {};
         }, copyColorsArray: function(t4) {
           for (var e5 = this.array, r3 = 0, n2 = 0, i3 = t4.length; n2 < i3; n2++) {
             var a4 = t4[n2];
-            void 0 === a4 && (console.warn("THREE.BufferAttribute.copyColorsArray(): color is undefined", n2), a4 = new Nt()), e5[r3++] = a4.r, e5[r3++] = a4.g, e5[r3++] = a4.b;
+            void 0 === a4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.BufferAttribute.copyColorsArray(): color is undefined", n2), a4 = new Nt()), e5[r3++] = a4.r, e5[r3++] = a4.g, e5[r3++] = a4.b;
           }
           return this;
         }, copyVector2sArray: function(t4) {
           for (var e5 = this.array, r3 = 0, n2 = 0, i3 = t4.length; n2 < i3; n2++) {
             var a4 = t4[n2];
-            void 0 === a4 && (console.warn("THREE.BufferAttribute.copyVector2sArray(): vector is undefined", n2), a4 = new l3()), e5[r3++] = a4.x, e5[r3++] = a4.y;
+            void 0 === a4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.BufferAttribute.copyVector2sArray(): vector is undefined", n2), a4 = new l3()), e5[r3++] = a4.x, e5[r3++] = a4.y;
           }
           return this;
         }, copyVector3sArray: function(t4) {
           for (var e5 = this.array, r3 = 0, n2 = 0, i3 = t4.length; n2 < i3; n2++) {
             var a4 = t4[n2];
-            void 0 === a4 && (console.warn("THREE.BufferAttribute.copyVector3sArray(): vector is undefined", n2), a4 = new d2()), e5[r3++] = a4.x, e5[r3++] = a4.y, e5[r3++] = a4.z;
+            void 0 === a4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.BufferAttribute.copyVector3sArray(): vector is undefined", n2), a4 = new d2()), e5[r3++] = a4.x, e5[r3++] = a4.y, e5[r3++] = a4.z;
           }
           return this;
         }, copyVector4sArray: function(t4) {
           for (var e5 = this.array, r3 = 0, n2 = 0, i3 = t4.length; n2 < i3; n2++) {
             var a4 = t4[n2];
-            void 0 === a4 && (console.warn("THREE.BufferAttribute.copyVector4sArray(): vector is undefined", n2), a4 = new x2()), e5[r3++] = a4.x, e5[r3++] = a4.y, e5[r3++] = a4.z, e5[r3++] = a4.w;
+            void 0 === a4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.BufferAttribute.copyVector4sArray(): vector is undefined", n2), a4 = new x2()), e5[r3++] = a4.x, e5[r3++] = a4.y, e5[r3++] = a4.z, e5[r3++] = a4.w;
           }
           return this;
         }, set: function(t4, e5) {
@@ -9990,7 +9990,7 @@ var dist = {};
             this.morphTargets.normal = u4;
           }
           var f4 = t4.skinIndices, m3 = t4.skinWeights, g3 = f4.length === n2.length, v3 = m3.length === n2.length;
-          for (n2.length > 0 && 0 === r3.length && console.error("THREE.DirectGeometry: Faceless geometries are not supported."), h3 = 0; h3 < r3.length; h3++) {
+          for (n2.length > 0 && 0 === r3.length && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.DirectGeometry: Faceless geometries are not supported."), h3 = 0; h3 < r3.length; h3++) {
             var y3 = r3[h3];
             this.vertices.push(n2[y3.a], n2[y3.b], n2[y3.c]);
             var x3 = y3.vertexNormals;
@@ -10007,7 +10007,7 @@ var dist = {};
               var M3 = y3.color;
               this.colors.push(M3, M3, M3);
             }
-            true === a4 && (void 0 !== (w3 = i3[0][h3]) ? this.uvs.push(w3[0], w3[1], w3[2]) : (console.warn("THREE.DirectGeometry.fromGeometry(): Undefined vertexUv ", h3), this.uvs.push(new l3(), new l3(), new l3()))), true === o5 && (void 0 !== (w3 = i3[1][h3]) ? this.uvs2.push(w3[0], w3[1], w3[2]) : (console.warn("THREE.DirectGeometry.fromGeometry(): Undefined vertexUv2 ", h3), this.uvs2.push(new l3(), new l3(), new l3())));
+            true === a4 && (void 0 !== (w3 = i3[0][h3]) ? this.uvs.push(w3[0], w3[1], w3[2]) : (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.DirectGeometry.fromGeometry(): Undefined vertexUv ", h3), this.uvs.push(new l3(), new l3(), new l3()))), true === o5 && (void 0 !== (w3 = i3[1][h3]) ? this.uvs2.push(w3[0], w3[1], w3[2]) : (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.DirectGeometry.fromGeometry(): Undefined vertexUv2 ", h3), this.uvs2.push(new l3(), new l3(), new l3())));
             for (var S3 = 0; S3 < c3; S3++) {
               var T4 = s4[S3].vertices;
               e5[S3].data.push(T4[y3.a], T4[y3.b], T4[y3.c]);
@@ -10029,7 +10029,7 @@ var dist = {};
         }, setIndex: function(t4) {
           Array.isArray(t4) ? this.index = new ($t(t4) > 65535 ? Jt : Xt)(t4, 1) : this.index = t4;
         }, addAttribute: function(t4, e5) {
-          return e5 && e5.isBufferAttribute || e5 && e5.isInterleavedBufferAttribute ? "index" === t4 ? (console.warn("THREE.BufferGeometry.addAttribute: Use .setIndex() for index attribute."), this.setIndex(e5), this) : (this.attributes[t4] = e5, this) : (console.warn("THREE.BufferGeometry: .addAttribute() now expects ( name, attribute )."), this.addAttribute(t4, new Vt(arguments[1], arguments[2])));
+          return e5 && e5.isBufferAttribute || e5 && e5.isInterleavedBufferAttribute ? "index" === t4 ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.BufferGeometry.addAttribute: Use .setIndex() for index attribute."), this.setIndex(e5), this) : (this.attributes[t4] = e5, this) : (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.BufferGeometry: .addAttribute() now expects ( name, attribute )."), this.addAttribute(t4, new Vt(arguments[1], arguments[2])));
         }, getAttribute: function(t4) {
           return this.attributes[t4];
         }, removeAttribute: function(t4) {
@@ -10135,7 +10135,7 @@ var dist = {};
               }
           } else
             this.boundingBox.makeEmpty();
-          (isNaN(this.boundingBox.min.x) || isNaN(this.boundingBox.min.y) || isNaN(this.boundingBox.min.z)) && console.error('THREE.BufferGeometry.computeBoundingBox: Computed min/max have NaN values. The "position" attribute is likely to have NaN values.', this);
+          (isNaN(this.boundingBox.min.x) || isNaN(this.boundingBox.min.y) || isNaN(this.boundingBox.min.z)) && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", 'THREE.BufferGeometry.computeBoundingBox: Computed min/max have NaN values. The "position" attribute is likely to have NaN values.', this);
         }, computeBoundingSphere: function() {
           null === this.boundingSphere && (this.boundingSphere = new ut());
           var t4 = this.attributes.position, e5 = this.morphAttributes.position;
@@ -10154,7 +10154,7 @@ var dist = {};
               for (n2 = 0, i3 = e5.length; n2 < i3; n2++)
                 for (var s4 = 0, c3 = (a4 = e5[n2]).count; s4 < c3; s4++)
                   oe.fromBufferAttribute(a4, s4), o5 = Math.max(o5, r3.distanceToSquared(oe));
-            this.boundingSphere.radius = Math.sqrt(o5), isNaN(this.boundingSphere.radius) && console.error('THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The "position" attribute is likely to have NaN values.', this);
+            this.boundingSphere.radius = Math.sqrt(o5), isNaN(this.boundingSphere.radius) && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", 'THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The "position" attribute is likely to have NaN values.', this);
           }
         }, computeFaceNormals: function() {
         }, computeVertexNormals: function() {
@@ -10178,7 +10178,7 @@ var dist = {};
           }
         }, merge: function(t4, e5) {
           if (t4 && t4.isBufferGeometry) {
-            void 0 === e5 && (e5 = 0, console.warn("THREE.BufferGeometry.merge(): Overwriting original geometry, starting at offset=0. Use BufferGeometryUtils.mergeBufferGeometries() for lossless merge."));
+            void 0 === e5 && (e5 = 0, index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.BufferGeometry.merge(): Overwriting original geometry, starting at offset=0. Use BufferGeometryUtils.mergeBufferGeometries() for lossless merge."));
             var r3 = this.attributes;
             for (var n2 in r3)
               if (void 0 !== t4.attributes[n2])
@@ -10186,7 +10186,7 @@ var dist = {};
                   i3[h3] = o5[l4];
             return this;
           }
-          console.error("THREE.BufferGeometry.merge(): geometry not an instance of THREE.BufferGeometry.", t4);
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.BufferGeometry.merge(): geometry not an instance of THREE.BufferGeometry.", t4);
         }, normalizeNormals: function() {
           for (var t4 = this.attributes.normal, e5 = 0, r3 = t4.count; e5 < r3; e5++)
             oe.x = t4.getX(e5), oe.y = t4.getY(e5), oe.z = t4.getZ(e5), oe.normalize(), t4.setXYZ(e5, oe.x, oe.y, oe.z);
@@ -10200,7 +10200,7 @@ var dist = {};
             return new Vt(i4, n3);
           }
           if (null === this.index)
-            return console.warn("THREE.BufferGeometry.toNonIndexed(): Geometry is already non-indexed."), this;
+            return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.BufferGeometry.toNonIndexed(): Geometry is already non-indexed."), this;
           var e5 = new se(), r3 = this.index.array, n2 = this.attributes;
           for (var i3 in n2) {
             var a4 = t4(n2[i3], r3);
@@ -10323,7 +10323,7 @@ var dist = {};
             }
           } else {
             var s4 = n2.morphTargets;
-            void 0 !== s4 && s4.length > 0 && console.error("THREE.Mesh.updateMorphTargets() no longer supports THREE.Geometry. Use THREE.BufferGeometry instead.");
+            void 0 !== s4 && s4.length > 0 && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Mesh.updateMorphTargets() no longer supports THREE.Geometry. Use THREE.BufferGeometry instead.");
           }
         }, raycast: function(t4, e5) {
           var r3, n2 = this.geometry, i3 = this.material, a4 = this.matrixWorld;
@@ -10541,9 +10541,9 @@ var dist = {};
               }
             }
           } else
-            console.error("THREE.Geometry.merge(): geometry not an instance of THREE.Geometry.", t4);
+            index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Geometry.merge(): geometry not an instance of THREE.Geometry.", t4);
         }, mergeMesh: function(t4) {
-          t4 && t4.isMesh ? (t4.matrixAutoUpdate && t4.updateMatrix(), this.merge(t4.geometry, t4.matrix)) : console.error("THREE.Geometry.mergeMesh(): mesh not an instance of THREE.Mesh.", t4);
+          t4 && t4.isMesh ? (t4.matrixAutoUpdate && t4.updateMatrix(), this.merge(t4.geometry, t4.matrix)) : index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Geometry.mergeMesh(): mesh not an instance of THREE.Mesh.", t4);
         }, mergeVertices: function() {
           var t4, e5, r3, n2, i3, a4, o5, s4, c3 = {}, l4 = [], h3 = [], u4 = Math.pow(10, 4);
           for (r3 = 0, n2 = this.vertices.length; r3 < n2; r3++)
@@ -10694,7 +10694,7 @@ var dist = {};
         } }), De.prototype = Object.create(Oe.prototype), De.prototype.constructor = De, Ne.prototype = Object.create(se.prototype), Ne.prototype.constructor = Ne;
         var Be = { clone: Ie, merge: ze };
         function Fe(t4) {
-          Ut.call(this), this.type = "ShaderMaterial", this.defines = {}, this.uniforms = {}, this.vertexShader = "void main() {\n	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\n}", this.fragmentShader = "void main() {\n	gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );\n}", this.linewidth = 1, this.wireframe = false, this.wireframeLinewidth = 1, this.fog = false, this.lights = false, this.clipping = false, this.skinning = false, this.morphTargets = false, this.morphNormals = false, this.extensions = { derivatives: false, fragDepth: false, drawBuffers: false, shaderTextureLOD: false }, this.defaultAttributeValues = { color: [1, 1, 1], uv: [0, 0], uv2: [0, 0] }, this.index0AttributeName = void 0, this.uniformsNeedUpdate = false, void 0 !== t4 && (void 0 !== t4.attributes && console.error("THREE.ShaderMaterial: attributes should now be defined in THREE.BufferGeometry instead."), this.setValues(t4));
+          Ut.call(this), this.type = "ShaderMaterial", this.defines = {}, this.uniforms = {}, this.vertexShader = "void main() {\n	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\n}", this.fragmentShader = "void main() {\n	gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );\n}", this.linewidth = 1, this.wireframe = false, this.wireframeLinewidth = 1, this.fog = false, this.lights = false, this.clipping = false, this.skinning = false, this.morphTargets = false, this.morphNormals = false, this.extensions = { derivatives: false, fragDepth: false, drawBuffers: false, shaderTextureLOD: false }, this.defaultAttributeValues = { color: [1, 1, 1], uv: [0, 0], uv2: [0, 0] }, this.index0AttributeName = void 0, this.uniformsNeedUpdate = false, void 0 !== t4 && (void 0 !== t4.attributes && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.ShaderMaterial: attributes should now be defined in THREE.BufferGeometry instead."), this.setValues(t4));
         }
         function Ge() {
           Y.call(this), this.type = "Camera", this.matrixWorldInverse = new P2(), this.projectionMatrix = new P2(), this.projectionMatrixInverse = new P2();
@@ -10747,7 +10747,7 @@ var dist = {};
         }, Ge.prototype = Object.assign(Object.create(Y.prototype), { constructor: Ge, isCamera: true, copy: function(t4, e5) {
           return Y.prototype.copy.call(this, t4, e5), this.matrixWorldInverse.copy(t4.matrixWorldInverse), this.projectionMatrix.copy(t4.projectionMatrix), this.projectionMatrixInverse.copy(t4.projectionMatrixInverse), this;
         }, getWorldDirection: function(t4) {
-          void 0 === t4 && (console.warn("THREE.Camera: .getWorldDirection() target is now required"), t4 = new d2()), this.updateMatrixWorld(true);
+          void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Camera: .getWorldDirection() target is now required"), t4 = new d2()), this.updateMatrixWorld(true);
           var e5 = this.matrixWorld.elements;
           return t4.set(-e5[8], -e5[9], -e5[10]).normalize();
         }, updateMatrixWorld: function(t4) {
@@ -10819,9 +10819,9 @@ var dist = {};
         }, distanceToSphere: function(t4) {
           return this.distanceToPoint(t4.center) - t4.radius;
         }, projectPoint: function(t4, e5) {
-          return void 0 === e5 && (console.warn("THREE.Plane: .projectPoint() target is now required"), e5 = new d2()), e5.copy(this.normal).multiplyScalar(-this.distanceToPoint(t4)).add(t4);
+          return void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Plane: .projectPoint() target is now required"), e5 = new d2()), e5.copy(this.normal).multiplyScalar(-this.distanceToPoint(t4)).add(t4);
         }, intersectLine: function(t4, e5) {
-          void 0 === e5 && (console.warn("THREE.Plane: .intersectLine() target is now required"), e5 = new d2());
+          void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Plane: .intersectLine() target is now required"), e5 = new d2());
           var r3 = t4.delta(ke), n2 = this.normal.dot(r3);
           if (0 === n2)
             return 0 === this.distanceToPoint(t4.start) ? e5.copy(t4.start) : void 0;
@@ -10835,7 +10835,7 @@ var dist = {};
         }, intersectsSphere: function(t4) {
           return t4.intersectsPlane(this);
         }, coplanarPoint: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Plane: .coplanarPoint() target is now required"), t4 = new d2()), t4.copy(this.normal).multiplyScalar(-this.constant);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Plane: .coplanarPoint() target is now required"), t4 = new d2()), t4.copy(this.normal).multiplyScalar(-this.constant);
         }, applyMatrix4: function(t4, e5) {
           var r3 = e5 || qe.getNormalMatrix(t4), n2 = this.coplanarPoint(ke).applyMatrix4(t4), i3 = this.normal.applyMatrix3(r3).normalize();
           return this.constant = -n2.dot(i3), this;
@@ -10914,10 +10914,10 @@ var dist = {};
               var n3 = e6.array, i4 = e6.dynamic ? 35048 : 35044, a4 = t4.createBuffer();
               t4.bindBuffer(r4, a4), t4.bufferData(r4, n3, i4), e6.onUploadCallback();
               var o5 = 5126;
-              return n3 instanceof Float32Array ? o5 = 5126 : n3 instanceof Float64Array ? console.warn("THREE.WebGLAttributes: Unsupported data buffer format: Float64Array.") : n3 instanceof Uint16Array ? o5 = 5123 : n3 instanceof Int16Array ? o5 = 5122 : n3 instanceof Uint32Array ? o5 = 5125 : n3 instanceof Int32Array ? o5 = 5124 : n3 instanceof Int8Array ? o5 = 5120 : n3 instanceof Uint8Array && (o5 = 5121), { buffer: a4, type: o5, bytesPerElement: n3.BYTES_PER_ELEMENT, version: e6.version };
+              return n3 instanceof Float32Array ? o5 = 5126 : n3 instanceof Float64Array ? index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLAttributes: Unsupported data buffer format: Float64Array.") : n3 instanceof Uint16Array ? o5 = 5123 : n3 instanceof Int16Array ? o5 = 5122 : n3 instanceof Uint32Array ? o5 = 5125 : n3 instanceof Int32Array ? o5 = 5124 : n3 instanceof Int8Array ? o5 = 5120 : n3 instanceof Uint8Array && (o5 = 5121), { buffer: a4, type: o5, bytesPerElement: n3.BYTES_PER_ELEMENT, version: e6.version };
             }(r3, n2)) : i3.version < r3.version && (function(e6, r4, n3) {
               var i4 = r4.array, a4 = r4.updateRange;
-              t4.bindBuffer(n3, e6), false === r4.dynamic ? t4.bufferData(n3, i4, 35044) : -1 === a4.count ? t4.bufferSubData(n3, 0, i4) : 0 === a4.count ? console.error("THREE.WebGLObjects.updateBuffer: dynamic THREE.BufferAttribute marked as needsUpdate but updateRange.count is 0, ensure you are using set methods or updating manually.") : (t4.bufferSubData(n3, a4.offset * i4.BYTES_PER_ELEMENT, i4.subarray(a4.offset, a4.offset + a4.count)), a4.count = -1);
+              t4.bindBuffer(n3, e6), false === r4.dynamic ? t4.bufferData(n3, i4, 35044) : -1 === a4.count ? t4.bufferSubData(n3, 0, i4) : 0 === a4.count ? index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLObjects.updateBuffer: dynamic THREE.BufferAttribute marked as needsUpdate but updateRange.count is 0, ensure you are using set methods or updating manually.") : (t4.bufferSubData(n3, a4.offset * i4.BYTES_PER_ELEMENT, i4.subarray(a4.offset, a4.offset + a4.count)), a4.count = -1);
             }(i3.buffer, r3, n2), i3.version = r3.version);
           } };
         }
@@ -10981,7 +10981,7 @@ var dist = {};
             if (n2.isWebGL2)
               c3 = t4, l4 = "drawArraysInstanced";
             else if (l4 = "drawArraysInstancedANGLE", null === (c3 = e5.get("ANGLE_instanced_arrays")))
-              return void console.error("THREE.WebGLBufferRenderer: using THREE.InstancedBufferGeometry but hardware does not support extension ANGLE_instanced_arrays.");
+              return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLBufferRenderer: using THREE.InstancedBufferGeometry but hardware does not support extension ANGLE_instanced_arrays.");
             c3[l4](i3, o5, s4, a4.maxInstancedCount), r3.update(s4, i3, a4.maxInstancedCount);
           };
         }
@@ -10996,7 +10996,7 @@ var dist = {};
             return "mediump" === e6 && t4.getShaderPrecisionFormat(35633, 36337).precision > 0 && t4.getShaderPrecisionFormat(35632, 36337).precision > 0 ? "mediump" : "lowp";
           }
           var a4 = "undefined" != typeof WebGL2RenderingContext && t4 instanceof WebGL2RenderingContext, o5 = void 0 !== r3.precision ? r3.precision : "highp", s4 = i3(o5);
-          s4 !== o5 && (console.warn("THREE.WebGLRenderer:", o5, "not supported, using", s4, "instead."), o5 = s4);
+          s4 !== o5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer:", o5, "not supported, using", s4, "instead."), o5 = s4);
           var c3 = true === r3.logarithmicDepthBuffer, l4 = t4.getParameter(34930), h3 = t4.getParameter(35660), u4 = t4.getParameter(3379), p4 = t4.getParameter(34076), d3 = t4.getParameter(34921), f4 = t4.getParameter(36347), m3 = t4.getParameter(36348), g3 = t4.getParameter(36349), v3 = h3 > 0, y3 = a4 || !!e5.get("OES_texture_float");
           return { isWebGL2: a4, getMaxAnisotropy: function() {
             if (void 0 !== n2)
@@ -11064,7 +11064,7 @@ var dist = {};
               default:
                 n2 = t4.getExtension(r3);
             }
-            return null === n2 && console.warn("THREE.WebGLRenderer: " + r3 + " extension not supported."), e5[r3] = n2, n2;
+            return null === n2 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: " + r3 + " extension not supported."), e5[r3] = n2, n2;
           } };
         }
         function lr(t4, e5, r3) {
@@ -11128,7 +11128,7 @@ var dist = {};
             if (n2.isWebGL2)
               h3 = t4, u4 = "drawElementsInstanced";
             else if (u4 = "drawElementsInstancedANGLE", null === (h3 = e5.get("ANGLE_instanced_arrays")))
-              return void console.error("THREE.WebGLIndexedBufferRenderer: using THREE.InstancedBufferGeometry but hardware does not support extension ANGLE_instanced_arrays.");
+              return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLIndexedBufferRenderer: using THREE.InstancedBufferGeometry but hardware does not support extension ANGLE_instanced_arrays.");
             h3[u4](i3, l4, a4, c3 * o5, s4.maxInstancedCount), r3.update(l4, i3, s4.maxInstancedCount);
           };
         }
@@ -11158,7 +11158,7 @@ var dist = {};
                 e5.points += n2 * t5;
                 break;
               default:
-                console.error("THREE.WebGLInfo: Unknown draw mode:", r3);
+                index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLInfo: Unknown draw mode:", r3);
             }
           } };
         }
@@ -11677,9 +11677,9 @@ var dist = {};
             if (false === s4.getProgramParameter(M3, 35714)) {
               N2 = false;
               var z3 = gn(s4, R2, "vertex"), B3 = gn(s4, P3, "fragment");
-              console.error("THREE.WebGLProgram: shader error: ", s4.getError(), "35715", s4.getProgramParameter(M3, 35715), "gl.getProgramInfoLog", C2, z3, B3);
+              index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLProgram: shader error: ", s4.getError(), "35715", s4.getProgramParameter(M3, 35715), "gl.getProgramInfoLog", C2, z3, B3);
             } else
-              "" !== C2 ? console.warn("THREE.WebGLProgram: gl.getProgramInfoLog()", C2) : "" !== O2 && "" !== D2 || (I2 = false);
+              "" !== C2 ? index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLProgram: gl.getProgramInfoLog()", C2) : "" !== O2 && "" !== D2 || (I2 = false);
             I2 && (this.diagnostics = { runnable: N2, material: n2, programLog: C2, vertexShader: { log: O2, prefix: m3 }, fragmentShader: { log: D2, prefix: g3 } });
           }
           return s4.deleteShader(R2), s4.deleteShader(P3), this.getUniforms = function() {
@@ -11700,7 +11700,7 @@ var dist = {};
           var n2 = [], i3 = { MeshDepthMaterial: "depth", MeshDistanceMaterial: "distanceRGBA", MeshNormalMaterial: "normal", MeshBasicMaterial: "basic", MeshLambertMaterial: "lambert", MeshPhongMaterial: "phong", MeshToonMaterial: "phong", MeshStandardMaterial: "physical", MeshPhysicalMaterial: "physical", MeshMatcapMaterial: "matcap", LineBasicMaterial: "basic", LineDashedMaterial: "dashed", PointsMaterial: "points", ShadowMaterial: "shadow", SpriteMaterial: "sprite" }, a4 = ["precision", "supportsVertexTextures", "map", "mapEncoding", "matcap", "matcapEncoding", "envMap", "envMapMode", "envMapEncoding", "lightMap", "aoMap", "emissiveMap", "emissiveMapEncoding", "bumpMap", "normalMap", "objectSpaceNormalMap", "tangentSpaceNormalMap", "clearcoatNormalMap", "displacementMap", "specularMap", "roughnessMap", "metalnessMap", "gradientMap", "alphaMap", "combine", "vertexColors", "vertexTangents", "fog", "useFog", "fogExp2", "flatShading", "sizeAttenuation", "logarithmicDepthBuffer", "skinning", "maxBones", "useVertexTexture", "morphTargets", "morphNormals", "maxMorphTargets", "maxMorphNormals", "premultipliedAlpha", "numDirLights", "numPointLights", "numSpotLights", "numHemiLights", "numRectAreaLights", "shadowMapEnabled", "shadowMapType", "toneMapping", "physicallyCorrectLights", "alphaTest", "doubleSided", "flipSided", "numClippingPlanes", "numClipIntersection", "depthPacking", "dithering", "sheen"];
           function o5(t5, e6) {
             var r4;
-            return t5 ? t5.isTexture ? r4 = t5.encoding : t5.isWebGLRenderTarget && (console.warn("THREE.WebGLPrograms.getTextureEncodingFromMap: don't use render targets as textures. Use their .texture property instead."), r4 = t5.texture.encoding) : r4 = 3e3, 3e3 === r4 && e6 && (r4 = 3007), r4;
+            return t5 ? t5.isTexture ? r4 = t5.encoding : t5.isWebGLRenderTarget && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLPrograms.getTextureEncodingFromMap: don't use render targets as textures. Use their .texture property instead."), r4 = t5.texture.encoding) : r4 = 3e3, 3e3 === r4 && e6 && (r4 = 3007), r4;
           }
           this.getParameters = function(e6, n3, a5, s4, c3, l4, h3) {
             var u4 = i3[e6.type], p4 = h3.isSkinnedMesh ? function(t5) {
@@ -11708,9 +11708,9 @@ var dist = {};
               if (r3.floatVertexTextures)
                 return 1024;
               var n4 = r3.maxVertexUniforms, i4 = Math.floor((n4 - 20) / 4), a6 = Math.min(i4, e7.length);
-              return a6 < e7.length ? (console.warn("THREE.WebGLRenderer: Skeleton has " + e7.length + " bones. This GPU supports " + a6 + "."), 0) : a6;
+              return a6 < e7.length ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Skeleton has " + e7.length + " bones. This GPU supports " + a6 + "."), 0) : a6;
             }(h3) : 0, d3 = r3.precision;
-            null !== e6.precision && (d3 = r3.getMaxPrecision(e6.precision)) !== e6.precision && console.warn("THREE.WebGLProgram.getParameters:", e6.precision, "not supported, using", d3, "instead.");
+            null !== e6.precision && (d3 = r3.getMaxPrecision(e6.precision)) !== e6.precision && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLProgram.getParameters:", e6.precision, "not supported, using", d3, "instead.");
             var f4 = t4.getRenderTarget();
             return { shaderID: u4, precision: d3, supportsVertexTextures: r3.vertexTextures, outputEncoding: o5(f4 ? f4.texture : null, t4.gammaOutput), map: !!e6.map, mapEncoding: o5(e6.map, t4.gammaInput), matcap: !!e6.matcap, matcapEncoding: o5(e6.matcap, t4.gammaInput), envMap: !!e6.envMap, envMapMode: e6.envMap && e6.envMap.mapping, envMapEncoding: o5(e6.envMap, t4.gammaInput), envMapCubeUV: !!e6.envMap && (306 === e6.envMap.mapping || 307 === e6.envMap.mapping), lightMap: !!e6.lightMap, aoMap: !!e6.aoMap, emissiveMap: !!e6.emissiveMap, emissiveMapEncoding: o5(e6.emissiveMap, t4.gammaInput), bumpMap: !!e6.bumpMap, normalMap: !!e6.normalMap, objectSpaceNormalMap: 1 === e6.normalMapType, tangentSpaceNormalMap: 0 === e6.normalMapType, clearcoatNormalMap: !!e6.clearcoatNormalMap, displacementMap: !!e6.displacementMap, roughnessMap: !!e6.roughnessMap, metalnessMap: !!e6.metalnessMap, specularMap: !!e6.specularMap, alphaMap: !!e6.alphaMap, gradientMap: !!e6.gradientMap, sheen: !!e6.sheen, combine: e6.combine, vertexTangents: e6.normalMap && e6.vertexTangents, vertexColors: e6.vertexColors, vertexUvs: !!(e6.map || e6.bumpMap || e6.normalMap || e6.specularMap || e6.alphaMap || e6.emissiveMap || e6.roughnessMap || e6.metalnessMap || e6.clearcoatNormalMap), fog: !!s4, useFog: e6.fog, fogExp2: s4 && s4.isFogExp2, flatShading: e6.flatShading, sizeAttenuation: e6.sizeAttenuation, logarithmicDepthBuffer: r3.logarithmicDepthBuffer, skinning: e6.skinning && p4 > 0, maxBones: p4, useVertexTexture: r3.floatVertexTextures, morphTargets: e6.morphTargets, morphNormals: e6.morphNormals, maxMorphTargets: t4.maxMorphTargets, maxMorphNormals: t4.maxMorphNormals, numDirLights: n3.directional.length, numPointLights: n3.point.length, numSpotLights: n3.spot.length, numRectAreaLights: n3.rectArea.length, numHemiLights: n3.hemi.length, numDirLightShadows: n3.directionalShadowMap.length, numPointLightShadows: n3.pointShadowMap.length, numSpotLightShadows: n3.spotShadowMap.length, numClippingPlanes: c3, numClipIntersection: l4, dithering: e6.dithering, shadowMapEnabled: t4.shadowMap.enabled && h3.receiveShadow && a5.length > 0, shadowMapType: t4.shadowMap.type, toneMapping: e6.toneMapped ? t4.toneMapping : 0, physicallyCorrectLights: t4.physicallyCorrectLights, premultipliedAlpha: e6.premultipliedAlpha, alphaTest: e6.alphaTest, doubleSided: 2 === e6.side, flipSided: 1 === e6.side, depthPacking: void 0 !== e6.depthPacking && e6.depthPacking };
           }, this.getProgramCode = function(e6, r4) {
@@ -11907,7 +11907,7 @@ var dist = {};
               p5 = f5;
             else {
               var m4 = false;
-              r4.morphTargets && (l4 && l4.isBufferGeometry ? m4 = l4.morphAttributes && l4.morphAttributes.position && l4.morphAttributes.position.length > 0 : l4 && l4.isGeometry && (m4 = l4.morphTargets && l4.morphTargets.length > 0)), e6.isSkinnedMesh && false === r4.skinning && console.warn("THREE.WebGLShadowMap: THREE.SkinnedMesh with material.skinning set to false:", e6);
+              r4.morphTargets && (l4 && l4.isBufferGeometry ? m4 = l4.morphAttributes && l4.morphAttributes.position && l4.morphAttributes.position.length > 0 : l4 && l4.isGeometry && (m4 = l4.morphTargets && l4.morphTargets.length > 0)), e6.isSkinnedMesh && false === r4.skinning && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLShadowMap: THREE.SkinnedMesh with material.skinning set to false:", e6);
               var g4 = 0;
               m4 && (g4 |= 1), e6.isSkinnedMesh && r4.skinning && (g4 |= 2), p5 = d4[g4];
             }
@@ -11948,7 +11948,7 @@ var dist = {};
                 if (void 0 !== g4) {
                   i3.copy(g4.mapSize);
                   var v4 = g4.getFrameExtents();
-                  if (i3.multiply(v4), a4.copy(g4.mapSize), (i3.x > r3 || i3.y > r3) && (console.warn("THREE.WebGLShadowMap:", m4, "has shadow exceeding max texture size, reducing"), i3.x > r3 && (a4.x = Math.floor(r3 / v4.x), i3.x = a4.x * v4.x, g4.mapSize.x = a4.x), i3.y > r3 && (a4.y = Math.floor(r3 / v4.y), i3.y = a4.y * v4.y, g4.mapSize.y = a4.y)), null === g4.map && !g4.isPointLightShadow && 3 === this.type) {
+                  if (i3.multiply(v4), a4.copy(g4.mapSize), (i3.x > r3 || i3.y > r3) && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLShadowMap:", m4, "has shadow exceeding max texture size, reducing"), i3.x > r3 && (a4.x = Math.floor(r3 / v4.x), i3.x = a4.x * v4.x, g4.mapSize.x = a4.x), i3.y > r3 && (a4.y = Math.floor(r3 / v4.y), i3.y = a4.y * v4.y, g4.mapSize.y = a4.y)), null === g4.map && !g4.isPointLightShadow && 3 === this.type) {
                     var y4 = { minFilter: 1006, magFilter: 1006, format: 1023 };
                     g4.map = new b2(i3.x, i3.y, y4), g4.map.texture.name = m4.name + ".shadowMap", g4.mapPass = new b2(i3.x, i3.y, y4), g4.camera.updateProjectionMatrix();
                   }
@@ -11959,7 +11959,7 @@ var dist = {};
                   }
                   g4.isPointLightShadow || 3 !== this.type || S3(g4, c4);
                 } else
-                  console.warn("THREE.WebGLShadowMap:", m4, "has no shadow.");
+                  index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLShadowMap:", m4, "has no shadow.");
               }
               M3.needsUpdate = false, t4.setRenderTarget(l4, h4, u5);
             }
@@ -12082,7 +12082,7 @@ var dist = {};
                       t4.blendFuncSeparate(0, 768, 0, 770);
                       break;
                     default:
-                      console.error("THREE.WebGLState: Invalid blending: ", e6);
+                      index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLState: Invalid blending: ", e6);
                   }
                 else
                   switch (e6) {
@@ -12099,7 +12099,7 @@ var dist = {};
                       t4.blendFunc(0, 768);
                       break;
                     default:
-                      console.error("THREE.WebGLState: Invalid blending: ", e6);
+                      index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLState: Invalid blending: ", e6);
                   }
                 v3 = null, y3 = null, w3 = null, _3 = null, m3 = e6, M3 = l5;
               }
@@ -12151,19 +12151,19 @@ var dist = {};
             try {
               t4.compressedTexImage2D.apply(t4, arguments);
             } catch (t5) {
-              console.error("THREE.WebGLState:", t5);
+              index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLState:", t5);
             }
           }, texImage2D: function() {
             try {
               t4.texImage2D.apply(t4, arguments);
             } catch (t5) {
-              console.error("THREE.WebGLState:", t5);
+              index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLState:", t5);
             }
           }, texImage3D: function() {
             try {
               t4.texImage3D.apply(t4, arguments);
             } catch (t5) {
-              console.error("THREE.WebGLState:", t5);
+              index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLState:", t5);
             }
           }, scissor: function(e6) {
             false === I2.equals(e6) && (t4.scissor(e6.x, e6.y, e6.z, e6.w), I2.copy(e6));
@@ -12187,9 +12187,9 @@ var dist = {};
                 var a5 = e6 ? s3.floorPowerOfTwo : Math.floor, o6 = a5(i3 * t5.width), c4 = a5(i3 * t5.height);
                 void 0 === l4 && (l4 = p4(o6, c4));
                 var h4 = r4 ? p4(o6, c4) : l4;
-                return h4.width = o6, h4.height = c4, h4.getContext("2d").drawImage(t5, 0, 0, o6, c4), console.warn("THREE.WebGLRenderer: Texture has been resized from (" + t5.width + "x" + t5.height + ") to (" + o6 + "x" + c4 + ")."), h4;
+                return h4.width = o6, h4.height = c4, h4.getContext("2d").drawImage(t5, 0, 0, o6, c4), index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Texture has been resized from (" + t5.width + "x" + t5.height + ") to (" + o6 + "x" + c4 + ")."), h4;
               }
-              return "data" in t5 && console.warn("THREE.WebGLRenderer: Image in DataTexture is too big (" + t5.width + "x" + t5.height + ")."), t5;
+              return "data" in t5 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Image in DataTexture is too big (" + t5.width + "x" + t5.height + ")."), t5;
             }
             return t5;
           }
@@ -12206,7 +12206,7 @@ var dist = {};
             if (!a4.isWebGL2)
               return t5;
             var n3 = t5;
-            return 6403 === t5 && (5126 === r4 && (n3 = 33326), 5131 === r4 && (n3 = 33325), 5121 === r4 && (n3 = 33321)), 6407 === t5 && (5126 === r4 && (n3 = 34837), 5131 === r4 && (n3 = 34843), 5121 === r4 && (n3 = 32849)), 6408 === t5 && (5126 === r4 && (n3 = 34836), 5131 === r4 && (n3 = 34842), 5121 === r4 && (n3 = 32856)), 33325 === n3 || 33326 === n3 || 34842 === n3 || 34836 === n3 ? e5.get("EXT_color_buffer_float") : 34843 !== n3 && 34837 !== n3 || console.warn("THREE.WebGLRenderer: Floating point textures with RGB format not supported. Please use RGBA instead."), n3;
+            return 6403 === t5 && (5126 === r4 && (n3 = 33326), 5131 === r4 && (n3 = 33325), 5121 === r4 && (n3 = 33321)), 6407 === t5 && (5126 === r4 && (n3 = 34837), 5131 === r4 && (n3 = 34843), 5121 === r4 && (n3 = 32849)), 6408 === t5 && (5126 === r4 && (n3 = 34836), 5131 === r4 && (n3 = 34842), 5121 === r4 && (n3 = 32856)), 33325 === n3 || 33326 === n3 || 34842 === n3 || 34836 === n3 ? e5.get("EXT_color_buffer_float") : 34843 !== n3 && 34837 !== n3 || index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Floating point textures with RGB format not supported. Please use RGBA instead."), n3;
           }
           function y3(t5) {
             return 1003 === t5 || 1004 === t5 || 1005 === t5 ? 9728 : 9729;
@@ -12241,11 +12241,11 @@ var dist = {};
             }(t5), t5.version > 0 && i3.__version !== t5.version) {
               var a5 = t5.image;
               if (void 0 === a5)
-                console.warn("THREE.WebGLRenderer: Texture marked for update but image is undefined");
+                index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Texture marked for update but image is undefined");
               else {
                 if (false !== a5.complete)
                   return void A4(i3, t5, e6);
-                console.warn("THREE.WebGLRenderer: Texture marked for update but image is incomplete");
+                index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Texture marked for update but image is incomplete");
               }
             }
             r3.activeTexture(33984 + e6), r3.bindTexture(3553, i3.__webglTexture);
@@ -12263,7 +12263,7 @@ var dist = {};
                     p5 = h4[u5].mipmaps;
                     for (var M4 = 0; M4 < p5.length; M4++) {
                       var S4 = p5[M4];
-                      1023 !== e6.format && 1022 !== e6.format ? r3.getCompressedTextureFormats().indexOf(b4) > -1 ? r3.compressedTexImage2D(34069 + u5, M4, _4, S4.width, S4.height, 0, S4.data) : console.warn("THREE.WebGLRenderer: Attempt to load unsupported compressed texture format in .setTextureCube()") : r3.texImage2D(34069 + u5, M4, _4, S4.width, S4.height, 0, b4, w4, S4.data);
+                      1023 !== e6.format && 1022 !== e6.format ? r3.getCompressedTextureFormats().indexOf(b4) > -1 ? r3.compressedTexImage2D(34069 + u5, M4, _4, S4.width, S4.height, 0, S4.data) : index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Attempt to load unsupported compressed texture format in .setTextureCube()") : r3.texImage2D(34069 + u5, M4, _4, S4.width, S4.height, 0, b4, w4, S4.data);
                     }
                   }
                   s4.__maxMipLevel = p5.length - 1;
@@ -12289,7 +12289,7 @@ var dist = {};
           }
           function T4(r4, i3, s4) {
             var c4;
-            if (s4 ? (t4.texParameteri(r4, 10242, o5.convert(i3.wrapS)), t4.texParameteri(r4, 10243, o5.convert(i3.wrapT)), 32879 !== r4 && 35866 !== r4 || t4.texParameteri(r4, 32882, o5.convert(i3.wrapR)), t4.texParameteri(r4, 10240, o5.convert(i3.magFilter)), t4.texParameteri(r4, 10241, o5.convert(i3.minFilter))) : (t4.texParameteri(r4, 10242, 33071), t4.texParameteri(r4, 10243, 33071), 32879 !== r4 && 35866 !== r4 || t4.texParameteri(r4, 32882, 33071), 1001 === i3.wrapS && 1001 === i3.wrapT || console.warn("THREE.WebGLRenderer: Texture is not power of two. Texture.wrapS and Texture.wrapT should be set to THREE.ClampToEdgeWrapping."), t4.texParameteri(r4, 10240, y3(i3.magFilter)), t4.texParameteri(r4, 10241, y3(i3.minFilter)), 1003 !== i3.minFilter && 1006 !== i3.minFilter && console.warn("THREE.WebGLRenderer: Texture is not power of two. Texture.minFilter should be set to THREE.NearestFilter or THREE.LinearFilter.")), c4 = e5.get("EXT_texture_filter_anisotropic")) {
+            if (s4 ? (t4.texParameteri(r4, 10242, o5.convert(i3.wrapS)), t4.texParameteri(r4, 10243, o5.convert(i3.wrapT)), 32879 !== r4 && 35866 !== r4 || t4.texParameteri(r4, 32882, o5.convert(i3.wrapR)), t4.texParameteri(r4, 10240, o5.convert(i3.magFilter)), t4.texParameteri(r4, 10241, o5.convert(i3.minFilter))) : (t4.texParameteri(r4, 10242, 33071), t4.texParameteri(r4, 10243, 33071), 32879 !== r4 && 35866 !== r4 || t4.texParameteri(r4, 32882, 33071), 1001 === i3.wrapS && 1001 === i3.wrapT || index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Texture is not power of two. Texture.wrapS and Texture.wrapT should be set to THREE.ClampToEdgeWrapping."), t4.texParameteri(r4, 10240, y3(i3.magFilter)), t4.texParameteri(r4, 10241, y3(i3.minFilter)), 1003 !== i3.minFilter && 1006 !== i3.minFilter && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Texture is not power of two. Texture.minFilter should be set to THREE.NearestFilter or THREE.LinearFilter.")), c4 = e5.get("EXT_texture_filter_anisotropic")) {
               if (1015 === i3.type && null === e5.get("OES_texture_float_linear"))
                 return;
               if (1016 === i3.type && null === (a4.isWebGL2 || e5.get("OES_texture_half_float_linear")))
@@ -12315,7 +12315,7 @@ var dist = {};
                 y4 = 36012;
               } else
                 a4.isWebGL2 && (y4 = 33189);
-              1026 === n3.format && 6402 === y4 && 1012 !== n3.type && 1014 !== n3.type && (console.warn("THREE.WebGLRenderer: Use UnsignedShortType or UnsignedIntType for DepthFormat DepthTexture."), n3.type = 1012, p5 = o5.convert(n3.type)), 1027 === n3.format && (y4 = 34041, 1020 !== n3.type && (console.warn("THREE.WebGLRenderer: Use UnsignedInt248Type for DepthStencilFormat DepthTexture."), n3.type = 1020, p5 = o5.convert(n3.type))), r3.texImage2D(3553, 0, y4, l5.width, l5.height, 0, u5, p5, null);
+              1026 === n3.format && 6402 === y4 && 1012 !== n3.type && 1014 !== n3.type && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Use UnsignedShortType or UnsignedIntType for DepthFormat DepthTexture."), n3.type = 1012, p5 = o5.convert(n3.type)), 1027 === n3.format && (y4 = 34041, 1020 !== n3.type && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Use UnsignedInt248Type for DepthStencilFormat DepthTexture."), n3.type = 1020, p5 = o5.convert(n3.type))), r3.texImage2D(3553, 0, y4, l5.width, l5.height, 0, u5, p5, null);
             } else if (n3.isDataTexture)
               if (b4.length > 0 && h4) {
                 for (var w4 = 0, _4 = b4.length; w4 < _4; w4++)
@@ -12325,7 +12325,7 @@ var dist = {};
                 r3.texImage2D(3553, 0, y4, l5.width, l5.height, 0, u5, p5, l5.data), e6.__maxMipLevel = 0;
             else if (n3.isCompressedTexture) {
               for (w4 = 0, _4 = b4.length; w4 < _4; w4++)
-                x4 = b4[w4], 1023 !== n3.format && 1022 !== n3.format ? r3.getCompressedTextureFormats().indexOf(u5) > -1 ? r3.compressedTexImage2D(3553, w4, y4, x4.width, x4.height, 0, x4.data) : console.warn("THREE.WebGLRenderer: Attempt to load unsupported compressed texture format in .uploadTexture()") : r3.texImage2D(3553, w4, y4, x4.width, x4.height, 0, u5, p5, x4.data);
+                x4 = b4[w4], 1023 !== n3.format && 1022 !== n3.format ? r3.getCompressedTextureFormats().indexOf(u5) > -1 ? r3.compressedTexImage2D(3553, w4, y4, x4.width, x4.height, 0, x4.data) : index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Attempt to load unsupported compressed texture format in .uploadTexture()") : r3.texImage2D(3553, w4, y4, x4.width, x4.height, 0, u5, p5, x4.data);
               e6.__maxMipLevel = b4.length - 1;
             } else if (n3.isDataTexture2DArray)
               r3.texImage3D(35866, 0, y4, l5.width, l5.height, l5.depth, 0, u5, p5, l5.data), e6.__maxMipLevel = 0;
@@ -12393,7 +12393,7 @@ var dist = {};
           var O2 = false, D2 = false;
           this.allocateTextureUnit = function() {
             var t5 = w3;
-            return t5 >= a4.maxTextures && console.warn("THREE.WebGLTextures: Trying to use " + t5 + " texture units while this GPU supports only " + a4.maxTextures), w3 += 1, t5;
+            return t5 >= a4.maxTextures && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLTextures: Trying to use " + t5 + " texture units while this GPU supports only " + a4.maxTextures), w3 += 1, t5;
           }, this.resetTextureUnits = function() {
             w3 = 0;
           }, this.setTexture2D = _3, this.setTexture2DArray = function(t5, e6) {
@@ -12416,7 +12416,7 @@ var dist = {};
                 var d4 = v3(o5.convert(e6.texture.format), o5.convert(e6.texture.type)), y4 = C2(e6);
                 t4.renderbufferStorageMultisample(36161, y4, d4, e6.width, e6.height), t4.bindFramebuffer(36160, i3.__webglMultisampledFramebuffer), t4.framebufferRenderbuffer(36160, 36064, 36161, i3.__webglColorRenderbuffer), t4.bindRenderbuffer(36161, null), e6.depthBuffer && (i3.__webglDepthRenderbuffer = t4.createRenderbuffer(), R2(i3.__webglDepthRenderbuffer, e6, true)), t4.bindFramebuffer(36160, null);
               } else
-                console.warn("THREE.WebGLRenderer: WebGLMultisampleRenderTarget can only be used with WebGL2.");
+                index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: WebGLMultisampleRenderTarget can only be used with WebGL2.");
             if (l5) {
               for (r3.bindTexture(34067, s4.__webglTexture), T4(34067, e6.texture, u5), p5 = 0; p5 < 6; p5++)
                 L4(i3.__webglFramebuffer[p5], e6, 36064, 34069 + p5);
@@ -12438,11 +12438,11 @@ var dist = {};
                 var i3 = e6.width, o6 = e6.height, s4 = 16384;
                 e6.depthBuffer && (s4 |= 256), e6.stencilBuffer && (s4 |= 1024), t4.blitFramebuffer(0, 0, i3, o6, 0, 0, i3, o6, s4, 9728);
               } else
-                console.warn("THREE.WebGLRenderer: WebGLMultisampleRenderTarget can only be used with WebGL2.");
+                index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: WebGLMultisampleRenderTarget can only be used with WebGL2.");
           }, this.safeSetTexture2D = function(t5, e6) {
-            t5 && t5.isWebGLRenderTarget && (false === O2 && (console.warn("THREE.WebGLTextures.safeSetTexture2D: don't use render targets as textures. Use their .texture property instead."), O2 = true), t5 = t5.texture), _3(t5, e6);
+            t5 && t5.isWebGLRenderTarget && (false === O2 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLTextures.safeSetTexture2D: don't use render targets as textures. Use their .texture property instead."), O2 = true), t5 = t5.texture), _3(t5, e6);
           }, this.safeSetTextureCube = function(t5, e6) {
-            t5 && t5.isWebGLRenderTargetCube && (false === D2 && (console.warn("THREE.WebGLTextures.safeSetTextureCube: don't use cube render targets as textures. Use their .texture property instead."), D2 = true), t5 = t5.texture), t5 && t5.isCubeTexture || Array.isArray(t5.image) && 6 === t5.image.length ? M3(t5, e6) : S3(t5, e6);
+            t5 && t5.isWebGLRenderTargetCube && (false === D2 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLTextures.safeSetTextureCube: don't use cube render targets as textures. Use their .texture property instead."), D2 = true), t5 = t5.texture), t5 && t5.isCubeTexture || Array.isArray(t5.image) && 6 === t5.image.length ? M3(t5, e6) : S3(t5, e6);
           };
         }
         function Vn(t4, e5, r3) {
@@ -12691,7 +12691,7 @@ var dist = {};
           }, this.dispose = function() {
             void 0 !== a3 && a3.removeEventListener("vrdisplaypresentchange", E4);
           }, this.setFrameOfReferenceType = function() {
-            console.warn("THREE.WebVRManager: setFrameOfReferenceType() has been deprecated.");
+            index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebVRManager: setFrameOfReferenceType() has been deprecated.");
           };
         }
         function Zn(t4, e5) {
@@ -12727,7 +12727,7 @@ var dist = {};
             return n2;
           }, this.setSession = function(t5) {
             null !== (n2 = t5) && (n2.addEventListener("select", d3), n2.addEventListener("selectstart", d3), n2.addEventListener("selectend", d3), n2.addEventListener("end", f4), n2.updateRenderState({ baseLayer: new XRWebGLLayer(n2, e5) }), n2.requestReferenceSpace(a4).then(m3), c3 = n2.inputSources, n2.addEventListener("inputsourceschange", function() {
-              c3 = n2.inputSources, console.log(c3);
+              c3 = n2.inputSources, index.__f__("log", "at node_modules/threejs-miniprogram/dist/index.js:1", c3);
               for (var t6 = 0; t6 < s4.length; t6++)
                 s4[t6].userData.inputSource = c3[t6];
             }));
@@ -12770,13 +12770,13 @@ var dist = {};
             v3 = t5;
           }, this.dispose = function() {
           }, this.getStandingMatrix = function() {
-            return console.warn("THREE.WebXRManager: getStandingMatrix() is no longer needed."), new P2();
+            return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebXRManager: getStandingMatrix() is no longer needed."), new P2();
           }, this.getDevice = function() {
-            console.warn("THREE.WebXRManager: getDevice() has been deprecated.");
+            index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebXRManager: getDevice() has been deprecated.");
           }, this.setDevice = function() {
-            console.warn("THREE.WebXRManager: setDevice() has been deprecated.");
+            index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebXRManager: setDevice() has been deprecated.");
           }, this.setFrameOfReferenceType = function() {
-            console.warn("THREE.WebXRManager: setFrameOfReferenceType() has been deprecated.");
+            index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebXRManager: setFrameOfReferenceType() has been deprecated.");
           }, this.submitFrame = function() {
           };
         }
@@ -12795,7 +12795,7 @@ var dist = {};
               return { rangeMin: 1, rangeMax: 1, precision: 1 };
             });
           } catch (t5) {
-            throw console.error("THREE.WebGLRenderer: " + t5.message), t5;
+            throw index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: " + t5.message), t5;
           }
           function pt2() {
             b3 = new cr(y3), (w3 = new or(y3, b3, t4)).isWebGL2 || (b3.get("WEBGL_depth_texture"), b3.get("OES_texture_float"), b3.get("OES_texture_half_float"), b3.get("OES_texture_half_float_linear"), b3.get("OES_standard_derivatives"), b3.get("OES_element_index_uint"), b3.get("ANGLE_instanced_arrays")), b3.get("OES_texture_float_linear"), B3 = new Vn(y3, b3, w3), (_3 = new Un(y3, b3, B3, w3)).scissor(Z3.copy(rt2).multiplyScalar(tt3).floor()), _3.viewport(J2.copy(et2).multiplyScalar(tt3).floor()), M3 = new ur(), S3 = new En(), T4 = new Hn(y3, b3, _3, S3, w3, B3, M3), E4 = new er(y3), A4 = new lr(y3, E4, M3), L4 = new fr(A4, M3), N2 = new dr(y3), R2 = new Tn(F3, b3, w3), C2 = new Pn(), O2 = new zn(), D2 = new ir(F3, _3, L4, u4), I2 = new ar(y3, b3, M3, w3), z3 = new hr(y3, b3, M3, w3), M3.programs = R2.programs, F3.capabilities = w3, F3.extensions = b3, F3.properties = S3, F3.renderLists = C2, F3.state = _3, F3.info = M3;
@@ -12805,10 +12805,10 @@ var dist = {};
           this.vr = dt2;
           var ft2 = new Gn(F3, L4, w3.maxTextureSize);
           function mt2(t5) {
-            t5.preventDefault(), console.log("THREE.WebGLRenderer: Context Lost."), G2 = true;
+            t5.preventDefault(), index.__f__("log", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Context Lost."), G2 = true;
           }
           function gt2() {
-            console.log("THREE.WebGLRenderer: Context Restored."), G2 = false, pt2();
+            index.__f__("log", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Context Restored."), G2 = false, pt2();
           }
           function vt2(t5) {
             var e6 = t5.target;
@@ -12835,15 +12835,15 @@ var dist = {};
           }, this.setPixelRatio = function(t5) {
             void 0 !== t5 && (tt3 = t5, this.setSize(K2, $2, false));
           }, this.getSize = function(t5) {
-            return void 0 === t5 && (console.warn("WebGLRenderer: .getsize() now requires a Vector2 as an argument"), t5 = new l3()), t5.set(K2, $2);
+            return void 0 === t5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "WebGLRenderer: .getsize() now requires a Vector2 as an argument"), t5 = new l3()), t5.set(K2, $2);
           }, this.setSize = function(t5, r4, n3) {
-            dt2.isPresenting() ? console.warn("THREE.WebGLRenderer: Can't change size while VR device is presenting.") : (K2 = t5, $2 = r4, e5.width = Math.floor(t5 * tt3), e5.height = Math.floor(r4 * tt3), false !== n3 && (e5.style.width = t5 + "px", e5.style.height = r4 + "px"), this.setViewport(0, 0, t5, r4));
+            dt2.isPresenting() ? index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer: Can't change size while VR device is presenting.") : (K2 = t5, $2 = r4, e5.width = Math.floor(t5 * tt3), e5.height = Math.floor(r4 * tt3), false !== n3 && (e5.style.width = t5 + "px", e5.style.height = r4 + "px"), this.setViewport(0, 0, t5, r4));
           }, this.getDrawingBufferSize = function(t5) {
-            return void 0 === t5 && (console.warn("WebGLRenderer: .getdrawingBufferSize() now requires a Vector2 as an argument"), t5 = new l3()), t5.set(K2 * tt3, $2 * tt3).floor();
+            return void 0 === t5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "WebGLRenderer: .getdrawingBufferSize() now requires a Vector2 as an argument"), t5 = new l3()), t5.set(K2 * tt3, $2 * tt3).floor();
           }, this.setDrawingBufferSize = function(t5, r4, n3) {
             K2 = t5, $2 = r4, tt3 = n3, e5.width = Math.floor(t5 * n3), e5.height = Math.floor(r4 * n3), this.setViewport(0, 0, t5, r4);
           }, this.getCurrentViewport = function(t5) {
-            return void 0 === t5 && (console.warn("WebGLRenderer: .getCurrentViewport() now requires a Vector4 as an argument"), t5 = new x2()), t5.copy(J2);
+            return void 0 === t5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "WebGLRenderer: .getCurrentViewport() now requires a Vector4 as an argument"), t5 = new x2()), t5.copy(J2);
           }, this.getViewport = function(t5) {
             return t5.copy(et2);
           }, this.setViewport = function(t5, e6, r4, n3) {
@@ -12891,7 +12891,7 @@ var dist = {};
             var d3 = I2;
             null !== h4 && (l4 = E4.get(h4), (d3 = z3).setIndex(l4)), c4 && (function(t6, e7, r5) {
               if (r5 && r5.isInstancedBufferGeometry && !w3.isWebGL2 && null === b3.get("ANGLE_instanced_arrays"))
-                console.error("THREE.WebGLRenderer.setupVertexAttributes: using THREE.InstancedBufferGeometry but hardware does not support extension ANGLE_instanced_arrays.");
+                index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer.setupVertexAttributes: using THREE.InstancedBufferGeometry but hardware does not support extension ANGLE_instanced_arrays.");
               else {
                 _3.initAttributes();
                 var n4 = r5.attributes, i4 = e7.getAttributes(), a5 = t6.defaultAttributeValues;
@@ -13141,7 +13141,7 @@ var dist = {};
             xt2 = t5, dt2.setAnimationLoop(t5), bt2.start();
           }, this.render = function(t5, e6) {
             var r4, n3;
-            if (void 0 !== arguments[2] && (console.warn("THREE.WebGLRenderer.render(): the renderTarget argument has been removed. Use .setRenderTarget() instead."), r4 = arguments[2]), void 0 !== arguments[3] && (console.warn("THREE.WebGLRenderer.render(): the forceClear argument has been removed. Use .clear() instead."), n3 = arguments[3]), e6 && e6.isCamera) {
+            if (void 0 !== arguments[2] && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer.render(): the renderTarget argument has been removed. Use .setRenderTarget() instead."), r4 = arguments[2]), void 0 !== arguments[3] && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer.render(): the forceClear argument has been removed. Use .clear() instead."), n3 = arguments[3]), e6 && e6.isCamera) {
               if (!G2) {
                 q2.geometry = null, q2.program = null, q2.wireframe = false, W2 = -1, X2 = null, true === t5.autoUpdate && t5.updateMatrixWorld(), null === e6.parent && e6.updateMatrixWorld(), dt2.enabled && (e6 = dt2.getCamera(e6)), (v3 = O2.get(t5, e6)).init(), t5.onBeforeRender(F3, t5, e6, r4 || j2), ct2.multiplyMatrices(e6.projectionMatrix, e6.matrixWorldInverse), it2.setFromMatrix(ct2), st2 = this.localClippingEnabled, ot2 = at2.init(this.clippingPlanes, st2, e6), (g3 = C2.get(t5, e6)).init(), wt2(t5, e6, 0, F3.sortObjects), true === F3.sortObjects && g3.sort(), ot2 && at2.beginShadows();
                 var i3 = v3.state.shadowsArray;
@@ -13155,7 +13155,7 @@ var dist = {};
                 t5.onAfterRender(F3, t5, e6), null !== j2 && (T4.updateRenderTargetMipmap(j2), T4.updateMultisampleRenderTarget(j2)), _3.buffers.depth.setTest(true), _3.buffers.depth.setMask(true), _3.buffers.color.setMask(true), _3.setPolygonOffset(false), dt2.enabled && dt2.submitFrame(), g3 = null, v3 = null;
               }
             } else
-              console.error("THREE.WebGLRenderer.render: camera is not an instance of THREE.Camera.");
+              index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer.render: camera is not an instance of THREE.Camera.");
           }, this.setFramebuffer = function(t5) {
             U3 !== t5 && y3.bindFramebuffer(36160, t5), U3 = t5;
           }, this.getActiveCubeFace = function() {
@@ -13185,16 +13185,16 @@ var dist = {};
                 try {
                   var l4 = t5.texture, h4 = l4.format, u5 = l4.type;
                   if (1023 !== h4 && B3.convert(h4) !== y3.getParameter(35739))
-                    return void console.error("THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not in RGBA or implementation defined format.");
+                    return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not in RGBA or implementation defined format.");
                   if (!(1009 === u5 || B3.convert(u5) === y3.getParameter(35738) || 1015 === u5 && (w3.isWebGL2 || b3.get("OES_texture_float") || b3.get("WEBGL_color_buffer_float")) || 1016 === u5 && (w3.isWebGL2 ? b3.get("EXT_color_buffer_float") : b3.get("EXT_color_buffer_half_float"))))
-                    return void console.error("THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not in UnsignedByteType or implementation defined type.");
-                  36053 === y3.checkFramebufferStatus(36160) ? e6 >= 0 && e6 <= t5.width - n3 && r4 >= 0 && r4 <= t5.height - i3 && y3.readPixels(e6, r4, n3, i3, B3.convert(h4), B3.convert(u5), a4) : console.error("THREE.WebGLRenderer.readRenderTargetPixels: readPixels from renderTarget failed. Framebuffer not complete.");
+                    return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not in UnsignedByteType or implementation defined type.");
+                  36053 === y3.checkFramebufferStatus(36160) ? e6 >= 0 && e6 <= t5.width - n3 && r4 >= 0 && r4 <= t5.height - i3 && y3.readPixels(e6, r4, n3, i3, B3.convert(h4), B3.convert(u5), a4) : index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer.readRenderTargetPixels: readPixels from renderTarget failed. Framebuffer not complete.");
                 } finally {
                   c4 && y3.bindFramebuffer(36160, k2);
                 }
               }
             } else
-              console.error("THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not THREE.WebGLRenderTarget.");
+              index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not THREE.WebGLRenderTarget.");
           }, this.copyFramebufferToTexture = function(t5, e6, r4) {
             var n3 = e6.image.width, i3 = e6.image.height, a4 = B3.convert(e6.format);
             T4.setTexture2D(e6, 0), y3.copyTexImage2D(3553, r4 || 0, a4, t5.x, t5.y, n3, i3, 0);
@@ -13290,7 +13290,7 @@ var dist = {};
           oi.subVectors(t4, r3).addScalar(0.5).multiply(n2), void 0 !== i3 ? (si.x = a4 * oi.x - i3 * oi.y, si.y = i3 * oi.x + a4 * oi.y) : si.copy(oi), t4.copy(e5), t4.x += si.x, t4.y += si.y, t4.applyMatrix4(ci);
         }
         mi.prototype = Object.assign(Object.create(Y.prototype), { constructor: mi, isSprite: true, raycast: function(t4, e5) {
-          null === t4.camera && console.error('THREE.Sprite: "Raycaster.camera" needs to be set in order to raycast against sprites.'), ii.setFromMatrixScale(this.matrixWorld), ci.copy(t4.camera.matrixWorld), this.modelViewMatrix.multiplyMatrices(t4.camera.matrixWorldInverse, this.matrixWorld), ai.setFromMatrixPosition(this.modelViewMatrix), t4.camera.isPerspectiveCamera && false === this.material.sizeAttenuation && ii.multiplyScalar(-ai.z);
+          null === t4.camera && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", 'THREE.Sprite: "Raycaster.camera" needs to be set in order to raycast against sprites.'), ii.setFromMatrixScale(this.matrixWorld), ci.copy(t4.camera.matrixWorld), this.modelViewMatrix.multiplyMatrices(t4.camera.matrixWorldInverse, this.matrixWorld), ai.setFromMatrixPosition(this.modelViewMatrix), t4.camera.isPerspectiveCamera && false === this.material.sizeAttenuation && ii.multiplyScalar(-ai.z);
           var r3, n2, i3 = this.material.rotation;
           0 !== i3 && (n2 = Math.cos(i3), r3 = Math.sin(i3));
           var a4 = this.center;
@@ -13310,7 +13310,7 @@ var dist = {};
           Y.call(this), this.type = "LOD", Object.defineProperties(this, { levels: { enumerable: true, value: [] } }), this.autoUpdate = true;
         }
         function bi(t4, e5) {
-          t4 && t4.isGeometry && console.error("THREE.SkinnedMesh no longer supports THREE.Geometry. Use THREE.BufferGeometry instead."), Te.call(this, t4, e5), this.type = "SkinnedMesh", this.bindMode = "attached", this.bindMatrix = new P2(), this.bindMatrixInverse = new P2();
+          t4 && t4.isGeometry && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.SkinnedMesh no longer supports THREE.Geometry. Use THREE.BufferGeometry instead."), Te.call(this, t4, e5), this.type = "SkinnedMesh", this.bindMode = "attached", this.bindMatrix = new P2(), this.bindMatrixInverse = new P2();
         }
         xi.prototype = Object.assign(Object.create(Y.prototype), { constructor: xi, isLOD: true, copy: function(t4) {
           Y.prototype.copy.call(this, t4, false);
@@ -13362,7 +13362,7 @@ var dist = {};
             i3 !== 1 / 0 ? t4.multiplyScalar(i3) : t4.set(1, 0, 0, 0), e5.setXYZW(r3, t4.x, t4.y, t4.z, t4.w);
           }
         }, updateMatrixWorld: function(t4) {
-          Te.prototype.updateMatrixWorld.call(this, t4), "attached" === this.bindMode ? this.bindMatrixInverse.getInverse(this.matrixWorld) : "detached" === this.bindMode ? this.bindMatrixInverse.getInverse(this.bindMatrix) : console.warn("THREE.SkinnedMesh: Unrecognized bindMode: " + this.bindMode);
+          Te.prototype.updateMatrixWorld.call(this, t4), "attached" === this.bindMode ? this.bindMatrixInverse.getInverse(this.matrixWorld) : "detached" === this.bindMode ? this.bindMatrixInverse.getInverse(this.bindMatrix) : index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.SkinnedMesh: Unrecognized bindMode: " + this.bindMode);
         }, clone: function() {
           return new this.constructor(this.geometry, this.material).copy(this);
         } });
@@ -13373,7 +13373,7 @@ var dist = {};
           else if (this.bones.length === e5.length)
             this.boneInverses = e5.slice(0);
           else {
-            console.warn("THREE.Skeleton boneInverses is the wrong length."), this.boneInverses = [];
+            index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Skeleton boneInverses is the wrong length."), this.boneInverses = [];
             for (var r3 = 0, n2 = this.bones.length; r3 < n2; r3++)
               this.boneInverses.push(new P2());
           }
@@ -13415,7 +13415,7 @@ var dist = {};
         };
         var Ei = new d2(), Ai = new d2(), Li = new P2(), Ri = new xt(), Pi = new ut();
         function Ci(t4, e5, r3) {
-          1 === r3 && console.error("THREE.Line: parameter THREE.LinePieces no longer supported. Use THREE.LineSegments instead."), Y.call(this), this.type = "Line", this.geometry = void 0 !== t4 ? t4 : new se(), this.material = void 0 !== e5 ? e5 : new Ti({ color: 16777215 * Math.random() });
+          1 === r3 && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Line: parameter THREE.LinePieces no longer supported. Use THREE.LineSegments instead."), Y.call(this), this.type = "Line", this.geometry = void 0 !== t4 ? t4 : new se(), this.material = void 0 !== e5 ? e5 : new Ti({ color: 16777215 * Math.random() });
         }
         Ci.prototype = Object.assign(Object.create(Y.prototype), { constructor: Ci, isLine: true, computeLineDistances: function() {
           var t4 = this.geometry;
@@ -13425,7 +13425,7 @@ var dist = {};
                 Ei.fromBufferAttribute(e5, n2 - 1), Ai.fromBufferAttribute(e5, n2), r3[n2] = r3[n2 - 1], r3[n2] += Ei.distanceTo(Ai);
               t4.addAttribute("lineDistance", new Zt(r3, 1));
             } else
-              console.warn("THREE.Line.computeLineDistances(): Computation only possible with non-indexed BufferGeometry.");
+              index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Line.computeLineDistances(): Computation only possible with non-indexed BufferGeometry.");
           else if (t4.isGeometry) {
             var a4 = t4.vertices;
             for ((r3 = t4.lineDistances)[0] = 0, n2 = 1, i3 = a4.length; n2 < i3; n2++)
@@ -13476,7 +13476,7 @@ var dist = {};
                 Oi.fromBufferAttribute(e5, n2), Di.fromBufferAttribute(e5, n2 + 1), r3[n2] = 0 === n2 ? 0 : r3[n2 - 1], r3[n2 + 1] = r3[n2] + Oi.distanceTo(Di);
               t4.addAttribute("lineDistance", new Zt(r3, 1));
             } else
-              console.warn("THREE.LineSegments.computeLineDistances(): Computation only possible with non-indexed BufferGeometry.");
+              index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.LineSegments.computeLineDistances(): Computation only possible with non-indexed BufferGeometry.");
           else if (t4.isGeometry) {
             var a4 = t4.vertices;
             for (r3 = t4.lineDistances, n2 = 0, i3 = a4.length; n2 < i3; n2 += 2)
@@ -13549,7 +13549,7 @@ var dist = {};
         function Ji(t4, e5, r3) {
           se.call(this), this.type = "ParametricBufferGeometry", this.parameters = { func: t4, slices: e5, stacks: r3 };
           var n2, i3, a4 = [], o5 = [], s4 = [], c3 = [], l4 = 1e-5, h3 = new d2(), u4 = new d2(), p4 = new d2(), f4 = new d2(), m3 = new d2();
-          t4.length < 3 && console.error("THREE.ParametricGeometry: Function must now modify a Vector3 as third parameter.");
+          t4.length < 3 && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.ParametricGeometry: Function must now modify a Vector3 as third parameter.");
           var g3 = e5 + 1;
           for (n2 = 0; n2 <= r3; n2++) {
             var v3 = n2 / r3;
@@ -13652,7 +13652,7 @@ var dist = {};
           Qi.call(this, i3, [3, 11, 7, 3, 7, 15, 3, 15, 13, 7, 19, 17, 7, 17, 6, 7, 6, 15, 17, 4, 8, 17, 8, 10, 17, 10, 6, 8, 0, 16, 8, 16, 2, 8, 2, 10, 0, 12, 1, 0, 1, 18, 0, 18, 16, 6, 10, 2, 6, 2, 13, 6, 13, 15, 2, 16, 18, 2, 18, 3, 2, 3, 13, 18, 1, 9, 18, 9, 11, 18, 11, 3, 4, 14, 12, 4, 12, 0, 4, 0, 8, 11, 9, 5, 11, 5, 19, 11, 19, 7, 19, 5, 14, 19, 14, 4, 19, 4, 17, 1, 12, 14, 1, 14, 5, 1, 5, 9], t4, e5), this.type = "DodecahedronBufferGeometry", this.parameters = { radius: t4, detail: e5 };
         }
         function oa(t4, e5, r3, n2, i3, a4) {
-          Oe.call(this), this.type = "TubeGeometry", this.parameters = { path: t4, tubularSegments: e5, radius: r3, radialSegments: n2, closed: i3 }, void 0 !== a4 && console.warn("THREE.TubeGeometry: taper has been removed.");
+          Oe.call(this), this.type = "TubeGeometry", this.parameters = { path: t4, tubularSegments: e5, radius: r3, radialSegments: n2, closed: i3 }, void 0 !== a4 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.TubeGeometry: taper has been removed.");
           var o5 = new sa(t4, e5, r3, n2, i3);
           this.tangents = o5.tangents, this.normals = o5.normals, this.binormals = o5.binormals, this.fromBufferGeometry(o5), this.mergeVertices();
         }
@@ -13686,7 +13686,7 @@ var dist = {};
           }(), this.setIndex(v3), this.addAttribute("position", new Zt(f4, 3)), this.addAttribute("normal", new Zt(m3, 3)), this.addAttribute("uv", new Zt(g3, 2));
         }
         function ca(t4, e5, r3, n2, i3, a4, o5) {
-          Oe.call(this), this.type = "TorusKnotGeometry", this.parameters = { radius: t4, tube: e5, tubularSegments: r3, radialSegments: n2, p: i3, q: a4 }, void 0 !== o5 && console.warn("THREE.TorusKnotGeometry: heightScale has been deprecated. Use .scale( x, y, z ) instead."), this.fromBufferGeometry(new la(t4, e5, r3, n2, i3, a4)), this.mergeVertices();
+          Oe.call(this), this.type = "TorusKnotGeometry", this.parameters = { radius: t4, tube: e5, tubularSegments: r3, radialSegments: n2, p: i3, q: a4 }, void 0 !== o5 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.TorusKnotGeometry: heightScale has been deprecated. Use .scale( x, y, z ) instead."), this.fromBufferGeometry(new la(t4, e5, r3, n2, i3, a4)), this.mergeVertices();
         }
         function la(t4, e5, r3, n2, i3, a4) {
           se.call(this), this.type = "TorusKnotBufferGeometry", this.parameters = { radius: t4, tube: e5, tubularSegments: r3, radialSegments: n2, p: i3, q: a4 }, t4 = t4 || 1, e5 = e5 || 0.4, r3 = Math.floor(r3) || 64, n2 = Math.floor(n2) || 8, i3 = i3 || 2, a4 = a4 || 3;
@@ -13762,7 +13762,7 @@ var dist = {};
             }
           } else {
             var s4 = n2.morphTargets;
-            void 0 !== s4 && s4.length > 0 && console.error("THREE.Points.updateMorphTargets() does not support THREE.Geometry. Use THREE.BufferGeometry instead.");
+            void 0 !== s4 && s4.length > 0 && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.Points.updateMorphTargets() does not support THREE.Geometry. Use THREE.BufferGeometry instead.");
           }
         }, clone: function() {
           return new this.constructor(this.geometry, this.material).copy(this);
@@ -14033,7 +14033,7 @@ var dist = {};
             s4(t4[a4]);
           function s4(t5) {
             var a5 = [], o6 = void 0 !== e5.curveSegments ? e5.curveSegments : 12, s5 = void 0 !== e5.steps ? e5.steps : 1, c3 = void 0 !== e5.depth ? e5.depth : 100, h3 = void 0 === e5.bevelEnabled || e5.bevelEnabled, u4 = void 0 !== e5.bevelThickness ? e5.bevelThickness : 6, p4 = void 0 !== e5.bevelSize ? e5.bevelSize : u4 - 2, f4 = void 0 !== e5.bevelOffset ? e5.bevelOffset : 0, m3 = void 0 !== e5.bevelSegments ? e5.bevelSegments : 3, g3 = e5.extrudePath, v3 = void 0 !== e5.UVGenerator ? e5.UVGenerator : Ga;
-            void 0 !== e5.amount && (console.warn("THREE.ExtrudeBufferGeometry: amount has been renamed to depth."), c3 = e5.amount);
+            void 0 !== e5.amount && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.ExtrudeBufferGeometry: amount has been renamed to depth."), c3 = e5.amount);
             var y3, x3, b3, w3, _3, M3, S3, T4, E4 = false;
             g3 && (y3 = g3.getSpacedPoints(s5), E4 = true, h3 = false, x3 = g3.computeFrenetFrames(s5, false), b3 = new d2(), w3 = new d2(), _3 = new d2()), h3 || (m3 = 0, u4 = 0, p4 = 0, f4 = 0);
             var A4 = t5.extractPoints(o6), L4 = A4.shape, R2 = A4.holes;
@@ -14044,7 +14044,7 @@ var dist = {};
             for (S3 = 0, T4 = R2.length; S3 < T4; S3++)
               M3 = R2[S3], L4 = L4.concat(M3);
             function O2(t6, e6, r4) {
-              return e6 || console.error("THREE.ExtrudeGeometry: vec does not exist"), e6.clone().multiplyScalar(r4).add(t6);
+              return e6 || index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.ExtrudeGeometry: vec does not exist"), e6.clone().multiplyScalar(r4).add(t6);
             }
             var D2, N2, I2, z3, B3, F3, G2 = L4.length, U3 = P3.length;
             function H4(t6, e6, r4) {
@@ -14171,7 +14171,7 @@ var dist = {};
         function Va(t4, e5) {
           var r3 = (e5 = e5 || {}).font;
           if (!r3 || !r3.isFont)
-            return console.error("THREE.TextGeometry: font parameter is not an instance of THREE.Font."), new Oe();
+            return index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.TextGeometry: font parameter is not an instance of THREE.Font."), new Oe();
           var n2 = r3.generateShapes(t4, e5.size);
           e5.depth = void 0 !== e5.height ? e5.height : 50, void 0 === e5.bevelThickness && (e5.bevelThickness = 10), void 0 === e5.bevelSize && (e5.bevelSize = 8), void 0 === e5.bevelEnabled && (e5.bevelEnabled = false), Fa.call(this, n2, e5), this.type = "TextBufferGeometry";
         }
@@ -14239,7 +14239,7 @@ var dist = {};
           }
         }
         function Ja(t4, e5) {
-          Oe.call(this), this.type = "ShapeGeometry", "object" === R(e5) && (console.warn("THREE.ShapeGeometry: Options parameter has been removed."), e5 = e5.curveSegments), this.parameters = { shapes: t4, curveSegments: e5 }, this.fromBufferGeometry(new Za(t4, e5)), this.mergeVertices();
+          Oe.call(this), this.type = "ShapeGeometry", "object" === R(e5) && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:1", "THREE.ShapeGeometry: Options parameter has been removed."), e5 = e5.curveSegments), this.parameters = { shapes: t4, curveSegments: e5 }, this.fromBufferGeometry(new Za(t4, e5)), this.mergeVertices();
         }
         function Za(t4, e5) {
           se.call(this), this.type = "ShapeBufferGeometry", this.parameters = { shapes: t4, curveSegments: e5 }, e5 = e5 || 12;
@@ -14652,7 +14652,7 @@ var dist = {};
                 throw new Error(r3);
               this.setInterpolation(this.DefaultInterpolation);
             }
-            return console.warn("THREE.KeyframeTrack:", r3), this;
+            return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.KeyframeTrack:", r3), this;
           }
           return this.createInterpolant = e5, this;
         }, getInterpolation: function() {
@@ -14689,17 +14689,17 @@ var dist = {};
           return this;
         }, validate: function() {
           var t4 = true, e5 = this.getValueSize();
-          e5 - Math.floor(e5) != 0 && (console.error("THREE.KeyframeTrack: Invalid value size in track.", this), t4 = false);
+          e5 - Math.floor(e5) != 0 && (index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.KeyframeTrack: Invalid value size in track.", this), t4 = false);
           var r3 = this.times, n2 = this.values, i3 = r3.length;
-          0 === i3 && (console.error("THREE.KeyframeTrack: Track is empty.", this), t4 = false);
+          0 === i3 && (index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.KeyframeTrack: Track is empty.", this), t4 = false);
           for (var a4 = null, o5 = 0; o5 !== i3; o5++) {
             var s4 = r3[o5];
             if ("number" == typeof s4 && isNaN(s4)) {
-              console.error("THREE.KeyframeTrack: Time is not a valid number.", this, o5, s4), t4 = false;
+              index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.KeyframeTrack: Time is not a valid number.", this, o5, s4), t4 = false;
               break;
             }
             if (null !== a4 && a4 > s4) {
-              console.error("THREE.KeyframeTrack: Out of order keys.", this, o5, s4, a4), t4 = false;
+              index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.KeyframeTrack: Out of order keys.", this, o5, s4, a4), t4 = false;
               break;
             }
             a4 = s4;
@@ -14709,7 +14709,7 @@ var dist = {};
             for (var c3 = n2.length; o5 !== c3; ++o5) {
               var l4 = n2[o5];
               if (isNaN(l4)) {
-                console.error("THREE.KeyframeTrack: Value is not a valid number.", this, o5, l4), t4 = false;
+                index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.KeyframeTrack: Value is not a valid number.", this, o5, l4), t4 = false;
                 break;
               }
             }
@@ -14794,7 +14794,7 @@ var dist = {};
           return h3;
         }, parseAnimation: function(t4, e5) {
           if (!t4)
-            return console.error("THREE.AnimationClip: No animation in JSONLoader data."), null;
+            return index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.AnimationClip: No animation in JSONLoader data."), null;
           for (var r3 = function(t5, e6, r4, n3, i4) {
             if (0 !== r4.length) {
               var a5 = [], o6 = [];
@@ -14985,7 +14985,7 @@ var dist = {};
                 Do.add(t4, r4);
                 var n2 = Bo[t4];
                 if (delete Bo[t4], 200 === this.status || 0 === this.status) {
-                  0 === this.status && console.warn("THREE.FileLoader: HTTP Status 0 received.");
+                  0 === this.status && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.FileLoader: HTTP Status 0 received.");
                   for (var i4 = 0, o6 = n2.length; i4 < o6; i4++)
                     (s5 = n2[i4]).onLoad && s5.onLoad(r4);
                   a4.manager.itemEnd(t4);
@@ -15111,7 +15111,7 @@ var dist = {};
             i3.format = n3 ? 1022 : 1023, i3.needsUpdate = true, void 0 !== e5 && e5(i3);
           }, r3, n2), i3;
         } }), Object.assign(Wo.prototype, { getPoint: function() {
-          return console.warn("THREE.Curve: .getPoint() not implemented."), null;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Curve: .getPoint() not implemented."), null;
         }, getPointAt: function(t4, e5) {
           var r3 = this.getUtoTmapping(t4);
           return this.getPoint(r3, e5);
@@ -15633,7 +15633,7 @@ var dist = {};
         }, parse: function(t4) {
           var e5 = this.textures;
           function r3(t5) {
-            return void 0 === e5[t5] && console.warn("THREE.MaterialLoader: Undefined texture", t5), e5[t5];
+            return void 0 === e5[t5] && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.MaterialLoader: Undefined texture", t5), e5[t5];
           }
           var n2 = new vo[t4.type]();
           if (void 0 !== t4.uuid && (n2.uuid = t4.uuid), void 0 !== t4.name && (n2.name = t4.name), void 0 !== t4.color && n2.color.setHex(t4.color), void 0 !== t4.roughness && (n2.roughness = t4.roughness), void 0 !== t4.metalness && (n2.metalness = t4.metalness), void 0 !== t4.emissive && n2.emissive.setHex(t4.emissive), void 0 !== t4.specular && n2.specular.setHex(t4.specular), void 0 !== t4.shininess && (n2.shininess = t4.shininess), void 0 !== t4.clearcoat && (n2.clearcoat = t4.clearcoat), void 0 !== t4.clearcoatRoughness && (n2.clearcoatRoughness = t4.clearcoatRoughness), void 0 !== t4.vertexColors && (n2.vertexColors = t4.vertexColors), void 0 !== t4.fog && (n2.fog = t4.fog), void 0 !== t4.flatShading && (n2.flatShading = t4.flatShading), void 0 !== t4.blending && (n2.blending = t4.blending), void 0 !== t4.combine && (n2.combine = t4.combine), void 0 !== t4.side && (n2.side = t4.side), void 0 !== t4.opacity && (n2.opacity = t4.opacity), void 0 !== t4.transparent && (n2.transparent = t4.transparent), void 0 !== t4.alphaTest && (n2.alphaTest = t4.alphaTest), void 0 !== t4.depthTest && (n2.depthTest = t4.depthTest), void 0 !== t4.depthWrite && (n2.depthWrite = t4.depthWrite), void 0 !== t4.colorWrite && (n2.colorWrite = t4.colorWrite), void 0 !== t4.wireframe && (n2.wireframe = t4.wireframe), void 0 !== t4.wireframeLinewidth && (n2.wireframeLinewidth = t4.wireframeLinewidth), void 0 !== t4.wireframeLinecap && (n2.wireframeLinecap = t4.wireframeLinecap), void 0 !== t4.wireframeLinejoin && (n2.wireframeLinejoin = t4.wireframeLinejoin), void 0 !== t4.rotation && (n2.rotation = t4.rotation), 1 !== t4.linewidth && (n2.linewidth = t4.linewidth), void 0 !== t4.dashSize && (n2.dashSize = t4.dashSize), void 0 !== t4.gapSize && (n2.gapSize = t4.gapSize), void 0 !== t4.scale && (n2.scale = t4.scale), void 0 !== t4.polygonOffset && (n2.polygonOffset = t4.polygonOffset), void 0 !== t4.polygonOffsetFactor && (n2.polygonOffsetFactor = t4.polygonOffsetFactor), void 0 !== t4.polygonOffsetUnits && (n2.polygonOffsetUnits = t4.polygonOffsetUnits), void 0 !== t4.skinning && (n2.skinning = t4.skinning), void 0 !== t4.morphTargets && (n2.morphTargets = t4.morphTargets), void 0 !== t4.morphNormals && (n2.morphNormals = t4.morphNormals), void 0 !== t4.dithering && (n2.dithering = t4.dithering), void 0 !== t4.visible && (n2.visible = t4.visible), void 0 !== t4.toneMapped && (n2.toneMapped = t4.toneMapped), void 0 !== t4.userData && (n2.userData = t4.userData), void 0 !== t4.uniforms)
@@ -15693,7 +15693,7 @@ var dist = {};
           se.call(this), this.type = "InstancedBufferGeometry", this.maxInstancedCount = void 0;
         }
         function Rs(t4, e5, r3, n2) {
-          "number" == typeof r3 && (n2 = r3, r3 = false, console.error("THREE.InstancedBufferAttribute: The constructor now expects normalized as the third argument.")), Vt.call(this, t4, e5, r3), this.meshPerAttribute = n2 || 1;
+          "number" == typeof r3 && (n2 = r3, r3 = false, index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.InstancedBufferAttribute: The constructor now expects normalized as the third argument.")), Vt.call(this, t4, e5, r3), this.meshPerAttribute = n2 || 1;
         }
         function Ps(t4) {
           zo.call(this, t4);
@@ -15761,10 +15761,10 @@ var dist = {};
             try {
               a5 = JSON.parse(r4);
             } catch (e6) {
-              return void 0 !== n2 && n2(e6), void console.error("THREE:ObjectLoader: Can't parse " + t4 + ".", e6.message);
+              return void 0 !== n2 && n2(e6), void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE:ObjectLoader: Can't parse " + t4 + ".", e6.message);
             }
             var o6 = a5.metadata;
-            void 0 !== o6 && void 0 !== o6.type && "geometry" !== o6.type.toLowerCase() ? i3.parse(a5, e5) : console.error("THREE.ObjectLoader: Can't load " + t4);
+            void 0 !== o6 && void 0 !== o6.type && "geometry" !== o6.type.toLowerCase() ? i3.parse(a5, e5) : index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.ObjectLoader: Can't load " + t4);
           }, r3, n2);
         }, parse: function(t4, e5) {
           var r3 = this.parseShape(t4.shapes), n2 = this.parseGeometries(t4.geometries, r3), i3 = this.parseImages(t4.images, function() {
@@ -15864,10 +15864,10 @@ var dist = {};
                   s4 = n2.parse(c3);
                   break;
                 case "Geometry":
-                  "THREE" in a3 && "LegacyJSONLoader" in THREE ? s4 = new THREE.LegacyJSONLoader().parse(c3, this.resourcePath).geometry : console.error('THREE.ObjectLoader: You have to import LegacyJSONLoader in order load geometry data of type "Geometry".');
+                  "THREE" in a3 && "LegacyJSONLoader" in THREE ? s4 = new THREE.LegacyJSONLoader().parse(c3, this.resourcePath).geometry : index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", 'THREE.ObjectLoader: You have to import LegacyJSONLoader in order load geometry data of type "Geometry".');
                   break;
                 default:
-                  console.warn('THREE.ObjectLoader: Unsupported geometry type "' + c3.type + '"');
+                  index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", 'THREE.ObjectLoader: Unsupported geometry type "' + c3.type + '"');
                   continue;
               }
               s4.uuid = c3.uuid, void 0 !== c3.name && (s4.name = c3.name), true === s4.isBufferGeometry && void 0 !== c3.userData && (s4.userData = c3.userData), r3[c3.uuid] = s4;
@@ -15924,30 +15924,30 @@ var dist = {};
           return n2;
         }, parseTextures: function(t4, e5) {
           function r3(t5, e6) {
-            return "number" == typeof t5 ? t5 : (console.warn("THREE.ObjectLoader.parseTexture: Constant should be in numeric form.", t5), e6[t5]);
+            return "number" == typeof t5 ? t5 : (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.ObjectLoader.parseTexture: Constant should be in numeric form.", t5), e6[t5]);
           }
           var n2 = {};
           if (void 0 !== t4)
             for (var i3 = 0, a4 = t4.length; i3 < a4; i3++) {
               var o5, s4 = t4[i3];
-              void 0 === s4.image && console.warn('THREE.ObjectLoader: No "image" specified for', s4.uuid), void 0 === e5[s4.image] && console.warn("THREE.ObjectLoader: Undefined image", s4.image), (o5 = Array.isArray(e5[s4.image]) ? new mr(e5[s4.image]) : new y2(e5[s4.image])).needsUpdate = true, o5.uuid = s4.uuid, void 0 !== s4.name && (o5.name = s4.name), void 0 !== s4.mapping && (o5.mapping = r3(s4.mapping, Ns)), void 0 !== s4.offset && o5.offset.fromArray(s4.offset), void 0 !== s4.repeat && o5.repeat.fromArray(s4.repeat), void 0 !== s4.center && o5.center.fromArray(s4.center), void 0 !== s4.rotation && (o5.rotation = s4.rotation), void 0 !== s4.wrap && (o5.wrapS = r3(s4.wrap[0], Is), o5.wrapT = r3(s4.wrap[1], Is)), void 0 !== s4.format && (o5.format = s4.format), void 0 !== s4.type && (o5.type = s4.type), void 0 !== s4.encoding && (o5.encoding = s4.encoding), void 0 !== s4.minFilter && (o5.minFilter = r3(s4.minFilter, zs)), void 0 !== s4.magFilter && (o5.magFilter = r3(s4.magFilter, zs)), void 0 !== s4.anisotropy && (o5.anisotropy = s4.anisotropy), void 0 !== s4.flipY && (o5.flipY = s4.flipY), void 0 !== s4.premultiplyAlpha && (o5.premultiplyAlpha = s4.premultiplyAlpha), void 0 !== s4.unpackAlignment && (o5.unpackAlignment = s4.unpackAlignment), n2[s4.uuid] = o5;
+              void 0 === s4.image && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", 'THREE.ObjectLoader: No "image" specified for', s4.uuid), void 0 === e5[s4.image] && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.ObjectLoader: Undefined image", s4.image), (o5 = Array.isArray(e5[s4.image]) ? new mr(e5[s4.image]) : new y2(e5[s4.image])).needsUpdate = true, o5.uuid = s4.uuid, void 0 !== s4.name && (o5.name = s4.name), void 0 !== s4.mapping && (o5.mapping = r3(s4.mapping, Ns)), void 0 !== s4.offset && o5.offset.fromArray(s4.offset), void 0 !== s4.repeat && o5.repeat.fromArray(s4.repeat), void 0 !== s4.center && o5.center.fromArray(s4.center), void 0 !== s4.rotation && (o5.rotation = s4.rotation), void 0 !== s4.wrap && (o5.wrapS = r3(s4.wrap[0], Is), o5.wrapT = r3(s4.wrap[1], Is)), void 0 !== s4.format && (o5.format = s4.format), void 0 !== s4.type && (o5.type = s4.type), void 0 !== s4.encoding && (o5.encoding = s4.encoding), void 0 !== s4.minFilter && (o5.minFilter = r3(s4.minFilter, zs)), void 0 !== s4.magFilter && (o5.magFilter = r3(s4.magFilter, zs)), void 0 !== s4.anisotropy && (o5.anisotropy = s4.anisotropy), void 0 !== s4.flipY && (o5.flipY = s4.flipY), void 0 !== s4.premultiplyAlpha && (o5.premultiplyAlpha = s4.premultiplyAlpha), void 0 !== s4.unpackAlignment && (o5.unpackAlignment = s4.unpackAlignment), n2[s4.uuid] = o5;
             }
           return n2;
         }, parseObject: function(t4, e5, r3) {
           var n2;
           function i3(t5) {
-            return void 0 === e5[t5] && console.warn("THREE.ObjectLoader: Undefined geometry", t5), e5[t5];
+            return void 0 === e5[t5] && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.ObjectLoader: Undefined geometry", t5), e5[t5];
           }
           function a4(t5) {
             if (void 0 !== t5) {
               if (Array.isArray(t5)) {
                 for (var e6 = [], n3 = 0, i4 = t5.length; n3 < i4; n3++) {
                   var a5 = t5[n3];
-                  void 0 === r3[a5] && console.warn("THREE.ObjectLoader: Undefined material", a5), e6.push(r3[a5]);
+                  void 0 === r3[a5] && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.ObjectLoader: Undefined material", a5), e6.push(r3[a5]);
                 }
                 return e6;
               }
-              return void 0 === r3[t5] && console.warn("THREE.ObjectLoader: Undefined material", t5), r3[t5];
+              return void 0 === r3[t5] && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.ObjectLoader: Undefined material", t5), r3[t5];
             }
           }
           switch (t4.type) {
@@ -15979,7 +15979,7 @@ var dist = {};
               n2 = new ms(t4.color, t4.groundColor, t4.intensity);
               break;
             case "SkinnedMesh":
-              console.warn("THREE.ObjectLoader.parseObject() does not support SkinnedMesh yet.");
+              index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.ObjectLoader.parseObject() does not support SkinnedMesh yet.");
             case "Mesh":
               var o5 = i3(t4.geometry), s4 = a4(t4.material);
               n2 = o5.bones && o5.bones.length > 0 ? new bi(o5, s4) : new Te(o5, s4), void 0 !== t4.drawMode && n2.setDrawMode(t4.drawMode);
@@ -16021,7 +16021,7 @@ var dist = {};
         } });
         var Ds, Ns = { UVMapping: 300, CubeReflectionMapping: 301, CubeRefractionMapping: 302, EquirectangularReflectionMapping: 303, EquirectangularRefractionMapping: 304, SphericalReflectionMapping: 305, CubeUVReflectionMapping: 306, CubeUVRefractionMapping: 307 }, Is = { RepeatWrapping: 1e3, ClampToEdgeWrapping: 1001, MirroredRepeatWrapping: 1002 }, zs = { NearestFilter: 1003, NearestMipmapNearestFilter: 1004, NearestMipmapLinearFilter: 1005, LinearFilter: 1006, LinearMipmapNearestFilter: 1007, LinearMipmapLinearFilter: 1008 };
         function Bs(t4) {
-          "undefined" == typeof createImageBitmap && console.warn("THREE.ImageBitmapLoader: createImageBitmap() not supported."), "undefined" == typeof fetch && console.warn("THREE.ImageBitmapLoader: fetch() not supported."), zo.call(this, t4), this.options = void 0;
+          "undefined" == typeof createImageBitmap && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.ImageBitmapLoader: createImageBitmap() not supported."), "undefined" == typeof fetch && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.ImageBitmapLoader: fetch() not supported."), zo.call(this, t4), this.options = void 0;
         }
         function Fs() {
           this.type = "ShapePath", this.color = new Nt(), this.subPaths = [], this.currentPath = null;
@@ -16050,7 +16050,7 @@ var dist = {};
                 }
             return { offsetX: a4.ha * e5, path: f4 };
           }
-          console.error('THREE.Font: character "' + t4 + '" does not exists in font family ' + i3.familyName + ".");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", 'THREE.Font: character "' + t4 + '" does not exists in font family ' + i3.familyName + ".");
         }
         function Hs(t4) {
           zo.call(this, t4);
@@ -16174,7 +16174,7 @@ var dist = {};
             try {
               r4 = JSON.parse(t5);
             } catch (e6) {
-              console.warn("THREE.FontLoader: typeface.js support is being deprecated. Use typeface.json instead."), r4 = JSON.parse(t5.substring(65, t5.length - 2));
+              index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.FontLoader: typeface.js support is being deprecated. Use typeface.json instead."), r4 = JSON.parse(t5.substring(65, t5.length - 2));
             }
             var n3 = i3.parse(r4);
             e5 && e5(n3);
@@ -16349,17 +16349,17 @@ var dist = {};
               var t4 = this.context.createBufferSource();
               return t4.buffer = this.buffer, t4.loop = this.loop, t4.onended = this.onEnded.bind(this), this.startTime = this.context.currentTime, t4.start(this.startTime, this.offset, this.duration), this.isPlaying = true, this.source = t4, this.setDetune(this.detune), this.setPlaybackRate(this.playbackRate), this.connect();
             }
-            console.warn("THREE.Audio: this Audio has no playback control.");
+            index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Audio: this Audio has no playback control.");
           } else
-            console.warn("THREE.Audio: Audio is already playing.");
+            index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Audio: Audio is already playing.");
         }, pause: function() {
           if (false !== this.hasPlaybackControl)
             return true === this.isPlaying && (this.source.stop(), this.source.onended = null, this.offset += (this.context.currentTime - this.startTime) * this.playbackRate, this.isPlaying = false), this;
-          console.warn("THREE.Audio: this Audio has no playback control.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Audio: this Audio has no playback control.");
         }, stop: function() {
           if (false !== this.hasPlaybackControl)
             return this.source.stop(), this.source.onended = null, this.offset = 0, this.isPlaying = false, this;
-          console.warn("THREE.Audio: this Audio has no playback control.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Audio: this Audio has no playback control.");
         }, connect: function() {
           if (this.filters.length > 0) {
             this.source.connect(this.filters[0]);
@@ -16394,17 +16394,17 @@ var dist = {};
         }, setPlaybackRate: function(t4) {
           if (false !== this.hasPlaybackControl)
             return this.playbackRate = t4, true === this.isPlaying && this.source.playbackRate.setTargetAtTime(this.playbackRate, this.context.currentTime, 0.01), this;
-          console.warn("THREE.Audio: this Audio has no playback control.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Audio: this Audio has no playback control.");
         }, getPlaybackRate: function() {
           return this.playbackRate;
         }, onEnded: function() {
           this.isPlaying = false;
         }, getLoop: function() {
-          return false === this.hasPlaybackControl ? (console.warn("THREE.Audio: this Audio has no playback control."), false) : this.loop;
+          return false === this.hasPlaybackControl ? (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Audio: this Audio has no playback control."), false) : this.loop;
         }, setLoop: function(t4) {
           if (false !== this.hasPlaybackControl)
             return this.loop = t4, true === this.isPlaying && (this.source.loop = this.loop), this;
-          console.warn("THREE.Audio: this Audio has no playback control.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Audio: this Audio has no playback control.");
         }, getVolume: function() {
           return this.gain.gain.value;
         }, setVolume: function(t4) {
@@ -16548,14 +16548,14 @@ var dist = {};
           this._root = t4, this._initMemoryManager(), this._accuIndex = 0, this.time = 0, this.timeScale = 1;
         }
         function Sc(t4) {
-          "string" == typeof t4 && (console.warn("THREE.Uniform: Type parameter is no longer needed."), t4 = arguments[1]), this.value = t4;
+          "string" == typeof t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Uniform: Type parameter is no longer needed."), t4 = arguments[1]), this.value = t4;
         }
         function Tc(t4, e5, r3) {
           ti.call(this, t4, e5), this.meshPerAttribute = r3 || 1;
         }
         function Ec(t4, e5, r3, n2) {
           this.ray = new xt(t4, e5), this.near = r3 || 0, this.far = n2 || 1 / 0, this.camera = null, this.params = { Mesh: {}, Line: {}, LOD: {}, Points: { threshold: 1 }, Sprite: {} }, Object.defineProperties(this.params, { PointCloud: { get: function() {
-            return console.warn("THREE.Raycaster: params.PointCloud has been renamed to params.Points."), this.Points;
+            return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.Raycaster: params.PointCloud has been renamed to params.Points."), this.Points;
           } } });
         }
         function Ac(t4, e5) {
@@ -16677,14 +16677,14 @@ var dist = {};
               switch (r3) {
                 case "materials":
                   if (!t4.material)
-                    return void console.error("THREE.PropertyBinding: Can not bind to material as node does not have a material.", this);
+                    return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Can not bind to material as node does not have a material.", this);
                   if (!t4.material.materials)
-                    return void console.error("THREE.PropertyBinding: Can not bind to material.materials as node.material does not have a materials array.", this);
+                    return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Can not bind to material.materials as node.material does not have a materials array.", this);
                   t4 = t4.material.materials;
                   break;
                 case "bones":
                   if (!t4.skeleton)
-                    return void console.error("THREE.PropertyBinding: Can not bind to bones as node does not have a skeleton.", this);
+                    return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Can not bind to bones as node does not have a skeleton.", this);
                   t4 = t4.skeleton.bones;
                   for (var o5 = 0; o5 < t4.length; o5++)
                     if (t4[o5].name === a4) {
@@ -16694,12 +16694,12 @@ var dist = {};
                   break;
                 default:
                   if (void 0 === t4[r3])
-                    return void console.error("THREE.PropertyBinding: Can not bind to objectName of node undefined.", this);
+                    return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Can not bind to objectName of node undefined.", this);
                   t4 = t4[r3];
               }
               if (void 0 !== a4) {
                 if (void 0 === t4[a4])
-                  return void console.error("THREE.PropertyBinding: Trying to bind to objectIndex of objectName, but is undefined.", this, t4);
+                  return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Trying to bind to objectIndex of objectName, but is undefined.", this, t4);
                 t4 = t4[a4];
               }
             }
@@ -16711,10 +16711,10 @@ var dist = {};
               if (void 0 !== i3) {
                 if ("morphTargetInfluences" === n2) {
                   if (!t4.geometry)
-                    return void console.error("THREE.PropertyBinding: Can not bind to morphTargetInfluences because node does not have a geometry.", this);
+                    return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Can not bind to morphTargetInfluences because node does not have a geometry.", this);
                   if (t4.geometry.isBufferGeometry) {
                     if (!t4.geometry.morphAttributes)
-                      return void console.error("THREE.PropertyBinding: Can not bind to morphTargetInfluences because node does not have a geometry.morphAttributes.", this);
+                      return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Can not bind to morphTargetInfluences because node does not have a geometry.morphAttributes.", this);
                     for (o5 = 0; o5 < this.node.geometry.morphAttributes.position.length; o5++)
                       if (t4.geometry.morphAttributes.position[o5].name === i3) {
                         i3 = o5;
@@ -16722,7 +16722,7 @@ var dist = {};
                       }
                   } else {
                     if (!t4.geometry.morphTargets)
-                      return void console.error("THREE.PropertyBinding: Can not bind to morphTargetInfluences because node does not have a geometry.morphTargets.", this);
+                      return void index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Can not bind to morphTargetInfluences because node does not have a geometry.morphTargets.", this);
                     for (o5 = 0; o5 < this.node.geometry.morphTargets.length; o5++)
                       if (t4.geometry.morphTargets[o5].name === i3) {
                         i3 = o5;
@@ -16736,10 +16736,10 @@ var dist = {};
               this.getValue = this.GetterByBindingType[l4], this.setValue = this.SetterByBindingTypeAndVersioning[l4][c3];
             } else {
               var h3 = e5.nodeName;
-              console.error("THREE.PropertyBinding: Trying to update property for track: " + h3 + "." + n2 + " but it wasn't found.", t4);
+              index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Trying to update property for track: " + h3 + "." + n2 + " but it wasn't found.", t4);
             }
           } else
-            console.error("THREE.PropertyBinding: Trying to update node for track: " + this.path + " but it wasn't found.");
+            index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:2", "THREE.PropertyBinding: Trying to update node for track: " + this.path + " but it wasn't found.");
         }, unbind: function() {
           this.node = null, this.getValue = this._getValue_unbound, this.setValue = this._setValue_unbound;
         } }), //!\ DECLARE ALIAS AFTER assign prototype !
@@ -16758,7 +16758,7 @@ var dist = {};
                 y3[d3] = x3, void 0 === b3 && (b3 = new bc(u4, i3[f4], a4[f4])), y3[g3] = b3;
               }
             } else
-              t4[d3] !== c3 && console.error("THREE.AnimationObjectGroup: Different objects with the same UUID detected. Clean the caches or recreate your infrastructure when reloading scenes.");
+              t4[d3] !== c3 && index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.AnimationObjectGroup: Different objects with the same UUID detected. Clean the caches or recreate your infrastructure when reloading scenes.");
           }
           this.nCachedObjects_ = r3;
         }, remove: function() {
@@ -17115,14 +17115,14 @@ var dist = {};
         } }), Object.assign(Ec.prototype, { linePrecision: 1, set: function(t4, e5) {
           this.ray.set(t4, e5);
         }, setFromCamera: function(t4, e5) {
-          e5 && e5.isPerspectiveCamera ? (this.ray.origin.setFromMatrixPosition(e5.matrixWorld), this.ray.direction.set(t4.x, t4.y, 0.5).unproject(e5).sub(this.ray.origin).normalize(), this.camera = e5) : e5 && e5.isOrthographicCamera ? (this.ray.origin.set(t4.x, t4.y, (e5.near + e5.far) / (e5.near - e5.far)).unproject(e5), this.ray.direction.set(0, 0, -1).transformDirection(e5.matrixWorld), this.camera = e5) : console.error("THREE.Raycaster: Unsupported camera type.");
+          e5 && e5.isPerspectiveCamera ? (this.ray.origin.setFromMatrixPosition(e5.matrixWorld), this.ray.direction.set(t4.x, t4.y, 0.5).unproject(e5).sub(this.ray.origin).normalize(), this.camera = e5) : e5 && e5.isOrthographicCamera ? (this.ray.origin.set(t4.x, t4.y, (e5.near + e5.far) / (e5.near - e5.far)).unproject(e5), this.ray.direction.set(0, 0, -1).transformDirection(e5.matrixWorld), this.camera = e5) : index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Raycaster: Unsupported camera type.");
         }, intersectObject: function(t4, e5, r3) {
           var n2 = r3 || [];
           return Lc(t4, this, n2, e5), n2.sort(Ac), n2;
         }, intersectObjects: function(t4, e5, r3) {
           var n2 = r3 || [];
           if (false === Array.isArray(t4))
-            return console.warn("THREE.Raycaster.intersectObjects: objects is not an Array."), n2;
+            return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Raycaster.intersectObjects: objects is not an Array."), n2;
           for (var i3 = 0, a4 = t4.length; i3 < a4; i3++)
             Lc(t4[i3], this, n2, e5);
           return n2.sort(Ac), n2;
@@ -17172,9 +17172,9 @@ var dist = {};
         }, isEmpty: function() {
           return this.max.x < this.min.x || this.max.y < this.min.y;
         }, getCenter: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Box2: .getCenter() target is now required"), t4 = new l3()), this.isEmpty() ? t4.set(0, 0) : t4.addVectors(this.min, this.max).multiplyScalar(0.5);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box2: .getCenter() target is now required"), t4 = new l3()), this.isEmpty() ? t4.set(0, 0) : t4.addVectors(this.min, this.max).multiplyScalar(0.5);
         }, getSize: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Box2: .getSize() target is now required"), t4 = new l3()), this.isEmpty() ? t4.set(0, 0) : t4.subVectors(this.max, this.min);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box2: .getSize() target is now required"), t4 = new l3()), this.isEmpty() ? t4.set(0, 0) : t4.subVectors(this.max, this.min);
         }, expandByPoint: function(t4) {
           return this.min.min(t4), this.max.max(t4), this;
         }, expandByVector: function(t4) {
@@ -17186,11 +17186,11 @@ var dist = {};
         }, containsBox: function(t4) {
           return this.min.x <= t4.min.x && t4.max.x <= this.max.x && this.min.y <= t4.min.y && t4.max.y <= this.max.y;
         }, getParameter: function(t4, e5) {
-          return void 0 === e5 && (console.warn("THREE.Box2: .getParameter() target is now required"), e5 = new l3()), e5.set((t4.x - this.min.x) / (this.max.x - this.min.x), (t4.y - this.min.y) / (this.max.y - this.min.y));
+          return void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box2: .getParameter() target is now required"), e5 = new l3()), e5.set((t4.x - this.min.x) / (this.max.x - this.min.x), (t4.y - this.min.y) / (this.max.y - this.min.y));
         }, intersectsBox: function(t4) {
           return !(t4.max.x < this.min.x || t4.min.x > this.max.x || t4.max.y < this.min.y || t4.min.y > this.max.y);
         }, clampPoint: function(t4, e5) {
-          return void 0 === e5 && (console.warn("THREE.Box2: .clampPoint() target is now required"), e5 = new l3()), e5.copy(t4).clamp(this.min, this.max);
+          return void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box2: .clampPoint() target is now required"), e5 = new l3()), e5.copy(t4).clamp(this.min, this.max);
         }, distanceToPoint: function(t4) {
           return Cc.copy(t4).clamp(this.min, this.max).sub(t4).length();
         }, intersect: function(t4) {
@@ -17217,22 +17217,22 @@ var dist = {};
         }, copy: function(t4) {
           return this.start.copy(t4.start), this.end.copy(t4.end), this;
         }, getCenter: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Line3: .getCenter() target is now required"), t4 = new d2()), t4.addVectors(this.start, this.end).multiplyScalar(0.5);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Line3: .getCenter() target is now required"), t4 = new d2()), t4.addVectors(this.start, this.end).multiplyScalar(0.5);
         }, delta: function(t4) {
-          return void 0 === t4 && (console.warn("THREE.Line3: .delta() target is now required"), t4 = new d2()), t4.subVectors(this.end, this.start);
+          return void 0 === t4 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Line3: .delta() target is now required"), t4 = new d2()), t4.subVectors(this.end, this.start);
         }, distanceSq: function() {
           return this.start.distanceToSquared(this.end);
         }, distance: function() {
           return this.start.distanceTo(this.end);
         }, at: function(t4, e5) {
-          return void 0 === e5 && (console.warn("THREE.Line3: .at() target is now required"), e5 = new d2()), this.delta(e5).multiplyScalar(t4).add(this.start);
+          return void 0 === e5 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Line3: .at() target is now required"), e5 = new d2()), this.delta(e5).multiplyScalar(t4).add(this.start);
         }, closestPointToPointParameter: function(t4, e5) {
           Dc.subVectors(t4, this.start), Nc.subVectors(this.end, this.start);
           var r3 = Nc.dot(Nc), n2 = Nc.dot(Dc) / r3;
           return e5 && (n2 = s3.clamp(n2, 0, 1)), n2;
         }, closestPointToPoint: function(t4, e5, r3) {
           var n2 = this.closestPointToPointParameter(t4, e5);
-          return void 0 === r3 && (console.warn("THREE.Line3: .closestPointToPoint() target is now required"), r3 = new d2()), this.delta(r3).multiplyScalar(n2).add(this.start);
+          return void 0 === r3 && (index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Line3: .closestPointToPoint() target is now required"), r3 = new d2()), this.delta(r3).multiplyScalar(n2).add(this.start);
         }, applyMatrix4: function(t4) {
           return this.start.applyMatrix4(t4), this.end.applyMatrix4(t4), this;
         }, equals: function(t4) {
@@ -17418,7 +17418,7 @@ var dist = {};
         function sl(t4, e5, r3, n2) {
           this.object = t4, this.size = void 0 !== e5 ? e5 : 1;
           var i3 = void 0 !== r3 ? r3 : 16776960, a4 = void 0 !== n2 ? n2 : 1, o5 = 0, s4 = this.object.geometry;
-          s4 && s4.isGeometry ? o5 = s4.faces.length : console.warn("THREE.FaceNormalsHelper: only THREE.Geometry is supported. Use THREE.VertexNormalsHelper, instead.");
+          s4 && s4.isGeometry ? o5 = s4.faces.length : index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.FaceNormalsHelper: only THREE.Geometry is supported. Use THREE.VertexNormalsHelper, instead.");
           var c3 = new se(), l4 = new Zt(2 * o5 * 3, 3);
           c3.addAttribute("position", l4), Ni.call(this, c3, new Ti({ color: i3, linewidth: a4 })), this.matrixAutoUpdate = false, this.update();
         }
@@ -17484,7 +17484,7 @@ var dist = {};
           a4.addAttribute("position", new Zt([1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1], 3)), a4.computeBoundingSphere(), this.add(new Te(a4, new Ht({ color: n2, opacity: 0.2, transparent: true, depthWrite: false })));
         }
         vl.prototype = Object.create(Ni.prototype), vl.prototype.constructor = vl, vl.prototype.update = function(t4) {
-          if (void 0 !== t4 && console.warn("THREE.BoxHelper: .update() has no longer arguments."), void 0 !== this.object && gl.setFromObject(this.object), !gl.isEmpty()) {
+          if (void 0 !== t4 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BoxHelper: .update() has no longer arguments."), void 0 !== this.object && gl.setFromObject(this.object), !gl.isEmpty()) {
             var e5 = gl.min, r3 = gl.max, n2 = this.geometry.attributes.position, i3 = n2.array;
             i3[0] = r3.x, i3[1] = r3.y, i3[2] = r3.z, i3[3] = e5.x, i3[4] = r3.y, i3[5] = r3.z, i3[6] = e5.x, i3[7] = e5.y, i3[8] = r3.z, i3[9] = r3.x, i3[10] = e5.y, i3[11] = r3.z, i3[12] = r3.x, i3[13] = r3.y, i3[14] = e5.z, i3[15] = e5.x, i3[16] = r3.y, i3[17] = e5.z, i3[18] = e5.x, i3[19] = e5.y, i3[20] = e5.z, i3[21] = r3.x, i3[22] = e5.y, i3[23] = e5.z, n2.needsUpdate = true, this.geometry.computeBoundingSphere();
           }
@@ -17512,13 +17512,13 @@ var dist = {};
           Ni.call(this, r3, n2);
         }
         function Tl(t4) {
-          console.warn("THREE.ClosedSplineCurve3 has been deprecated. Use THREE.CatmullRomCurve3 instead."), $o.call(this, t4), this.type = "catmullrom", this.closed = true;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ClosedSplineCurve3 has been deprecated. Use THREE.CatmullRomCurve3 instead."), $o.call(this, t4), this.type = "catmullrom", this.closed = true;
         }
         function El(t4) {
-          console.warn("THREE.SplineCurve3 has been deprecated. Use THREE.CatmullRomCurve3 instead."), $o.call(this, t4), this.type = "catmullrom";
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.SplineCurve3 has been deprecated. Use THREE.CatmullRomCurve3 instead."), $o.call(this, t4), this.type = "catmullrom";
         }
         function Al(t4) {
-          console.warn("THREE.Spline has been removed. Use THREE.CatmullRomCurve3 instead."), $o.call(this, t4), this.type = "catmullrom";
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Spline has been removed. Use THREE.CatmullRomCurve3 instead."), $o.call(this, t4), this.type = "catmullrom";
         }
         Ml.prototype = Object.create(Y.prototype), Ml.prototype.constructor = Ml, Ml.prototype.setDirection = function(t4) {
           if (t4.y > 0.99999)
@@ -17539,503 +17539,503 @@ var dist = {};
         }, Ml.prototype.clone = function() {
           return new this.constructor().copy(this);
         }, Sl.prototype = Object.create(Ni.prototype), Sl.prototype.constructor = Sl, Wo.create = function(t4, e5) {
-          return console.log("THREE.Curve.create() has been deprecated"), t4.prototype = Object.create(Wo.prototype), t4.prototype.constructor = t4, t4.prototype.getPoint = e5, t4;
+          return index.__f__("log", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Curve.create() has been deprecated"), t4.prototype = Object.create(Wo.prototype), t4.prototype.constructor = t4, t4.prototype.getPoint = e5, t4;
         }, Object.assign(us.prototype, { createPointsGeometry: function(t4) {
-          console.warn("THREE.CurvePath: .createPointsGeometry() has been removed. Use new THREE.Geometry().setFromPoints( points ) instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.CurvePath: .createPointsGeometry() has been removed. Use new THREE.Geometry().setFromPoints( points ) instead.");
           var e5 = this.getPoints(t4);
           return this.createGeometry(e5);
         }, createSpacedPointsGeometry: function(t4) {
-          console.warn("THREE.CurvePath: .createSpacedPointsGeometry() has been removed. Use new THREE.Geometry().setFromPoints( points ) instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.CurvePath: .createSpacedPointsGeometry() has been removed. Use new THREE.Geometry().setFromPoints( points ) instead.");
           var e5 = this.getSpacedPoints(t4);
           return this.createGeometry(e5);
         }, createGeometry: function(t4) {
-          console.warn("THREE.CurvePath: .createGeometry() has been removed. Use new THREE.Geometry().setFromPoints( points ) instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.CurvePath: .createGeometry() has been removed. Use new THREE.Geometry().setFromPoints( points ) instead.");
           for (var e5 = new Oe(), r3 = 0, n2 = t4.length; r3 < n2; r3++) {
             var i3 = t4[r3];
             e5.vertices.push(new d2(i3.x, i3.y, i3.z || 0));
           }
           return e5;
         } }), Object.assign(ps.prototype, { fromPoints: function(t4) {
-          console.warn("THREE.Path: .fromPoints() has been renamed to .setFromPoints()."), this.setFromPoints(t4);
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Path: .fromPoints() has been renamed to .setFromPoints()."), this.setFromPoints(t4);
         } }), Tl.prototype = Object.create($o.prototype), El.prototype = Object.create($o.prototype), Al.prototype = Object.create($o.prototype), Object.assign(Al.prototype, { initFromArray: function() {
-          console.error("THREE.Spline: .initFromArray() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Spline: .initFromArray() has been removed.");
         }, getControlPointsArray: function() {
-          console.error("THREE.Spline: .getControlPointsArray() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Spline: .getControlPointsArray() has been removed.");
         }, reparametrizeByArcLength: function() {
-          console.error("THREE.Spline: .reparametrizeByArcLength() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Spline: .reparametrizeByArcLength() has been removed.");
         } }), el.prototype.setColors = function() {
-          console.error("THREE.GridHelper: setColors() has been deprecated, pass them in the constructor instead.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.GridHelper: setColors() has been deprecated, pass them in the constructor instead.");
         }, Xc.prototype.update = function() {
-          console.error("THREE.SkeletonHelper: update() no longer needs to be called.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.SkeletonHelper: update() no longer needs to be called.");
         }, Object.assign(zo.prototype, { extractUrlBase: function(t4) {
-          return console.warn("THREE.Loader: .extractUrlBase() has been deprecated. Use THREE.LoaderUtils.extractUrlBase() instead."), As.extractUrlBase(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Loader: .extractUrlBase() has been deprecated. Use THREE.LoaderUtils.extractUrlBase() instead."), As.extractUrlBase(t4);
         } }), Object.assign(Os.prototype, { setTexturePath: function(t4) {
-          return console.warn("THREE.ObjectLoader: .setTexturePath() has been renamed to .setResourcePath()."), this.setResourcePath(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ObjectLoader: .setTexturePath() has been renamed to .setResourcePath()."), this.setResourcePath(t4);
         } }), Object.assign(Oc.prototype, { center: function(t4) {
-          return console.warn("THREE.Box2: .center() has been renamed to .getCenter()."), this.getCenter(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box2: .center() has been renamed to .getCenter()."), this.getCenter(t4);
         }, empty: function() {
-          return console.warn("THREE.Box2: .empty() has been renamed to .isEmpty()."), this.isEmpty();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box2: .empty() has been renamed to .isEmpty()."), this.isEmpty();
         }, isIntersectionBox: function(t4) {
-          return console.warn("THREE.Box2: .isIntersectionBox() has been renamed to .intersectsBox()."), this.intersectsBox(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box2: .isIntersectionBox() has been renamed to .intersectsBox()."), this.intersectsBox(t4);
         }, size: function(t4) {
-          return console.warn("THREE.Box2: .size() has been renamed to .getSize()."), this.getSize(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box2: .size() has been renamed to .getSize()."), this.getSize(t4);
         } }), Object.assign(ct.prototype, { center: function(t4) {
-          return console.warn("THREE.Box3: .center() has been renamed to .getCenter()."), this.getCenter(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box3: .center() has been renamed to .getCenter()."), this.getCenter(t4);
         }, empty: function() {
-          return console.warn("THREE.Box3: .empty() has been renamed to .isEmpty()."), this.isEmpty();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box3: .empty() has been renamed to .isEmpty()."), this.isEmpty();
         }, isIntersectionBox: function(t4) {
-          return console.warn("THREE.Box3: .isIntersectionBox() has been renamed to .intersectsBox()."), this.intersectsBox(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box3: .isIntersectionBox() has been renamed to .intersectsBox()."), this.intersectsBox(t4);
         }, isIntersectionSphere: function(t4) {
-          return console.warn("THREE.Box3: .isIntersectionSphere() has been renamed to .intersectsSphere()."), this.intersectsSphere(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box3: .isIntersectionSphere() has been renamed to .intersectsSphere()."), this.intersectsSphere(t4);
         }, size: function(t4) {
-          return console.warn("THREE.Box3: .size() has been renamed to .getSize()."), this.getSize(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Box3: .size() has been renamed to .getSize()."), this.getSize(t4);
         } }), Ic.prototype.center = function(t4) {
-          return console.warn("THREE.Line3: .center() has been renamed to .getCenter()."), this.getCenter(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Line3: .center() has been renamed to .getCenter()."), this.getCenter(t4);
         }, Object.assign(s3, { random16: function() {
-          return console.warn("THREE.Math: .random16() has been deprecated. Use Math.random() instead."), Math.random();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Math: .random16() has been deprecated. Use Math.random() instead."), Math.random();
         }, nearestPowerOfTwo: function(t4) {
-          return console.warn("THREE.Math: .nearestPowerOfTwo() has been renamed to .floorPowerOfTwo()."), s3.floorPowerOfTwo(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Math: .nearestPowerOfTwo() has been renamed to .floorPowerOfTwo()."), s3.floorPowerOfTwo(t4);
         }, nextPowerOfTwo: function(t4) {
-          return console.warn("THREE.Math: .nextPowerOfTwo() has been renamed to .ceilPowerOfTwo()."), s3.ceilPowerOfTwo(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Math: .nextPowerOfTwo() has been renamed to .ceilPowerOfTwo()."), s3.ceilPowerOfTwo(t4);
         } }), Object.assign(m2.prototype, { flattenToArrayOffset: function(t4, e5) {
-          return console.warn("THREE.Matrix3: .flattenToArrayOffset() has been deprecated. Use .toArray() instead."), this.toArray(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix3: .flattenToArrayOffset() has been deprecated. Use .toArray() instead."), this.toArray(t4, e5);
         }, multiplyVector3: function(t4) {
-          return console.warn("THREE.Matrix3: .multiplyVector3() has been removed. Use vector.applyMatrix3( matrix ) instead."), t4.applyMatrix3(this);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix3: .multiplyVector3() has been removed. Use vector.applyMatrix3( matrix ) instead."), t4.applyMatrix3(this);
         }, multiplyVector3Array: function() {
-          console.error("THREE.Matrix3: .multiplyVector3Array() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix3: .multiplyVector3Array() has been removed.");
         }, applyToBuffer: function(t4) {
-          return console.warn("THREE.Matrix3: .applyToBuffer() has been removed. Use matrix.applyToBufferAttribute( attribute ) instead."), this.applyToBufferAttribute(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix3: .applyToBuffer() has been removed. Use matrix.applyToBufferAttribute( attribute ) instead."), this.applyToBufferAttribute(t4);
         }, applyToVector3Array: function() {
-          console.error("THREE.Matrix3: .applyToVector3Array() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix3: .applyToVector3Array() has been removed.");
         } }), Object.assign(P2.prototype, { extractPosition: function(t4) {
-          return console.warn("THREE.Matrix4: .extractPosition() has been renamed to .copyPosition()."), this.copyPosition(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .extractPosition() has been renamed to .copyPosition()."), this.copyPosition(t4);
         }, flattenToArrayOffset: function(t4, e5) {
-          return console.warn("THREE.Matrix4: .flattenToArrayOffset() has been deprecated. Use .toArray() instead."), this.toArray(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .flattenToArrayOffset() has been deprecated. Use .toArray() instead."), this.toArray(t4, e5);
         }, getPosition: function() {
-          return console.warn("THREE.Matrix4: .getPosition() has been removed. Use Vector3.setFromMatrixPosition( matrix ) instead."), new d2().setFromMatrixColumn(this, 3);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .getPosition() has been removed. Use Vector3.setFromMatrixPosition( matrix ) instead."), new d2().setFromMatrixColumn(this, 3);
         }, setRotationFromQuaternion: function(t4) {
-          return console.warn("THREE.Matrix4: .setRotationFromQuaternion() has been renamed to .makeRotationFromQuaternion()."), this.makeRotationFromQuaternion(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .setRotationFromQuaternion() has been renamed to .makeRotationFromQuaternion()."), this.makeRotationFromQuaternion(t4);
         }, multiplyToArray: function() {
-          console.warn("THREE.Matrix4: .multiplyToArray() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .multiplyToArray() has been removed.");
         }, multiplyVector3: function(t4) {
-          return console.warn("THREE.Matrix4: .multiplyVector3() has been removed. Use vector.applyMatrix4( matrix ) instead."), t4.applyMatrix4(this);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .multiplyVector3() has been removed. Use vector.applyMatrix4( matrix ) instead."), t4.applyMatrix4(this);
         }, multiplyVector4: function(t4) {
-          return console.warn("THREE.Matrix4: .multiplyVector4() has been removed. Use vector.applyMatrix4( matrix ) instead."), t4.applyMatrix4(this);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .multiplyVector4() has been removed. Use vector.applyMatrix4( matrix ) instead."), t4.applyMatrix4(this);
         }, multiplyVector3Array: function() {
-          console.error("THREE.Matrix4: .multiplyVector3Array() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .multiplyVector3Array() has been removed.");
         }, rotateAxis: function(t4) {
-          console.warn("THREE.Matrix4: .rotateAxis() has been removed. Use Vector3.transformDirection( matrix ) instead."), t4.transformDirection(this);
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .rotateAxis() has been removed. Use Vector3.transformDirection( matrix ) instead."), t4.transformDirection(this);
         }, crossVector: function(t4) {
-          return console.warn("THREE.Matrix4: .crossVector() has been removed. Use vector.applyMatrix4( matrix ) instead."), t4.applyMatrix4(this);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .crossVector() has been removed. Use vector.applyMatrix4( matrix ) instead."), t4.applyMatrix4(this);
         }, translate: function() {
-          console.error("THREE.Matrix4: .translate() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .translate() has been removed.");
         }, rotateX: function() {
-          console.error("THREE.Matrix4: .rotateX() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .rotateX() has been removed.");
         }, rotateY: function() {
-          console.error("THREE.Matrix4: .rotateY() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .rotateY() has been removed.");
         }, rotateZ: function() {
-          console.error("THREE.Matrix4: .rotateZ() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .rotateZ() has been removed.");
         }, rotateByAxis: function() {
-          console.error("THREE.Matrix4: .rotateByAxis() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .rotateByAxis() has been removed.");
         }, applyToBuffer: function(t4) {
-          return console.warn("THREE.Matrix4: .applyToBuffer() has been removed. Use matrix.applyToBufferAttribute( attribute ) instead."), this.applyToBufferAttribute(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .applyToBuffer() has been removed. Use matrix.applyToBufferAttribute( attribute ) instead."), this.applyToBufferAttribute(t4);
         }, applyToVector3Array: function() {
-          console.error("THREE.Matrix4: .applyToVector3Array() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .applyToVector3Array() has been removed.");
         }, makeFrustum: function(t4, e5, r3, n2, i3, a4) {
-          return console.warn("THREE.Matrix4: .makeFrustum() has been removed. Use .makePerspective( left, right, top, bottom, near, far ) instead."), this.makePerspective(t4, e5, n2, r3, i3, a4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Matrix4: .makeFrustum() has been removed. Use .makePerspective( left, right, top, bottom, near, far ) instead."), this.makePerspective(t4, e5, n2, r3, i3, a4);
         } }), Xe.prototype.isIntersectionLine = function(t4) {
-          return console.warn("THREE.Plane: .isIntersectionLine() has been renamed to .intersectsLine()."), this.intersectsLine(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Plane: .isIntersectionLine() has been renamed to .intersectsLine()."), this.intersectsLine(t4);
         }, h2.prototype.multiplyVector3 = function(t4) {
-          return console.warn("THREE.Quaternion: .multiplyVector3() has been removed. Use is now vector.applyQuaternion( quaternion ) instead."), t4.applyQuaternion(this);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Quaternion: .multiplyVector3() has been removed. Use is now vector.applyQuaternion( quaternion ) instead."), t4.applyQuaternion(this);
         }, Object.assign(xt.prototype, { isIntersectionBox: function(t4) {
-          return console.warn("THREE.Ray: .isIntersectionBox() has been renamed to .intersectsBox()."), this.intersectsBox(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Ray: .isIntersectionBox() has been renamed to .intersectsBox()."), this.intersectsBox(t4);
         }, isIntersectionPlane: function(t4) {
-          return console.warn("THREE.Ray: .isIntersectionPlane() has been renamed to .intersectsPlane()."), this.intersectsPlane(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Ray: .isIntersectionPlane() has been renamed to .intersectsPlane()."), this.intersectsPlane(t4);
         }, isIntersectionSphere: function(t4) {
-          return console.warn("THREE.Ray: .isIntersectionSphere() has been renamed to .intersectsSphere()."), this.intersectsSphere(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Ray: .isIntersectionSphere() has been renamed to .intersectsSphere()."), this.intersectsSphere(t4);
         } }), Object.assign(Pt.prototype, { area: function() {
-          return console.warn("THREE.Triangle: .area() has been renamed to .getArea()."), this.getArea();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Triangle: .area() has been renamed to .getArea()."), this.getArea();
         }, barycoordFromPoint: function(t4, e5) {
-          return console.warn("THREE.Triangle: .barycoordFromPoint() has been renamed to .getBarycoord()."), this.getBarycoord(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Triangle: .barycoordFromPoint() has been renamed to .getBarycoord()."), this.getBarycoord(t4, e5);
         }, midpoint: function(t4) {
-          return console.warn("THREE.Triangle: .midpoint() has been renamed to .getMidpoint()."), this.getMidpoint(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Triangle: .midpoint() has been renamed to .getMidpoint()."), this.getMidpoint(t4);
         }, normal: function(t4) {
-          return console.warn("THREE.Triangle: .normal() has been renamed to .getNormal()."), this.getNormal(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Triangle: .normal() has been renamed to .getNormal()."), this.getNormal(t4);
         }, plane: function(t4) {
-          return console.warn("THREE.Triangle: .plane() has been renamed to .getPlane()."), this.getPlane(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Triangle: .plane() has been renamed to .getPlane()."), this.getPlane(t4);
         } }), Object.assign(Pt, { barycoordFromPoint: function(t4, e5, r3, n2, i3) {
-          return console.warn("THREE.Triangle: .barycoordFromPoint() has been renamed to .getBarycoord()."), Pt.getBarycoord(t4, e5, r3, n2, i3);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Triangle: .barycoordFromPoint() has been renamed to .getBarycoord()."), Pt.getBarycoord(t4, e5, r3, n2, i3);
         }, normal: function(t4, e5, r3, n2) {
-          return console.warn("THREE.Triangle: .normal() has been renamed to .getNormal()."), Pt.getNormal(t4, e5, r3, n2);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Triangle: .normal() has been renamed to .getNormal()."), Pt.getNormal(t4, e5, r3, n2);
         } }), Object.assign(ds.prototype, { extractAllPoints: function(t4) {
-          return console.warn("THREE.Shape: .extractAllPoints() has been removed. Use .extractPoints() instead."), this.extractPoints(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Shape: .extractAllPoints() has been removed. Use .extractPoints() instead."), this.extractPoints(t4);
         }, extrude: function(t4) {
-          return console.warn("THREE.Shape: .extrude() has been removed. Use ExtrudeGeometry() instead."), new Ba(this, t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Shape: .extrude() has been removed. Use ExtrudeGeometry() instead."), new Ba(this, t4);
         }, makeGeometry: function(t4) {
-          return console.warn("THREE.Shape: .makeGeometry() has been removed. Use ShapeGeometry() instead."), new Ja(this, t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Shape: .makeGeometry() has been removed. Use ShapeGeometry() instead."), new Ja(this, t4);
         } }), Object.assign(l3.prototype, { fromAttribute: function(t4, e5, r3) {
-          return console.warn("THREE.Vector2: .fromAttribute() has been renamed to .fromBufferAttribute()."), this.fromBufferAttribute(t4, e5, r3);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector2: .fromAttribute() has been renamed to .fromBufferAttribute()."), this.fromBufferAttribute(t4, e5, r3);
         }, distanceToManhattan: function(t4) {
-          return console.warn("THREE.Vector2: .distanceToManhattan() has been renamed to .manhattanDistanceTo()."), this.manhattanDistanceTo(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector2: .distanceToManhattan() has been renamed to .manhattanDistanceTo()."), this.manhattanDistanceTo(t4);
         }, lengthManhattan: function() {
-          return console.warn("THREE.Vector2: .lengthManhattan() has been renamed to .manhattanLength()."), this.manhattanLength();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector2: .lengthManhattan() has been renamed to .manhattanLength()."), this.manhattanLength();
         } }), Object.assign(d2.prototype, { setEulerFromRotationMatrix: function() {
-          console.error("THREE.Vector3: .setEulerFromRotationMatrix() has been removed. Use Euler.setFromRotationMatrix() instead.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector3: .setEulerFromRotationMatrix() has been removed. Use Euler.setFromRotationMatrix() instead.");
         }, setEulerFromQuaternion: function() {
-          console.error("THREE.Vector3: .setEulerFromQuaternion() has been removed. Use Euler.setFromQuaternion() instead.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector3: .setEulerFromQuaternion() has been removed. Use Euler.setFromQuaternion() instead.");
         }, getPositionFromMatrix: function(t4) {
-          return console.warn("THREE.Vector3: .getPositionFromMatrix() has been renamed to .setFromMatrixPosition()."), this.setFromMatrixPosition(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector3: .getPositionFromMatrix() has been renamed to .setFromMatrixPosition()."), this.setFromMatrixPosition(t4);
         }, getScaleFromMatrix: function(t4) {
-          return console.warn("THREE.Vector3: .getScaleFromMatrix() has been renamed to .setFromMatrixScale()."), this.setFromMatrixScale(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector3: .getScaleFromMatrix() has been renamed to .setFromMatrixScale()."), this.setFromMatrixScale(t4);
         }, getColumnFromMatrix: function(t4, e5) {
-          return console.warn("THREE.Vector3: .getColumnFromMatrix() has been renamed to .setFromMatrixColumn()."), this.setFromMatrixColumn(e5, t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector3: .getColumnFromMatrix() has been renamed to .setFromMatrixColumn()."), this.setFromMatrixColumn(e5, t4);
         }, applyProjection: function(t4) {
-          return console.warn("THREE.Vector3: .applyProjection() has been removed. Use .applyMatrix4( m ) instead."), this.applyMatrix4(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector3: .applyProjection() has been removed. Use .applyMatrix4( m ) instead."), this.applyMatrix4(t4);
         }, fromAttribute: function(t4, e5, r3) {
-          return console.warn("THREE.Vector3: .fromAttribute() has been renamed to .fromBufferAttribute()."), this.fromBufferAttribute(t4, e5, r3);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector3: .fromAttribute() has been renamed to .fromBufferAttribute()."), this.fromBufferAttribute(t4, e5, r3);
         }, distanceToManhattan: function(t4) {
-          return console.warn("THREE.Vector3: .distanceToManhattan() has been renamed to .manhattanDistanceTo()."), this.manhattanDistanceTo(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector3: .distanceToManhattan() has been renamed to .manhattanDistanceTo()."), this.manhattanDistanceTo(t4);
         }, lengthManhattan: function() {
-          return console.warn("THREE.Vector3: .lengthManhattan() has been renamed to .manhattanLength()."), this.manhattanLength();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector3: .lengthManhattan() has been renamed to .manhattanLength()."), this.manhattanLength();
         } }), Object.assign(x2.prototype, { fromAttribute: function(t4, e5, r3) {
-          return console.warn("THREE.Vector4: .fromAttribute() has been renamed to .fromBufferAttribute()."), this.fromBufferAttribute(t4, e5, r3);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector4: .fromAttribute() has been renamed to .fromBufferAttribute()."), this.fromBufferAttribute(t4, e5, r3);
         }, lengthManhattan: function() {
-          return console.warn("THREE.Vector4: .lengthManhattan() has been renamed to .manhattanLength()."), this.manhattanLength();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vector4: .lengthManhattan() has been renamed to .manhattanLength()."), this.manhattanLength();
         } }), Object.assign(Oe.prototype, { computeTangents: function() {
-          console.error("THREE.Geometry: .computeTangents() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Geometry: .computeTangents() has been removed.");
         }, computeLineDistances: function() {
-          console.error("THREE.Geometry: .computeLineDistances() has been removed. Use THREE.Line.computeLineDistances() instead.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Geometry: .computeLineDistances() has been removed. Use THREE.Line.computeLineDistances() instead.");
         } }), Object.assign(Y.prototype, { getChildByName: function(t4) {
-          return console.warn("THREE.Object3D: .getChildByName() has been renamed to .getObjectByName()."), this.getObjectByName(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Object3D: .getChildByName() has been renamed to .getObjectByName()."), this.getObjectByName(t4);
         }, renderDepth: function() {
-          console.warn("THREE.Object3D: .renderDepth has been removed. Use .renderOrder, instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Object3D: .renderDepth has been removed. Use .renderOrder, instead.");
         }, translate: function(t4, e5) {
-          return console.warn("THREE.Object3D: .translate() has been removed. Use .translateOnAxis( axis, distance ) instead."), this.translateOnAxis(e5, t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Object3D: .translate() has been removed. Use .translateOnAxis( axis, distance ) instead."), this.translateOnAxis(e5, t4);
         }, getWorldRotation: function() {
-          console.error("THREE.Object3D: .getWorldRotation() has been removed. Use THREE.Object3D.getWorldQuaternion( target ) instead.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Object3D: .getWorldRotation() has been removed. Use THREE.Object3D.getWorldQuaternion( target ) instead.");
         } }), Object.defineProperties(Y.prototype, { eulerOrder: { get: function() {
-          return console.warn("THREE.Object3D: .eulerOrder is now .rotation.order."), this.rotation.order;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Object3D: .eulerOrder is now .rotation.order."), this.rotation.order;
         }, set: function(t4) {
-          console.warn("THREE.Object3D: .eulerOrder is now .rotation.order."), this.rotation.order = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Object3D: .eulerOrder is now .rotation.order."), this.rotation.order = t4;
         } }, useQuaternion: { get: function() {
-          console.warn("THREE.Object3D: .useQuaternion has been removed. The library now uses quaternions by default.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Object3D: .useQuaternion has been removed. The library now uses quaternions by default.");
         }, set: function() {
-          console.warn("THREE.Object3D: .useQuaternion has been removed. The library now uses quaternions by default.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Object3D: .useQuaternion has been removed. The library now uses quaternions by default.");
         } } }), Object.defineProperties(xi.prototype, { objects: { get: function() {
-          return console.warn("THREE.LOD: .objects has been renamed to .levels."), this.levels;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.LOD: .objects has been renamed to .levels."), this.levels;
         } } }), Object.defineProperty(Mi.prototype, "useVertexTexture", { get: function() {
-          console.warn("THREE.Skeleton: useVertexTexture has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Skeleton: useVertexTexture has been removed.");
         }, set: function() {
-          console.warn("THREE.Skeleton: useVertexTexture has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Skeleton: useVertexTexture has been removed.");
         } }), bi.prototype.initBones = function() {
-          console.error("THREE.SkinnedMesh: initBones() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.SkinnedMesh: initBones() has been removed.");
         }, Object.defineProperty(Wo.prototype, "__arcLengthDivisions", { get: function() {
-          return console.warn("THREE.Curve: .__arcLengthDivisions is now .arcLengthDivisions."), this.arcLengthDivisions;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Curve: .__arcLengthDivisions is now .arcLengthDivisions."), this.arcLengthDivisions;
         }, set: function(t4) {
-          console.warn("THREE.Curve: .__arcLengthDivisions is now .arcLengthDivisions."), this.arcLengthDivisions = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Curve: .__arcLengthDivisions is now .arcLengthDivisions."), this.arcLengthDivisions = t4;
         } }), Ue.prototype.setLens = function(t4, e5) {
-          console.warn("THREE.PerspectiveCamera.setLens is deprecated. Use .setFocalLength and .filmGauge for a photographic setup."), void 0 !== e5 && (this.filmGauge = e5), this.setFocalLength(t4);
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.PerspectiveCamera.setLens is deprecated. Use .setFocalLength and .filmGauge for a photographic setup."), void 0 !== e5 && (this.filmGauge = e5), this.setFocalLength(t4);
         }, Object.defineProperties(fs.prototype, { onlyShadow: { set: function() {
-          console.warn("THREE.Light: .onlyShadow has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .onlyShadow has been removed.");
         } }, shadowCameraFov: { set: function(t4) {
-          console.warn("THREE.Light: .shadowCameraFov is now .shadow.camera.fov."), this.shadow.camera.fov = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowCameraFov is now .shadow.camera.fov."), this.shadow.camera.fov = t4;
         } }, shadowCameraLeft: { set: function(t4) {
-          console.warn("THREE.Light: .shadowCameraLeft is now .shadow.camera.left."), this.shadow.camera.left = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowCameraLeft is now .shadow.camera.left."), this.shadow.camera.left = t4;
         } }, shadowCameraRight: { set: function(t4) {
-          console.warn("THREE.Light: .shadowCameraRight is now .shadow.camera.right."), this.shadow.camera.right = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowCameraRight is now .shadow.camera.right."), this.shadow.camera.right = t4;
         } }, shadowCameraTop: { set: function(t4) {
-          console.warn("THREE.Light: .shadowCameraTop is now .shadow.camera.top."), this.shadow.camera.top = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowCameraTop is now .shadow.camera.top."), this.shadow.camera.top = t4;
         } }, shadowCameraBottom: { set: function(t4) {
-          console.warn("THREE.Light: .shadowCameraBottom is now .shadow.camera.bottom."), this.shadow.camera.bottom = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowCameraBottom is now .shadow.camera.bottom."), this.shadow.camera.bottom = t4;
         } }, shadowCameraNear: { set: function(t4) {
-          console.warn("THREE.Light: .shadowCameraNear is now .shadow.camera.near."), this.shadow.camera.near = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowCameraNear is now .shadow.camera.near."), this.shadow.camera.near = t4;
         } }, shadowCameraFar: { set: function(t4) {
-          console.warn("THREE.Light: .shadowCameraFar is now .shadow.camera.far."), this.shadow.camera.far = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowCameraFar is now .shadow.camera.far."), this.shadow.camera.far = t4;
         } }, shadowCameraVisible: { set: function() {
-          console.warn("THREE.Light: .shadowCameraVisible has been removed. Use new THREE.CameraHelper( light.shadow.camera ) instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowCameraVisible has been removed. Use new THREE.CameraHelper( light.shadow.camera ) instead.");
         } }, shadowBias: { set: function(t4) {
-          console.warn("THREE.Light: .shadowBias is now .shadow.bias."), this.shadow.bias = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowBias is now .shadow.bias."), this.shadow.bias = t4;
         } }, shadowDarkness: { set: function() {
-          console.warn("THREE.Light: .shadowDarkness has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowDarkness has been removed.");
         } }, shadowMapWidth: { set: function(t4) {
-          console.warn("THREE.Light: .shadowMapWidth is now .shadow.mapSize.width."), this.shadow.mapSize.width = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowMapWidth is now .shadow.mapSize.width."), this.shadow.mapSize.width = t4;
         } }, shadowMapHeight: { set: function(t4) {
-          console.warn("THREE.Light: .shadowMapHeight is now .shadow.mapSize.height."), this.shadow.mapSize.height = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Light: .shadowMapHeight is now .shadow.mapSize.height."), this.shadow.mapSize.height = t4;
         } } }), Object.defineProperties(Vt.prototype, { length: { get: function() {
-          return console.warn("THREE.BufferAttribute: .length has been deprecated. Use .count instead."), this.array.length;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferAttribute: .length has been deprecated. Use .count instead."), this.array.length;
         } }, copyIndicesArray: function() {
-          console.error("THREE.BufferAttribute: .copyIndicesArray() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferAttribute: .copyIndicesArray() has been removed.");
         } }), Object.assign(se.prototype, { addIndex: function(t4) {
-          console.warn("THREE.BufferGeometry: .addIndex() has been renamed to .setIndex()."), this.setIndex(t4);
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferGeometry: .addIndex() has been renamed to .setIndex()."), this.setIndex(t4);
         }, addDrawCall: function(t4, e5, r3) {
-          void 0 !== r3 && console.warn("THREE.BufferGeometry: .addDrawCall() no longer supports indexOffset."), console.warn("THREE.BufferGeometry: .addDrawCall() is now .addGroup()."), this.addGroup(t4, e5);
+          void 0 !== r3 && index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferGeometry: .addDrawCall() no longer supports indexOffset."), index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferGeometry: .addDrawCall() is now .addGroup()."), this.addGroup(t4, e5);
         }, clearDrawCalls: function() {
-          console.warn("THREE.BufferGeometry: .clearDrawCalls() is now .clearGroups()."), this.clearGroups();
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferGeometry: .clearDrawCalls() is now .clearGroups()."), this.clearGroups();
         }, computeTangents: function() {
-          console.warn("THREE.BufferGeometry: .computeTangents() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferGeometry: .computeTangents() has been removed.");
         }, computeOffsets: function() {
-          console.warn("THREE.BufferGeometry: .computeOffsets() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferGeometry: .computeOffsets() has been removed.");
         } }), Object.defineProperties(se.prototype, { drawcalls: { get: function() {
-          return console.error("THREE.BufferGeometry: .drawcalls has been renamed to .groups."), this.groups;
+          return index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferGeometry: .drawcalls has been renamed to .groups."), this.groups;
         } }, offsets: { get: function() {
-          return console.warn("THREE.BufferGeometry: .offsets has been renamed to .groups."), this.groups;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BufferGeometry: .offsets has been renamed to .groups."), this.groups;
         } } }), Object.assign(Fa.prototype, { getArrays: function() {
-          console.error("THREE.ExtrudeBufferGeometry: .getArrays() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ExtrudeBufferGeometry: .getArrays() has been removed.");
         }, addShapeList: function() {
-          console.error("THREE.ExtrudeBufferGeometry: .addShapeList() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ExtrudeBufferGeometry: .addShapeList() has been removed.");
         }, addShape: function() {
-          console.error("THREE.ExtrudeBufferGeometry: .addShape() has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ExtrudeBufferGeometry: .addShape() has been removed.");
         } }), Object.defineProperties(Sc.prototype, { dynamic: { set: function() {
-          console.warn("THREE.Uniform: .dynamic has been removed. Use object.onBeforeRender() instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Uniform: .dynamic has been removed. Use object.onBeforeRender() instead.");
         } }, onUpdate: { value: function() {
-          return console.warn("THREE.Uniform: .onUpdate() has been removed. Use object.onBeforeRender() instead."), this;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Uniform: .onUpdate() has been removed. Use object.onBeforeRender() instead."), this;
         } } }), Object.defineProperties(Ut.prototype, { wrapAround: { get: function() {
-          console.warn("THREE.Material: .wrapAround has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Material: .wrapAround has been removed.");
         }, set: function() {
-          console.warn("THREE.Material: .wrapAround has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Material: .wrapAround has been removed.");
         } }, overdraw: { get: function() {
-          console.warn("THREE.Material: .overdraw has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Material: .overdraw has been removed.");
         }, set: function() {
-          console.warn("THREE.Material: .overdraw has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Material: .overdraw has been removed.");
         } }, wrapRGB: { get: function() {
-          return console.warn("THREE.Material: .wrapRGB has been removed."), new Nt();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Material: .wrapRGB has been removed."), new Nt();
         } }, shading: { get: function() {
-          console.error("THREE." + this.type + ": .shading has been removed. Use the boolean .flatShading instead.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE." + this.type + ": .shading has been removed. Use the boolean .flatShading instead.");
         }, set: function(t4) {
-          console.warn("THREE." + this.type + ": .shading has been removed. Use the boolean .flatShading instead."), this.flatShading = 1 === t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE." + this.type + ": .shading has been removed. Use the boolean .flatShading instead."), this.flatShading = 1 === t4;
         } } }), Object.defineProperties(ho.prototype, { metal: { get: function() {
-          return console.warn("THREE.MeshPhongMaterial: .metal has been removed. Use THREE.MeshStandardMaterial instead."), false;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.MeshPhongMaterial: .metal has been removed. Use THREE.MeshStandardMaterial instead."), false;
         }, set: function() {
-          console.warn("THREE.MeshPhongMaterial: .metal has been removed. Use THREE.MeshStandardMaterial instead");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.MeshPhongMaterial: .metal has been removed. Use THREE.MeshStandardMaterial instead");
         } } }), Object.defineProperties(Fe.prototype, { derivatives: { get: function() {
-          return console.warn("THREE.ShaderMaterial: .derivatives has been moved to .extensions.derivatives."), this.extensions.derivatives;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ShaderMaterial: .derivatives has been moved to .extensions.derivatives."), this.extensions.derivatives;
         }, set: function(t4) {
-          console.warn("THREE. ShaderMaterial: .derivatives has been moved to .extensions.derivatives."), this.extensions.derivatives = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE. ShaderMaterial: .derivatives has been moved to .extensions.derivatives."), this.extensions.derivatives = t4;
         } } }), Object.assign(Qn.prototype, { clearTarget: function(t4, e5, r3, n2) {
-          console.warn("THREE.WebGLRenderer: .clearTarget() has been deprecated. Use .setRenderTarget() and .clear() instead."), this.setRenderTarget(t4), this.clear(e5, r3, n2);
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .clearTarget() has been deprecated. Use .setRenderTarget() and .clear() instead."), this.setRenderTarget(t4), this.clear(e5, r3, n2);
         }, animate: function(t4) {
-          console.warn("THREE.WebGLRenderer: .animate() is now .setAnimationLoop()."), this.setAnimationLoop(t4);
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .animate() is now .setAnimationLoop()."), this.setAnimationLoop(t4);
         }, getCurrentRenderTarget: function() {
-          return console.warn("THREE.WebGLRenderer: .getCurrentRenderTarget() is now .getRenderTarget()."), this.getRenderTarget();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .getCurrentRenderTarget() is now .getRenderTarget()."), this.getRenderTarget();
         }, getMaxAnisotropy: function() {
-          return console.warn("THREE.WebGLRenderer: .getMaxAnisotropy() is now .capabilities.getMaxAnisotropy()."), this.capabilities.getMaxAnisotropy();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .getMaxAnisotropy() is now .capabilities.getMaxAnisotropy()."), this.capabilities.getMaxAnisotropy();
         }, getPrecision: function() {
-          return console.warn("THREE.WebGLRenderer: .getPrecision() is now .capabilities.precision."), this.capabilities.precision;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .getPrecision() is now .capabilities.precision."), this.capabilities.precision;
         }, resetGLState: function() {
-          return console.warn("THREE.WebGLRenderer: .resetGLState() is now .state.reset()."), this.state.reset();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .resetGLState() is now .state.reset()."), this.state.reset();
         }, supportsFloatTextures: function() {
-          return console.warn("THREE.WebGLRenderer: .supportsFloatTextures() is now .extensions.get( 'OES_texture_float' )."), this.extensions.get("OES_texture_float");
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .supportsFloatTextures() is now .extensions.get( 'OES_texture_float' )."), this.extensions.get("OES_texture_float");
         }, supportsHalfFloatTextures: function() {
-          return console.warn("THREE.WebGLRenderer: .supportsHalfFloatTextures() is now .extensions.get( 'OES_texture_half_float' )."), this.extensions.get("OES_texture_half_float");
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .supportsHalfFloatTextures() is now .extensions.get( 'OES_texture_half_float' )."), this.extensions.get("OES_texture_half_float");
         }, supportsStandardDerivatives: function() {
-          return console.warn("THREE.WebGLRenderer: .supportsStandardDerivatives() is now .extensions.get( 'OES_standard_derivatives' )."), this.extensions.get("OES_standard_derivatives");
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .supportsStandardDerivatives() is now .extensions.get( 'OES_standard_derivatives' )."), this.extensions.get("OES_standard_derivatives");
         }, supportsCompressedTextureS3TC: function() {
-          return console.warn("THREE.WebGLRenderer: .supportsCompressedTextureS3TC() is now .extensions.get( 'WEBGL_compressed_texture_s3tc' )."), this.extensions.get("WEBGL_compressed_texture_s3tc");
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .supportsCompressedTextureS3TC() is now .extensions.get( 'WEBGL_compressed_texture_s3tc' )."), this.extensions.get("WEBGL_compressed_texture_s3tc");
         }, supportsCompressedTexturePVRTC: function() {
-          return console.warn("THREE.WebGLRenderer: .supportsCompressedTexturePVRTC() is now .extensions.get( 'WEBGL_compressed_texture_pvrtc' )."), this.extensions.get("WEBGL_compressed_texture_pvrtc");
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .supportsCompressedTexturePVRTC() is now .extensions.get( 'WEBGL_compressed_texture_pvrtc' )."), this.extensions.get("WEBGL_compressed_texture_pvrtc");
         }, supportsBlendMinMax: function() {
-          return console.warn("THREE.WebGLRenderer: .supportsBlendMinMax() is now .extensions.get( 'EXT_blend_minmax' )."), this.extensions.get("EXT_blend_minmax");
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .supportsBlendMinMax() is now .extensions.get( 'EXT_blend_minmax' )."), this.extensions.get("EXT_blend_minmax");
         }, supportsVertexTextures: function() {
-          return console.warn("THREE.WebGLRenderer: .supportsVertexTextures() is now .capabilities.vertexTextures."), this.capabilities.vertexTextures;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .supportsVertexTextures() is now .capabilities.vertexTextures."), this.capabilities.vertexTextures;
         }, supportsInstancedArrays: function() {
-          return console.warn("THREE.WebGLRenderer: .supportsInstancedArrays() is now .extensions.get( 'ANGLE_instanced_arrays' )."), this.extensions.get("ANGLE_instanced_arrays");
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .supportsInstancedArrays() is now .extensions.get( 'ANGLE_instanced_arrays' )."), this.extensions.get("ANGLE_instanced_arrays");
         }, enableScissorTest: function(t4) {
-          console.warn("THREE.WebGLRenderer: .enableScissorTest() is now .setScissorTest()."), this.setScissorTest(t4);
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .enableScissorTest() is now .setScissorTest()."), this.setScissorTest(t4);
         }, initMaterial: function() {
-          console.warn("THREE.WebGLRenderer: .initMaterial() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .initMaterial() has been removed.");
         }, addPrePlugin: function() {
-          console.warn("THREE.WebGLRenderer: .addPrePlugin() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .addPrePlugin() has been removed.");
         }, addPostPlugin: function() {
-          console.warn("THREE.WebGLRenderer: .addPostPlugin() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .addPostPlugin() has been removed.");
         }, updateShadowMap: function() {
-          console.warn("THREE.WebGLRenderer: .updateShadowMap() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .updateShadowMap() has been removed.");
         }, setFaceCulling: function() {
-          console.warn("THREE.WebGLRenderer: .setFaceCulling() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .setFaceCulling() has been removed.");
         }, allocTextureUnit: function() {
-          console.warn("THREE.WebGLRenderer: .allocTextureUnit() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .allocTextureUnit() has been removed.");
         }, setTexture: function() {
-          console.warn("THREE.WebGLRenderer: .setTexture() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .setTexture() has been removed.");
         }, setTexture2D: function() {
-          console.warn("THREE.WebGLRenderer: .setTexture2D() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .setTexture2D() has been removed.");
         }, setTextureCube: function() {
-          console.warn("THREE.WebGLRenderer: .setTextureCube() has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .setTextureCube() has been removed.");
         }, getActiveMipMapLevel: function() {
-          return console.warn("THREE.WebGLRenderer: .getActiveMipMapLevel() is now .getActiveMipmapLevel()."), this.getActiveMipmapLevel();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .getActiveMipMapLevel() is now .getActiveMipmapLevel()."), this.getActiveMipmapLevel();
         } }), Object.defineProperties(Qn.prototype, { shadowMapEnabled: { get: function() {
           return this.shadowMap.enabled;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderer: .shadowMapEnabled is now .shadowMap.enabled."), this.shadowMap.enabled = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMapEnabled is now .shadowMap.enabled."), this.shadowMap.enabled = t4;
         } }, shadowMapType: { get: function() {
           return this.shadowMap.type;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderer: .shadowMapType is now .shadowMap.type."), this.shadowMap.type = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMapType is now .shadowMap.type."), this.shadowMap.type = t4;
         } }, shadowMapCullFace: { get: function() {
-          console.warn("THREE.WebGLRenderer: .shadowMapCullFace has been removed. Set Material.shadowSide instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMapCullFace has been removed. Set Material.shadowSide instead.");
         }, set: function() {
-          console.warn("THREE.WebGLRenderer: .shadowMapCullFace has been removed. Set Material.shadowSide instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMapCullFace has been removed. Set Material.shadowSide instead.");
         } }, context: { get: function() {
-          return console.warn("THREE.WebGLRenderer: .context has been removed. Use .getContext() instead."), this.getContext();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .context has been removed. Use .getContext() instead."), this.getContext();
         } } }), Object.defineProperties(Gn.prototype, { cullFace: { get: function() {
-          console.warn("THREE.WebGLRenderer: .shadowMap.cullFace has been removed. Set Material.shadowSide instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMap.cullFace has been removed. Set Material.shadowSide instead.");
         }, set: function() {
-          console.warn("THREE.WebGLRenderer: .shadowMap.cullFace has been removed. Set Material.shadowSide instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMap.cullFace has been removed. Set Material.shadowSide instead.");
         } }, renderReverseSided: { get: function() {
-          console.warn("THREE.WebGLRenderer: .shadowMap.renderReverseSided has been removed. Set Material.shadowSide instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMap.renderReverseSided has been removed. Set Material.shadowSide instead.");
         }, set: function() {
-          console.warn("THREE.WebGLRenderer: .shadowMap.renderReverseSided has been removed. Set Material.shadowSide instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMap.renderReverseSided has been removed. Set Material.shadowSide instead.");
         } }, renderSingleSided: { get: function() {
-          console.warn("THREE.WebGLRenderer: .shadowMap.renderSingleSided has been removed. Set Material.shadowSide instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMap.renderSingleSided has been removed. Set Material.shadowSide instead.");
         }, set: function() {
-          console.warn("THREE.WebGLRenderer: .shadowMap.renderSingleSided has been removed. Set Material.shadowSide instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderer: .shadowMap.renderSingleSided has been removed. Set Material.shadowSide instead.");
         } } }), Object.defineProperties(Ve.prototype, { activeCubeFace: { set: function() {
-          console.warn("THREE.WebGLRenderTargetCube: .activeCubeFace has been removed. It is now the second parameter of WebGLRenderer.setRenderTarget().");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTargetCube: .activeCubeFace has been removed. It is now the second parameter of WebGLRenderer.setRenderTarget().");
         } }, activeMipMapLevel: { set: function() {
-          console.warn("THREE.WebGLRenderTargetCube: .activeMipMapLevel has been removed. It is now the third parameter of WebGLRenderer.setRenderTarget().");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTargetCube: .activeMipMapLevel has been removed. It is now the third parameter of WebGLRenderer.setRenderTarget().");
         } } }), Object.defineProperties(b2.prototype, { wrapS: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .wrapS is now .texture.wrapS."), this.texture.wrapS;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .wrapS is now .texture.wrapS."), this.texture.wrapS;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .wrapS is now .texture.wrapS."), this.texture.wrapS = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .wrapS is now .texture.wrapS."), this.texture.wrapS = t4;
         } }, wrapT: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .wrapT is now .texture.wrapT."), this.texture.wrapT;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .wrapT is now .texture.wrapT."), this.texture.wrapT;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .wrapT is now .texture.wrapT."), this.texture.wrapT = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .wrapT is now .texture.wrapT."), this.texture.wrapT = t4;
         } }, magFilter: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .magFilter is now .texture.magFilter."), this.texture.magFilter;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .magFilter is now .texture.magFilter."), this.texture.magFilter;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .magFilter is now .texture.magFilter."), this.texture.magFilter = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .magFilter is now .texture.magFilter."), this.texture.magFilter = t4;
         } }, minFilter: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .minFilter is now .texture.minFilter."), this.texture.minFilter;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .minFilter is now .texture.minFilter."), this.texture.minFilter;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .minFilter is now .texture.minFilter."), this.texture.minFilter = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .minFilter is now .texture.minFilter."), this.texture.minFilter = t4;
         } }, anisotropy: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .anisotropy is now .texture.anisotropy."), this.texture.anisotropy;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .anisotropy is now .texture.anisotropy."), this.texture.anisotropy;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .anisotropy is now .texture.anisotropy."), this.texture.anisotropy = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .anisotropy is now .texture.anisotropy."), this.texture.anisotropy = t4;
         } }, offset: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .offset is now .texture.offset."), this.texture.offset;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .offset is now .texture.offset."), this.texture.offset;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .offset is now .texture.offset."), this.texture.offset = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .offset is now .texture.offset."), this.texture.offset = t4;
         } }, repeat: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .repeat is now .texture.repeat."), this.texture.repeat;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .repeat is now .texture.repeat."), this.texture.repeat;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .repeat is now .texture.repeat."), this.texture.repeat = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .repeat is now .texture.repeat."), this.texture.repeat = t4;
         } }, format: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .format is now .texture.format."), this.texture.format;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .format is now .texture.format."), this.texture.format;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .format is now .texture.format."), this.texture.format = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .format is now .texture.format."), this.texture.format = t4;
         } }, type: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .type is now .texture.type."), this.texture.type;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .type is now .texture.type."), this.texture.type;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .type is now .texture.type."), this.texture.type = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .type is now .texture.type."), this.texture.type = t4;
         } }, generateMipmaps: { get: function() {
-          return console.warn("THREE.WebGLRenderTarget: .generateMipmaps is now .texture.generateMipmaps."), this.texture.generateMipmaps;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .generateMipmaps is now .texture.generateMipmaps."), this.texture.generateMipmaps;
         }, set: function(t4) {
-          console.warn("THREE.WebGLRenderTarget: .generateMipmaps is now .texture.generateMipmaps."), this.texture.generateMipmaps = t4;
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebGLRenderTarget: .generateMipmaps is now .texture.generateMipmaps."), this.texture.generateMipmaps = t4;
         } } }), Object.defineProperties(Jn.prototype, { standing: { set: function() {
-          console.warn("THREE.WebVRManager: .standing has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebVRManager: .standing has been removed.");
         } }, userHeight: { set: function() {
-          console.warn("THREE.WebVRManager: .userHeight has been removed.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WebVRManager: .userHeight has been removed.");
         } } }), nc.prototype.load = function(t4) {
-          console.warn("THREE.Audio: .load has been deprecated. Use THREE.AudioLoader instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Audio: .load has been deprecated. Use THREE.AudioLoader instead.");
           var e5 = this;
           return new js().load(t4, function(t5) {
             e5.setBuffer(t5);
           }), this;
         }, lc.prototype.getData = function() {
-          return console.warn("THREE.AudioAnalyser: .getData() is now .getFrequencyData()."), this.getFrequencyData();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.AudioAnalyser: .getData() is now .getFrequencyData()."), this.getFrequencyData();
         }, He.prototype.updateCubeMap = function(t4, e5) {
-          return console.warn("THREE.CubeCamera: .updateCubeMap() is now .update()."), this.update(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.CubeCamera: .updateCubeMap() is now .update()."), this.update(t4, e5);
         };
         var Ll = { merge: function(t4, e5, r3) {
           var n2;
-          console.warn("THREE.GeometryUtils: .merge() has been moved to Geometry. Use geometry.merge( geometry2, matrix, materialIndexOffset ) instead."), e5.isMesh && (e5.matrixAutoUpdate && e5.updateMatrix(), n2 = e5.matrix, e5 = e5.geometry), t4.merge(e5, n2, r3);
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.GeometryUtils: .merge() has been moved to Geometry. Use geometry.merge( geometry2, matrix, materialIndexOffset ) instead."), e5.isMesh && (e5.matrixAutoUpdate && e5.updateMatrix(), n2 = e5.matrix, e5 = e5.geometry), t4.merge(e5, n2, r3);
         }, center: function(t4) {
-          return console.warn("THREE.GeometryUtils: .center() has been moved to Geometry. Use geometry.center() instead."), t4.center();
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.GeometryUtils: .center() has been moved to Geometry. Use geometry.center() instead."), t4.center();
         } };
         g2.crossOrigin = void 0, g2.loadTexture = function(t4, e5, r3, n2) {
-          console.warn("THREE.ImageUtils.loadTexture has been deprecated. Use THREE.TextureLoader() instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ImageUtils.loadTexture has been deprecated. Use THREE.TextureLoader() instead.");
           var i3 = new ko();
           i3.setCrossOrigin(this.crossOrigin);
           var a4 = i3.load(t4, r3, void 0, n2);
           return e5 && (a4.mapping = e5), a4;
         }, g2.loadTextureCube = function(t4, e5, r3, n2) {
-          console.warn("THREE.ImageUtils.loadTextureCube has been deprecated. Use THREE.CubeTextureLoader() instead.");
+          index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ImageUtils.loadTextureCube has been deprecated. Use THREE.CubeTextureLoader() instead.");
           var i3 = new jo();
           i3.setCrossOrigin(this.crossOrigin);
           var a4 = i3.load(t4, r3, void 0, n2);
           return e5 && (a4.mapping = e5), a4;
         }, g2.loadCompressedTexture = function() {
-          console.error("THREE.ImageUtils.loadCompressedTexture has been removed. Use THREE.DDSLoader instead.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ImageUtils.loadCompressedTexture has been removed. Use THREE.DDSLoader instead.");
         }, g2.loadCompressedTextureCube = function() {
-          console.error("THREE.ImageUtils.loadCompressedTextureCube has been removed. Use THREE.DDSLoader instead.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ImageUtils.loadCompressedTextureCube has been removed. Use THREE.DDSLoader instead.");
         };
         var Rl = { createMultiMaterialObject: function() {
-          console.error("THREE.SceneUtils has been moved to /examples/js/utils/SceneUtils.js");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.SceneUtils has been moved to /examples/js/utils/SceneUtils.js");
         }, detach: function() {
-          console.error("THREE.SceneUtils has been moved to /examples/js/utils/SceneUtils.js");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.SceneUtils has been moved to /examples/js/utils/SceneUtils.js");
         }, attach: function() {
-          console.error("THREE.SceneUtils has been moved to /examples/js/utils/SceneUtils.js");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.SceneUtils has been moved to /examples/js/utils/SceneUtils.js");
         } };
         t3.ACESFilmicToneMapping = 5, t3.AddEquation = 100, t3.AddOperation = 2, t3.AdditiveBlending = 2, t3.AlphaFormat = 1021, t3.AlwaysDepth = 1, t3.AlwaysStencilFunc = 519, t3.AmbientLight = Ss, t3.AmbientLightProbe = Xs, t3.AnimationClip = Co, t3.AnimationLoader = Go, t3.AnimationMixer = Mc, t3.AnimationObjectGroup = wc, t3.AnimationUtils = yo, t3.ArcCurve = Xo, t3.ArrayCamera = kn, t3.ArrowHelper = Ml, t3.Audio = nc, t3.AudioAnalyser = lc, t3.AudioContext = Vs, t3.AudioListener = rc, t3.AudioLoader = js, t3.AxesHelper = Sl, t3.AxisHelper = function(t4) {
-          return console.warn("THREE.AxisHelper has been renamed to THREE.AxesHelper."), new Sl(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.AxisHelper has been renamed to THREE.AxesHelper."), new Sl(t4);
         }, t3.BackSide = 1, t3.BasicDepthPacking = 3200, t3.BasicShadowMap = 0, t3.BinaryTextureLoader = function(t4) {
-          return console.warn("THREE.BinaryTextureLoader has been renamed to THREE.DataTextureLoader."), new Ho(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BinaryTextureLoader has been renamed to THREE.DataTextureLoader."), new Ho(t4);
         }, t3.Bone = Si, t3.BooleanKeyframeTrack = So, t3.BoundingBoxHelper = function(t4, e5) {
-          return console.warn("THREE.BoundingBoxHelper has been deprecated. Creating a THREE.BoxHelper instead."), new vl(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.BoundingBoxHelper has been deprecated. Creating a THREE.BoxHelper instead."), new vl(t4, e5);
         }, t3.Box2 = Oc, t3.Box3 = ct, t3.Box3Helper = yl, t3.BoxBufferGeometry = Ne, t3.BoxGeometry = De, t3.BoxHelper = vl, t3.BufferAttribute = Vt, t3.BufferGeometry = se, t3.BufferGeometryLoader = Ps, t3.ByteType = 1010, t3.Cache = Do, t3.Camera = Ge, t3.CameraHelper = fl, t3.CanvasRenderer = function() {
-          console.error("THREE.CanvasRenderer has been removed");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.CanvasRenderer has been removed");
         }, t3.CanvasTexture = Wi, t3.CatmullRomCurve3 = $o, t3.CineonToneMapping = 4, t3.CircleBufferGeometry = io, t3.CircleGeometry = no, t3.ClampToEdgeWrapping = 1001, t3.Clock = Qs, t3.ClosedSplineCurve3 = Tl, t3.Color = Nt, t3.ColorKeyframeTrack = To, t3.CompressedTexture = ki, t3.CompressedTextureLoader = Uo, t3.ConeBufferGeometry = ro, t3.ConeGeometry = eo, t3.CubeCamera = He, t3.CubeGeometry = De, t3.CubeReflectionMapping = 301, t3.CubeRefractionMapping = 302, t3.CubeTexture = mr, t3.CubeTextureLoader = jo, t3.CubeUVReflectionMapping = 306, t3.CubeUVRefractionMapping = 307, t3.CubicBezierCurve = ns, t3.CubicBezierCurve3 = is, t3.CubicInterpolant = bo, t3.CullFaceBack = 1, t3.CullFaceFront = 2, t3.CullFaceFrontBack = 3, t3.CullFaceNone = 0, t3.Curve = Wo, t3.CurvePath = us, t3.CustomBlending = 5, t3.CylinderBufferGeometry = to, t3.CylinderGeometry = $a, t3.Cylindrical = Pc, t3.DataTexture = je, t3.DataTexture2DArray = gr, t3.DataTexture3D = vr, t3.DataTextureLoader = Ho, t3.DecrementStencilOp = 7683, t3.DecrementWrapStencilOp = 34056, t3.DefaultLoadingManager = Io, t3.DepthFormat = 1026, t3.DepthStencilFormat = 1027, t3.DepthTexture = qi, t3.DirectionalLight = Ms, t3.DirectionalLightHelper = ul, t3.DirectionalLightShadow = _s, t3.DiscreteInterpolant = _o, t3.DodecahedronBufferGeometry = aa, t3.DodecahedronGeometry = ia, t3.DoubleSide = 2, t3.DstAlphaFactor = 206, t3.DstColorFactor = 208, t3.DynamicBufferAttribute = function(t4, e5) {
-          return console.warn("THREE.DynamicBufferAttribute has been removed. Use new THREE.BufferAttribute().setDynamic( true ) instead."), new Vt(t4, e5).setDynamic(true);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.DynamicBufferAttribute has been removed. Use new THREE.BufferAttribute().setDynamic( true ) instead."), new Vt(t4, e5).setDynamic(true);
         }, t3.EdgesGeometry = Ka, t3.EdgesHelper = function(t4, e5) {
-          return console.warn("THREE.EdgesHelper has been removed. Use THREE.EdgesGeometry instead."), new Ni(new Ka(t4.geometry), new Ti({ color: void 0 !== e5 ? e5 : 16777215 }));
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.EdgesHelper has been removed. Use THREE.EdgesGeometry instead."), new Ni(new Ka(t4.geometry), new Ti({ color: void 0 !== e5 ? e5 : 16777215 }));
         }, t3.EllipseCurve = qo, t3.EqualDepth = 4, t3.EqualStencilFunc = 514, t3.EquirectangularReflectionMapping = 303, t3.EquirectangularRefractionMapping = 304, t3.Euler = D, t3.EventDispatcher = e4, t3.ExtrudeBufferGeometry = Fa, t3.ExtrudeGeometry = Ba, t3.Face3 = Ft, t3.Face4 = function(t4, e5, r3, n2, i3, a4, o5) {
-          return console.warn("THREE.Face4 has been removed. A THREE.Face3 will be created instead."), new Ft(t4, e5, r3, i3, a4, o5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Face4 has been removed. A THREE.Face3 will be created instead."), new Ft(t4, e5, r3, i3, a4, o5);
         }, t3.FaceColors = 1, t3.FaceNormalsHelper = sl, t3.FileLoader = Fo, t3.FlatShading = 1, t3.Float32Attribute = function(t4, e5) {
-          return console.warn("THREE.Float32Attribute has been removed. Use new THREE.Float32BufferAttribute() instead."), new Zt(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Float32Attribute has been removed. Use new THREE.Float32BufferAttribute() instead."), new Zt(t4, e5);
         }, t3.Float32BufferAttribute = Zt, t3.Float64Attribute = function(t4, e5) {
-          return console.warn("THREE.Float64Attribute has been removed. Use new THREE.Float64BufferAttribute() instead."), new Qt(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Float64Attribute has been removed. Use new THREE.Float64BufferAttribute() instead."), new Qt(t4, e5);
         }, t3.Float64BufferAttribute = Qt, t3.FloatType = 1015, t3.Fog = $n, t3.FogExp2 = Kn, t3.Font = Gs, t3.FontLoader = Hs, t3.FrontFaceDirectionCCW = 1, t3.FrontFaceDirectionCW = 0, t3.FrontSide = 0, t3.Frustum = Ze, t3.GammaEncoding = 3007, t3.Geometry = Oe, t3.GeometryUtils = Ll, t3.GreaterDepth = 6, t3.GreaterEqualDepth = 5, t3.GreaterEqualStencilFunc = 518, t3.GreaterStencilFunc = 516, t3.GridHelper = el, t3.Group = jn, t3.HalfFloatType = 1016, t3.HemisphereLight = ms, t3.HemisphereLightHelper = $c, t3.HemisphereLightProbe = qs, t3.IcosahedronBufferGeometry = na, t3.IcosahedronGeometry = ra, t3.ImageBitmapLoader = Bs, t3.ImageLoader = Vo, t3.ImageUtils = g2, t3.ImmediateRenderObject = zc, t3.IncrementStencilOp = 7682, t3.IncrementWrapStencilOp = 34055, t3.InstancedBufferAttribute = Rs, t3.InstancedBufferGeometry = Ls, t3.InstancedInterleavedBuffer = Tc, t3.Int16Attribute = function(t4, e5) {
-          return console.warn("THREE.Int16Attribute has been removed. Use new THREE.Int16BufferAttribute() instead."), new qt(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Int16Attribute has been removed. Use new THREE.Int16BufferAttribute() instead."), new qt(t4, e5);
         }, t3.Int16BufferAttribute = qt, t3.Int32Attribute = function(t4, e5) {
-          return console.warn("THREE.Int32Attribute has been removed. Use new THREE.Int32BufferAttribute() instead."), new Yt(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Int32Attribute has been removed. Use new THREE.Int32BufferAttribute() instead."), new Yt(t4, e5);
         }, t3.Int32BufferAttribute = Yt, t3.Int8Attribute = function(t4, e5) {
-          return console.warn("THREE.Int8Attribute has been removed. Use new THREE.Int8BufferAttribute() instead."), new jt(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Int8Attribute has been removed. Use new THREE.Int8BufferAttribute() instead."), new jt(t4, e5);
         }, t3.Int8BufferAttribute = jt, t3.IntType = 1013, t3.InterleavedBuffer = ti, t3.InterleavedBufferAttribute = ei, t3.Interpolant = xo, t3.InterpolateDiscrete = 2300, t3.InterpolateLinear = 2301, t3.InterpolateSmooth = 2302, t3.InvertStencilOp = 5386, t3.JSONLoader = function() {
-          console.error("THREE.JSONLoader has been removed.");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.JSONLoader has been removed.");
         }, t3.KeepStencilOp = 7680, t3.KeyframeTrack = Mo, t3.LOD = xi, t3.LatheBufferGeometry = Ya, t3.LatheGeometry = Xa, t3.Layers = N, t3.LensFlare = function() {
-          console.error("THREE.LensFlare has been moved to /examples/js/objects/Lensflare.js");
+          index.__f__("error", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.LensFlare has been moved to /examples/js/objects/Lensflare.js");
         }, t3.LessDepth = 2, t3.LessEqualDepth = 3, t3.LessEqualStencilFunc = 515, t3.LessStencilFunc = 513, t3.Light = fs, t3.LightProbe = Ws, t3.LightProbeHelper = tl, t3.LightShadow = gs, t3.Line = Ci, t3.Line3 = Ic, t3.LineBasicMaterial = Ti, t3.LineCurve = as, t3.LineCurve3 = os, t3.LineDashedMaterial = go, t3.LineLoop = Ii, t3.LinePieces = 1, t3.LineSegments = Ni, t3.LineStrip = 0, t3.LinearEncoding = 3e3, t3.LinearFilter = 1006, t3.LinearInterpolant = wo, t3.LinearMipMapLinearFilter = 1008, t3.LinearMipMapNearestFilter = 1007, t3.LinearMipmapLinearFilter = 1008, t3.LinearMipmapNearestFilter = 1007, t3.LinearToneMapping = 1, t3.Loader = zo, t3.LoaderUtils = As, t3.LoadingManager = No, t3.LogLuvEncoding = 3003, t3.LoopOnce = 2200, t3.LoopPingPong = 2202, t3.LoopRepeat = 2201, t3.LuminanceAlphaFormat = 1025, t3.LuminanceFormat = 1024, t3.MOUSE = { LEFT: 0, MIDDLE: 1, RIGHT: 2, ROTATE: 0, DOLLY: 1, PAN: 2 }, t3.Material = Ut, t3.MaterialLoader = Es, t3.Math = s3, t3.Matrix3 = m2, t3.Matrix4 = P2, t3.MaxEquation = 104, t3.Mesh = Te, t3.MeshBasicMaterial = Ht, t3.MeshDepthMaterial = Bn, t3.MeshDistanceMaterial = Fn, t3.MeshFaceMaterial = function(t4) {
-          return console.warn("THREE.MeshFaceMaterial has been removed. Use an Array instead."), t4;
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.MeshFaceMaterial has been removed. Use an Array instead."), t4;
         }, t3.MeshLambertMaterial = fo, t3.MeshMatcapMaterial = mo, t3.MeshNormalMaterial = po, t3.MeshPhongMaterial = ho, t3.MeshPhysicalMaterial = lo, t3.MeshStandardMaterial = co, t3.MeshToonMaterial = uo, t3.MinEquation = 103, t3.MirroredRepeatWrapping = 1002, t3.MixOperation = 1, t3.MultiMaterial = function(t4) {
-          return void 0 === t4 && (t4 = []), console.warn("THREE.MultiMaterial has been removed. Use an Array instead."), t4.isMultiMaterial = true, t4.materials = t4, t4.clone = function() {
+          return void 0 === t4 && (t4 = []), index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.MultiMaterial has been removed. Use an Array instead."), t4.isMultiMaterial = true, t4.materials = t4, t4.clone = function() {
             return t4.slice();
           }, t4;
         }, t3.MultiplyBlending = 4, t3.MultiplyOperation = 0, t3.NearestFilter = 1003, t3.NearestMipMapLinearFilter = 1005, t3.NearestMipMapNearestFilter = 1004, t3.NearestMipmapLinearFilter = 1005, t3.NearestMipmapNearestFilter = 1004, t3.NeverDepth = 0, t3.NeverStencilFunc = 512, t3.NoBlending = 0, t3.NoColors = 0, t3.NoToneMapping = 0, t3.NormalBlending = 1, t3.NotEqualDepth = 7, t3.NotEqualStencilFunc = 517, t3.NumberKeyframeTrack = Eo, t3.Object3D = Y, t3.ObjectLoader = Os, t3.ObjectSpaceNormalMap = 1, t3.OctahedronBufferGeometry = ea, t3.OctahedronGeometry = ta, t3.OneFactor = 201, t3.OneMinusDstAlphaFactor = 207, t3.OneMinusDstColorFactor = 209, t3.OneMinusSrcAlphaFactor = 205, t3.OneMinusSrcColorFactor = 203, t3.OrthographicCamera = ws, t3.PCFShadowMap = 1, t3.PCFSoftShadowMap = 2, t3.ParametricBufferGeometry = Ji, t3.ParametricGeometry = Yi, t3.Particle = function(t4) {
-          return console.warn("THREE.Particle has been renamed to THREE.Sprite."), new mi(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Particle has been renamed to THREE.Sprite."), new mi(t4);
         }, t3.ParticleBasicMaterial = function(t4) {
-          return console.warn("THREE.ParticleBasicMaterial has been renamed to THREE.PointsMaterial."), new zi(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ParticleBasicMaterial has been renamed to THREE.PointsMaterial."), new zi(t4);
         }, t3.ParticleSystem = function(t4, e5) {
-          return console.warn("THREE.ParticleSystem has been renamed to THREE.Points."), new Hi(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ParticleSystem has been renamed to THREE.Points."), new Hi(t4, e5);
         }, t3.ParticleSystemMaterial = function(t4) {
-          return console.warn("THREE.ParticleSystemMaterial has been renamed to THREE.PointsMaterial."), new zi(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.ParticleSystemMaterial has been renamed to THREE.PointsMaterial."), new zi(t4);
         }, t3.Path = ps, t3.PerspectiveCamera = Ue, t3.Plane = Xe, t3.PlaneBufferGeometry = nr, t3.PlaneGeometry = rr, t3.PlaneHelper = xl, t3.PointCloud = function(t4, e5) {
-          return console.warn("THREE.PointCloud has been renamed to THREE.Points."), new Hi(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.PointCloud has been renamed to THREE.Points."), new Hi(t4, e5);
         }, t3.PointCloudMaterial = function(t4) {
-          return console.warn("THREE.PointCloudMaterial has been renamed to THREE.PointsMaterial."), new zi(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.PointCloudMaterial has been renamed to THREE.PointsMaterial."), new zi(t4);
         }, t3.PointLight = bs, t3.PointLightHelper = Yc, t3.Points = Hi, t3.PointsMaterial = zi, t3.PolarGridHelper = rl, t3.PolyhedronBufferGeometry = Qi, t3.PolyhedronGeometry = Zi, t3.PositionalAudio = cc, t3.PositionalAudioHelper = nl, t3.PropertyBinding = bc, t3.PropertyMixer = hc, t3.QuadraticBezierCurve = ss, t3.QuadraticBezierCurve3 = cs, t3.Quaternion = h2, t3.QuaternionKeyframeTrack = Lo, t3.QuaternionLinearInterpolant = Ao, t3.REVISION = "108", t3.RGBADepthPacking = 3201, t3.RGBAFormat = 1023, t3.RGBA_ASTC_10x10_Format = 37819, t3.RGBA_ASTC_10x5_Format = 37816, t3.RGBA_ASTC_10x6_Format = 37817, t3.RGBA_ASTC_10x8_Format = 37818, t3.RGBA_ASTC_12x10_Format = 37820, t3.RGBA_ASTC_12x12_Format = 37821, t3.RGBA_ASTC_4x4_Format = 37808, t3.RGBA_ASTC_5x4_Format = 37809, t3.RGBA_ASTC_5x5_Format = 37810, t3.RGBA_ASTC_6x5_Format = 37811, t3.RGBA_ASTC_6x6_Format = 37812, t3.RGBA_ASTC_8x5_Format = 37813, t3.RGBA_ASTC_8x6_Format = 37814, t3.RGBA_ASTC_8x8_Format = 37815, t3.RGBA_PVRTC_2BPPV1_Format = 35843, t3.RGBA_PVRTC_4BPPV1_Format = 35842, t3.RGBA_S3TC_DXT1_Format = 33777, t3.RGBA_S3TC_DXT3_Format = 33778, t3.RGBA_S3TC_DXT5_Format = 33779, t3.RGBDEncoding = 3006, t3.RGBEEncoding = 3002, t3.RGBEFormat = 1023, t3.RGBFormat = 1022, t3.RGBM16Encoding = 3005, t3.RGBM7Encoding = 3004, t3.RGB_ETC1_Format = 36196, t3.RGB_PVRTC_2BPPV1_Format = 35841, t3.RGB_PVRTC_4BPPV1_Format = 35840, t3.RGB_S3TC_DXT1_Format = 33776, t3.RawShaderMaterial = so, t3.Ray = xt, t3.Raycaster = Ec, t3.RectAreaLight = Ts, t3.RectAreaLightHelper = Jc, t3.RedFormat = 1028, t3.ReinhardToneMapping = 2, t3.RepeatWrapping = 1e3, t3.ReplaceStencilOp = 7681, t3.ReverseSubtractEquation = 102, t3.RingBufferGeometry = qa2, t3.RingGeometry = Wa, t3.Scene = J, t3.SceneUtils = Rl, t3.ShaderChunk = Qe, t3.ShaderLib = $e, t3.ShaderMaterial = Fe, t3.ShadowMaterial = oo, t3.Shape = ds, t3.ShapeBufferGeometry = Za, t3.ShapeGeometry = Ja, t3.ShapePath = Fs, t3.ShapeUtils = Na, t3.ShortType = 1011, t3.Skeleton = Mi, t3.SkeletonHelper = Xc, t3.SkinnedMesh = bi, t3.SmoothShading = 2, t3.Sphere = ut, t3.SphereBufferGeometry = ka, t3.SphereGeometry = ja, t3.Spherical = Rc, t3.SphericalHarmonics3 = ks2, t3.SphericalReflectionMapping = 305, t3.Spline = Al, t3.SplineCurve = ls, t3.SplineCurve3 = El, t3.SpotLight = ys, t3.SpotLightHelper = jc, t3.SpotLightShadow = vs, t3.Sprite = mi, t3.SpriteMaterial = ri, t3.SrcAlphaFactor = 204, t3.SrcAlphaSaturateFactor = 210, t3.SrcColorFactor = 202, t3.StereoCamera = Zs, t3.StringKeyframeTrack = Ro, t3.SubtractEquation = 101, t3.SubtractiveBlending = 3, t3.TOUCH = { ROTATE: 0, PAN: 1, DOLLY_PAN: 2, DOLLY_ROTATE: 3 }, t3.TangentSpaceNormalMap = 0, t3.TetrahedronBufferGeometry = $i, t3.TetrahedronGeometry = Ki, t3.TextBufferGeometry = Va, t3.TextGeometry = Ha, t3.Texture = y2, t3.TextureLoader = ko, t3.TorusBufferGeometry = ua, t3.TorusGeometry = ha, t3.TorusKnotBufferGeometry = la, t3.TorusKnotGeometry = ca, t3.Triangle = Pt, t3.TriangleFanDrawMode = 2, t3.TriangleStripDrawMode = 1, t3.TrianglesDrawMode = 0, t3.TubeBufferGeometry = sa, t3.TubeGeometry = oa, t3.UVMapping = 300, t3.Uint16Attribute = function(t4, e5) {
-          return console.warn("THREE.Uint16Attribute has been removed. Use new THREE.Uint16BufferAttribute() instead."), new Xt(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Uint16Attribute has been removed. Use new THREE.Uint16BufferAttribute() instead."), new Xt(t4, e5);
         }, t3.Uint16BufferAttribute = Xt, t3.Uint32Attribute = function(t4, e5) {
-          return console.warn("THREE.Uint32Attribute has been removed. Use new THREE.Uint32BufferAttribute() instead."), new Jt(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Uint32Attribute has been removed. Use new THREE.Uint32BufferAttribute() instead."), new Jt(t4, e5);
         }, t3.Uint32BufferAttribute = Jt, t3.Uint8Attribute = function(t4, e5) {
-          return console.warn("THREE.Uint8Attribute has been removed. Use new THREE.Uint8BufferAttribute() instead."), new kt(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Uint8Attribute has been removed. Use new THREE.Uint8BufferAttribute() instead."), new kt(t4, e5);
         }, t3.Uint8BufferAttribute = kt, t3.Uint8ClampedAttribute = function(t4, e5) {
-          return console.warn("THREE.Uint8ClampedAttribute has been removed. Use new THREE.Uint8ClampedBufferAttribute() instead."), new Wt(t4, e5);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Uint8ClampedAttribute has been removed. Use new THREE.Uint8ClampedBufferAttribute() instead."), new Wt(t4, e5);
         }, t3.Uint8ClampedBufferAttribute = Wt, t3.Uncharted2ToneMapping = 3, t3.Uniform = Sc, t3.UniformsLib = Ke, t3.UniformsUtils = Be, t3.UnsignedByteType = 1009, t3.UnsignedInt248Type = 1020, t3.UnsignedIntType = 1014, t3.UnsignedShort4444Type = 1017, t3.UnsignedShort5551Type = 1018, t3.UnsignedShort565Type = 1019, t3.UnsignedShortType = 1012, t3.VSMShadowMap = 3, t3.Vector2 = l3, t3.Vector3 = d2, t3.Vector4 = x2, t3.VectorKeyframeTrack = Po, t3.Vertex = function(t4, e5, r3) {
-          return console.warn("THREE.Vertex has been removed. Use THREE.Vector3 instead."), new d2(t4, e5, r3);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.Vertex has been removed. Use THREE.Vector3 instead."), new d2(t4, e5, r3);
         }, t3.VertexColors = 2, t3.VertexNormalsHelper = Hc, t3.VideoTexture = ji, t3.WebGLMultisampleRenderTarget = w2, t3.WebGLRenderTarget = b2, t3.WebGLRenderTargetCube = Ve, t3.WebGLRenderer = Qn, t3.WebGLUtils = Vn, t3.WireframeGeometry = Xi, t3.WireframeHelper = function(t4, e5) {
-          return console.warn("THREE.WireframeHelper has been removed. Use THREE.WireframeGeometry instead."), new Ni(new Xi(t4.geometry), new Ti({ color: void 0 !== e5 ? e5 : 16777215 }));
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.WireframeHelper has been removed. Use THREE.WireframeGeometry instead."), new Ni(new Xi(t4.geometry), new Ti({ color: void 0 !== e5 ? e5 : 16777215 }));
         }, t3.WrapAroundEnding = 2402, t3.XHRLoader = function(t4) {
-          return console.warn("THREE.XHRLoader has been renamed to THREE.FileLoader."), new Fo(t4);
+          return index.__f__("warn", "at node_modules/threejs-miniprogram/dist/index.js:3", "THREE.XHRLoader has been renamed to THREE.FileLoader."), new Fo(t4);
         }, t3.ZeroCurvatureEnding = 2400, t3.ZeroFactor = 200, t3.ZeroSlopeEnding = 2401, t3.ZeroStencilOp = 0, t3.sRGBEncoding = 3001, Object.defineProperty(t3, "__esModule", { value: true });
       }, "object" === R(l2) && void 0 !== t2 ? s2(l2) : s2((o3 = o3 || self).THREE = {}), l2;
     }

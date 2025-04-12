@@ -42,6 +42,7 @@
 					{ name: '抽签', image: '/static/images/lots.png', path:'/pages/game/draw-lots' },
 					{ name: '时间刚刚好', image: '/static/images/timer.png', path:'/pages/game/perfect-time' },
 					{ name: '猜谜语', image: '/static/images/riddle.png', path:'/pages/game/riddle' },
+					{ name: '炸弹九宫格', image: '/static/images/bomb.png', path:'/pages/game/bomb' },
 				],
 			}
 		},

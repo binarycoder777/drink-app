@@ -11,6 +11,7 @@ if (!Math) {
   "./pages/game/truth-dare.js";
   "./pages/game/perfect-time.js";
   "./pages/game/riddle.js";
+  "./pages/game/bomb.js";
 }
 const _sfc_main = {
   onLaunch: function() {
