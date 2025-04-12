@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const threejsMiniprogram = require("threejs-miniprogram");
 const _sfc_main = {
   setup() {
     const diceCount = common_vendor.ref(3);
@@ -103,7 +104,7 @@ const _sfc_main = {
             style: canvas.style
           });
           try {
-            this.THREE = common_vendor.markRaw(common_vendor.dist.createScopedThreejs(canvas));
+            this.THREE = common_vendor.markRaw(threejsMiniprogram.createScopedThreejs(canvas));
             this.scene = common_vendor.markRaw(new this.THREE.Scene());
             common_vendor.index.__f__("log", "at pages/game/dice.vue:200", "THREE.js Scene:", {
               background: this.scene.background,
